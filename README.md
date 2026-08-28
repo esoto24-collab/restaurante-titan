@@ -20,7 +20,7 @@ Desafortunadamente, tenemos una debilidad en nuestro diseño y esa debilidad es 
 * **Personas adictas a lo extremo:** Puedes irte a nuestro apartado de retos y buscar el más adecuado para ti, en esa sección podrás elegir entre LOS JUEGOS DEL HAMBRE, EL COLISEO ROMANO y el muy popular reto para tus pequeños que están aprendiendo a comer bien EL HIGADOTE CON CEBOLLÓN ENTERO.
  
 ## 🥓🥓🥓 Imagenes de referencia 🥓🥓🥓
-![Persona obesa comiendo muchas hamburguesas](https://share.gemini.google/0shG0pUgIReS)
-![Hamburguesa enorme](https://share.gemini.google/PUlkYGAV3sDl)
+![Hamburguesa colosal](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhlpLDYfnjp6RVD1Yn1YNHZlZyM5BD26tnhD3D_iO17Vzx37CKQevxHVmr&s=10)
+![Hamburguesa enorme](https://media.dondeir.com/2026/05/hamburguesas-gigantes-cdmx-gringo-naco.jpg)
 
 
