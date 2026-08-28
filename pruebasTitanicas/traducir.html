@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+
+</style>
+</head>
+<body>
+    <h1 id="titulo"></h1>
+    <h2 id="titulo2"></h2>
+    <button id="traducir">
+        traducir
+    </button>
+</body>
+<script>
+    const spanish = {
+    "titulo": "Hola mundo",
+    "titulo2": "Adios"
+}
+
+const english = {
+    "titulo": "hello word",
+    "titulo2": "bye"
+}
+
+const titulo = document.querySelector("#titulo")
+const titulo2 = document.querySelector("#titulo2")
+
+const traducir = document.querySelector("#traducir")
+
+let idioma= 'spanish'
+
+const traduccion = () =>{
+    switch(idioma){
+    case 'spanish':
+        titulo.textContent=spanish.titulo
+        titulo2.textContent=spanish.titulo2
+    break;
+    case 'english':
+        titulo.textContent=english.titulo
+        titulo2.textContent=english.titulo2
+    break;
+}
+
+}
+traduccion(idioma)
+
+traducir.addEventListener("click",()=>{
+    if(idioma === 'spanish'){
+         idioma='english'
+    }else{
+        idioma='spanish';
+    }
+    traduccion(idioma)
+})
+
+
+
+
+</script>
+</html>
