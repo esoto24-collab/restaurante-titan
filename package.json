@@ -1,4 +1,7 @@
 {
     "name": "restaurante-titan",
-    "author": "No te dire jamas te lo dire"
+    "author": "No te dire jamas te lo dire",
+    "devDependencies": {
+        "prettier": "3.9.6"
+    }
 }

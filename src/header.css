@@ -1,0 +1,70 @@
+ header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: var(--borde);
+        box-shadow: 0 2px 0 black;
+        background-color: var(--rojo);
+    }
+
+    header > ul{
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        color: white;
+    }
+
+    header > ul > li{
+        font-family: var(--subtitulo);
+        font-weight: 900;
+        position: relative;
+    }
+
+    header > ul > li::before{
+        content: " ";
+        background-color: white;
+        width: 0%;
+        height: 3px;
+        position: absolute;
+        bottom: 0;
+        transition: all 0.5s ease;
+    }
+
+    header > ul > li:hover::before{
+       width: 100%;
+    }
+
+     header > ul > li:hover{
+       transform: translate(0,-5px);
+    }    
+    
+    h1{
+        font-family: var(--titulo);
+        text-transform: uppercase;
+        color: var(--amarrillo);
+        text-shadow: 4px 4px 0 var(--negro);
+        -webkit-text-stroke: 2px black;
+        font-weight: 900;
+    }
+
+      .bts-header{
+        display: flex;
+        gap:20px;
+        flex-flow: wrap;
+    }
+
+    .bts-header > button{
+        font-family: var(--subtitulo);
+        font-weight: 800;
+        border: 3px solid black;
+        box-shadow: var(--shadow);
+        font-size: large;
+        padding: 3px 20px;
+    }
+
+    .bts-header > button:hover{
+        background-color: orange;
+        transform: translate(-2px,-2px);
+        box-shadow: 7px 7px 0 black;
+    }
