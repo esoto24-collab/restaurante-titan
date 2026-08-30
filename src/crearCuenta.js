@@ -89,6 +89,20 @@ const inputs = {
         type: 'email',
         id: 'email',
         placeholder: 'ejemplo@email.com'
+    },
+
+    password:{
+        titulo: 'Contraseña',
+        type: 'password',
+        id: 'password',
+        placeholder: 'Recuerda no compartir con nadie'
+    },
+
+    passwordRepeat:{
+        titulo: 'Escribe nuevamente la constraseña',
+        type: 'password',
+        id: 'password-repeat',
+        placeholder: 'NUNCA LA OLVIDES!!!!'
     }
 }
 
