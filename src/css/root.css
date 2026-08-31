@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'ArchivoBlack';
+  src: url(../assets/fonts/ArchivoBlack.ttf);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../assets/fonts/Inter.ttf);
+}
+
+@font-face {
+  font-family: 'PlusJatarkaSans';
+  src: url(../assets/fonts/PlusJakartaSans.ttf);
+}
+
+:root {
+  --negro: #011514;
+  --borde: 3px solid var(--negro);
+  --shadow: 3px 3px 0 var(--negro);
+  --titulo: 'ArchivoBlack';
+  --texto: 'Inter';
+  --subtitulo: 'PlusJatarkaSans';
+  --rojo: #6b0504;
+  --amarrillo: #f0c62d;
+  --naranja: #ea7e1f;
+  --naranajaFuerte: #e6451a;
+}

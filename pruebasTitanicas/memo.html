@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+          --blanco: #ffffff;
+          --negro: #000000;;
+        }
+
+        :root.noche{
+          --blanco: #000000;
+          --negro: #ffffff;
+        }
+
+
+        body{
+            --border: 3px solid var(--negro);
+            color: var(--negro);
+            background-color: var(--blanco);
+            min-height: 100dvh;
+            display: flex;
+            flex-flow: column-reverse;
+
+            align-items:last baseline;
+        }
+
+        button{
+            color: var(--negro);
+            border: var(--border);
+            background-color: var(--blanco);
+            box-shadow: 2px 2px 0 var(--negro);
+            padding: 5px 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Hola</h1>
+    <h2>Hey</h2>
+    <h5>amigo</h5>
+    <button id="btn">CAMBIAR DE COLOR</button>
+
+    <!-- -->
+</body>
+<script type="module">
+    const btn = document.querySelector("#btn");
+    const root = document.documentElement;
+
+    btn.addEventListener("click",()=>{
+
+        root.classList.toggle("noche")
+    })
+
+
+</script>
+</html>
