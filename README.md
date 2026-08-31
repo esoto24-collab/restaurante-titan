@@ -4,6 +4,7 @@ EL MEJOR RESTAURANTE JAMÁS CREADO
 **Contribuidores:** 
 Etneilav Andreé Soto Valdéz  
 Jesus Ivan Jimenez Aguilar
+Carlos Ramses Diaz Florez
 
 ---
 
