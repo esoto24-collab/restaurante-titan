@@ -38,16 +38,16 @@ const generarTabla = () => {
 
   for (let i = 0; i < usuarios.length; i++) {
     const fila = document.createElement('tr');
-    const tdNombre = document.createElement('th');
+    const tdNombre = document.createElement('td');
     tdNombre.textContent = usuarios[i].getNombre();
 
-    const tdApellido = document.createElement('th');
+    const tdApellido = document.createElement('td');
     tdApellido.textContent = usuarios[i].getApellido();
 
-    const tdFecha_nacimiento = document.createElement('th');
+    const tdFecha_nacimiento = document.createElement('td');
     tdFecha_nacimiento.textContent = usuarios[i].getfecha_nacimiento();
 
-    const tdCorreo = document.createElement('th');
+    const tdCorreo = document.createElement('td');
     tdCorreo.textContent = usuarios[i].getCorreo();
 
     fila.appendChild(tdNombre);

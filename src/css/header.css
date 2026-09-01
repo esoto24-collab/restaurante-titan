@@ -8,21 +8,21 @@ header {
   background-color: var(--rojo);
 }
 
-header > ul {
+header > nav > ul {
   display: flex;
   list-style: none;
   gap: 30px;
   color: white;
 }
 
-header > ul > li {
+header > nav > ul > li {
   font-family: var(--subtitulo);
   font-weight: 900;
   position: relative;
   cursor: pointer;
 }
 
-header > ul > li::before {
+header > nav > ul > li::before {
   content: ' ';
   background-color: white;
   width: 0%;
@@ -32,11 +32,11 @@ header > ul > li::before {
   transition: all 0.5s ease;
 }
 
-header > ul > li:hover::before {
+header > nav > ul > li:hover::before {
   width: 100%;
 }
 
-header > ul > li:hover {
+header > nav > ul > li:hover {
   transform: translate(0, -5px);
 }
 
