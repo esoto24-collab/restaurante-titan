@@ -33,7 +33,7 @@ footer {
 }
 
 .main-inicio > div {
-  background-color: white;
+  background-image: url(../assets/img/tortugatitan.jpg);
   border: var(--borde);
   box-shadow: 5px 5px 0 black;
   position: relative;
@@ -41,20 +41,34 @@ footer {
   justify-content: center;
   align-items: center;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+    cursor: pointer;
 }
 
-.main-inicio > div > div{
+.main-inicio > div > div {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: orange;
+  background-color: var(--naranajaFuerte);
+  display: flex;
+  padding: 10px 20px;
+  border-top: var(--borde);
 }
 
+.main-inicio > div > div > p,strong{
+  font-size: x-large;
+}
+
+.main-inicio > div > div > p:first-child{
+  margin-right: auto;
+}
 
 .main-formulario {
   display: flex;
   justify-content: center;
-  background-image: url(./assets/img/sddefault.jpg);
+  background-image: url(../assets/img/sddefault.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -111,12 +125,41 @@ footer {
   align-items: center;
 }
 
-.main-tabla table {
-  background-color: white;
-  border: var(--borde);
+
+
+table,
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  border-collapse: collapse;
+}
+
+table {
+  box-shadow: 5px 5px black;
+}
+
+tr {
+  margin: 0px;
+  border: 3px solid black;
 }
 
 th,
-tr {
-  border: 2px solid black;
+td {
+  padding: 15px 20px;
+}
+
+tr:nth-child(odd) {
+  background-color: whitesmoke;
+}
+
+th {
+  background-color: #6b0504;
+  color: #f0c62d;
+}
+
+tr:hover {
+  background-color: #f0c62d;
 }

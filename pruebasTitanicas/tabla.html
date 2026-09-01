@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table,th,td{
+            border: 2px solid black;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+            border-collapse: collapse;
+        }
+
+        table{
+            box-shadow: 5px 5px black;
+        }
+
+        tr{
+            margin: 0px;
+            border: 3px solid black;
+        }
+
+        th,td{
+            padding: 15px 20px;
+        }
+
+        tr:nth-child(odd){
+            background-color: whitesmoke;
+        }
+
+        th{
+            background-color: #6b0504;
+            color: #f0c62d;
+        }
+
+        tr:hover{
+            background-color: #f0c62d;
+        }
+
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Fecha de cumpleaños</th>
+            <th>Cosa</th>
+        </tr>
+        <tr>
+            <td>Jesus Ivan</td>
+            <td>jesusivan@mail.com</td>
+            <td>11/11/06</td>
+            <td>Conejo</td>
+        </tr>
+        <tr>
+            <td>Amukiri</td>
+            <td>amukiri@mail.com</td>
+            <td>10/12/06</td>
+            <td>Destornillador</td>
+        </tr>
+        <tr>
+            <td>Roberto</td>
+            <td>roberto@mail.com</td>
+            <td>01/01/01</td>
+            <td>Roberto</td>
+        </tr>
+        <tr>
+            <td>Ramses</td>
+            <td>ramses@mail.com</td>
+            <td>12/12/12</td>
+            <td>Computadora</td>
+        </tr>
+    </table>
+</body>
+</html>
