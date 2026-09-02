@@ -53,31 +53,31 @@ footer > div > div > div div:hover {
 }
 
 .discord {
-  -webkit-mask-image: url(./assets/img/discord.svg);
+  -webkit-mask-image: url(../assets/img/discord.svg);
   mask-image: url(../assets/img/discord.svg);
 }
 
 .youtube {
-  -webkit-mask-image: url(./assets/img/youtube.svg);
+  -webkit-mask-image: url(../assets/img/youtube.svg);
   mask-image: url(../assets/img/youtube.svg);
 }
 
 .instagran {
-  -webkit-mask-image: url(./assets/img/instagram.svg);
+  -webkit-mask-image: url(../assets/img/instagram.svg);
   mask-image: url(../assets/img/instagram.svg);
 }
 
 .github {
-  -webkit-mask-image: url(./assets/img/github.svg);
+  -webkit-mask-image: url(../assets/img/github.svg);
   mask-image: url(../assets/img/github.svg);
 }
 
 .twitter {
-  -webkit-mask-image: url(./assets/img/twitter.svg);
+  -webkit-mask-image: url(../assets/img/twitter.svg);
   mask-image: url(../assets/img/twitter.svg);
 }
 
 .facebook {
-  -webkit-mask-image: url(./assets/img/facebook.svg);
+  -webkit-mask-image: url(../assets/img/facebook.svg);
   mask-image: url(../assets/img/facebook.svg);
 }

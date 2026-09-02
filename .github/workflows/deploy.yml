@@ -28,7 +28,7 @@ jobs:
       - name: Subir artefacto (carpeta src) # Liada parda por no saber usar github deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './src'
+          path: '.'
       - name: Desplegar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
