@@ -44,7 +44,7 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .main-inicio > div > div {
@@ -57,11 +57,12 @@ footer {
   border-top: var(--borde);
 }
 
-.main-inicio > div > div > p,strong{
+.main-inicio > div > div > p,
+strong {
   font-size: x-large;
 }
 
-.main-inicio > div > div > p:first-child{
+.main-inicio > div > div > p:first-child {
   margin-right: auto;
 }
 
@@ -125,8 +126,6 @@ footer {
   align-items: center;
 }
 
-
-
 table,
 th,
 td {
@@ -162,4 +161,14 @@ th {
 
 tr:hover {
   background-color: #f0c62d;
+}
+
+@media (max-width: 800px)  {
+  .main-formulario > div {
+    width: 100%;
+  }
+
+  header{
+    padding-bottom: 20px;
+  }
 }

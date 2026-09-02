@@ -39,6 +39,10 @@ footer > div > div > div div {
   background-color: white;
 }
 
+footer > div > div > p{
+  text-align: center;
+}
+
 footer > div > div > div div:hover {
   background-color: var(--amarrillo);
 }

@@ -26,7 +26,7 @@ header > nav > ul > li::before {
   content: ' ';
   background-color: white;
   width: 0%;
-  height: 3px;
+  height: 2px;
   position: absolute;
   bottom: 0;
   transition: all 0.5s ease;
@@ -37,7 +37,7 @@ header > nav > ul > li:hover::before {
 }
 
 header > nav > ul > li:hover {
-  transform: translate(0, -5px);
+  transform: translate(0, -3px);
 }
 
 h1 {

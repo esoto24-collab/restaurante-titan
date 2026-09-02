@@ -1,6 +1,6 @@
 const btnCrearCuenta = document.querySelector('#crear-cuenta');
 const main = document.querySelector('#main');
-
+const iniciar = document.querySelector('#iniciar-sesion');
 export const usuarios = [];
 
 const crearUsuario = (nombre, apellido, fecha_nacimiento, correo) => {
@@ -165,9 +165,19 @@ const formulario = () => {
   return div;
 };
 
+
+
 btnCrearCuenta.addEventListener('click', () => {
   main.innerHTML = '';
   main.classList.remove('main-inicio');
+  main.classList.remove('main-tabla');
   main.classList.add('main-formulario');
   main.appendChild(formulario());
+});
+
+iniciar.addEventListener('click', () => {
+  main.innerHTML = '';
+  main.classList.remove('main-inicio');
+  main.classList.remove('main-tabla');
+  main.classList.add('main-formulario');
 });
