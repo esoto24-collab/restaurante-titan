@@ -13,6 +13,7 @@ header > nav > ul {
   list-style: none;
   gap: 30px;
   color: white;
+  padding: 0;
 }
 
 header > nav > ul > li {
@@ -41,13 +42,34 @@ header > nav > ul > li:hover {
 }
 
 h1 {
+  display: flex;
   font-family: var(--titulo);
   text-transform: uppercase;
   color: var(--amarrillo);
   text-shadow: 4px 4px 0 var(--negro);
   -webkit-text-stroke: 2px black;
   font-weight: 900;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
+
+h1::before{
+  content:"";
+  display: block;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: var(--amarrillo);
+  -webkit-mask-image: url(../assets/img/alien.svg);
+  mask-image: url(../assets/img/alien.svg);
+  mask-size: cover;
+}
+
+h1:hover::before{
+  background-color: greenyellow
+}
+
 
 h1:hover{
     color: var(--naranja);
