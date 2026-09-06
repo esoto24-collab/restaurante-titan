@@ -13,6 +13,7 @@ header > nav > ul {
   list-style: none;
   gap: 30px;
   color: white;
+  padding: 0;
 }
 
 header > nav > ul > li {
@@ -26,7 +27,7 @@ header > nav > ul > li::before {
   content: ' ';
   background-color: white;
   width: 0%;
-  height: 3px;
+  height: 2px;
   position: absolute;
   bottom: 0;
   transition: all 0.5s ease;
@@ -37,17 +38,39 @@ header > nav > ul > li:hover::before {
 }
 
 header > nav > ul > li:hover {
-  transform: translate(0, -5px);
+  transform: translate(0, -3px);
 }
 
 h1 {
+  display: flex;
   font-family: var(--titulo);
   text-transform: uppercase;
   color: var(--amarrillo);
   text-shadow: 4px 4px 0 var(--negro);
   -webkit-text-stroke: 2px black;
   font-weight: 900;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
 }
+
+h1::before{
+  content:"";
+  display: block;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: var(--amarrillo);
+  -webkit-mask-image: url(../assets/img/alien.svg);
+  mask-image: url(../assets/img/alien.svg);
+  mask-size: cover;
+}
+
+h1:hover::before{
+  background-color: greenyellow
+}
+
 
 h1:hover{
     color: var(--naranja);
@@ -74,4 +97,14 @@ h1:hover{
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0 black;
   cursor: pointer;
+}
+
+
+header a:link{
+  text-decoration: none;
+  color: inherit;
+}
+
+header a:visited{
+  color: inherit;
 }

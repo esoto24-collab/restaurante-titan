@@ -1,0 +1,30 @@
+.hero {
+  font-family: var(--titulo);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)),
+    url(../assets/img/hotdog\ hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom: var(--borde);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 4rem;
+  text-shadow: 10px 10px 50px white;
+  flex-flow: column;
+}
+
+.hero > button {
+  background-color: var(--naranajaFuerte);
+  border: var(--borde);
+  font-size: x-large;
+  font-family: var(--subtitulo);
+  padding: 5px 45px;
+  box-shadow: 5px 5px 0 black;
+}
+
+.hero > button:hover {
+  background-color: var(--amarrillo);
+}

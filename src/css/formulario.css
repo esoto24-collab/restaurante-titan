@@ -1,0 +1,53 @@
+.main-formulario {
+  display: flex;
+  justify-content: center;
+  background-image: url(../assets/img/sddefault.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-formulario > div {
+  background-color: rgba(244, 161, 66, 0.571);
+  width: 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.main-formulario h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.main-formulario > div > form {
+  display: flex;
+  gap: 30px;
+  flex-flow: column;
+  align-items: center;
+  width: 60%;
+}
+
+.main-formulario input {
+  border: var(--borde);
+  box-shadow: 5px 5px 0 black;
+  display: block;
+  height: 60px;
+}
+
+.main-formulario label {
+  font-family: var(--subtitulo);
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.main-formulario button {
+  border: var(--borde);
+  box-shadow: 3px 3px 0 black;
+  padding: 15px 20px;
+  background-color: lightgreen;
+  width: 100%;
+  margin-bottom: 40px;
+}

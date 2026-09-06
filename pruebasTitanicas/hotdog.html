@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: #000000; /* Coincide con el fondo de la imagen */
+  color: #ffffff;
+  padding: 0 8%;
+  gap: 2rem;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #ff6b00; /* Tono naranja acorde al brillo */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 3rem 5%;
+  }
+}
+    </style>
+</head>
+<body>
+    <section class="hero">
+  <div class="hero-content">
+    <h1>El Hot Dog Definitivo</h1>
+    <p>Albóndigas jugosas, queso fundido y una explosión de ingredientes premium.</p>
+    <a href="#menu" class="btn">Ver Menú</a>
+  </div>
+  <div class="hero-image">
+    <img src="../src/assets/img/hotdog hero.jpg" alt="Hot dog gigante con albóndigas">
+  </div>
+</section>
+</body>
+</html>

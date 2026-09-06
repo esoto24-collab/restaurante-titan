@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Botón para abrir/cerrar -->
+    <button onclick="toggleSidebar()">☰ Menú</button>
+
+    <!-- Barra lateral -->
+    <div id="sidebar" class="sidebar">
+      <button onclick="toggleSidebar()">✕ Cerrar</button>
+      <a href="#">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Contacto</a>
+    </div>
+
+    <style>
+      /* Estilos de la barra lateral */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Escondida a la izquierda fuera de la pantalla */
+        width: 250px;
+        height: 100vh;
+        background-color: #111;
+        color: white;
+        transition: transform 0.3s ease-in-out; /* Animación fluida */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .sidebar a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Clase que aplica el movimiento */
+      .sidebar.activa {
+        transform: translateX(250px); /* Desplaza la barra hacia la derecha */
+      }
+    </style>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        // Agrega o quita la clase 'activa' en cada clic
+        sidebar.classList.toggle('activa');
+      }
+    </script>
+  </body>
+</html>

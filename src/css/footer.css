@@ -39,6 +39,13 @@ footer > div > div > div div {
   background-color: white;
 }
 
+<<<<<<< HEAD
+=======
+footer > div > div > p{
+  text-align: center;
+}
+
+>>>>>>> rama-sensacion
 footer > div > div > div div:hover {
   background-color: var(--amarrillo);
 }
@@ -53,31 +60,55 @@ footer > div > div > div div:hover {
 }
 
 .discord {
+<<<<<<< HEAD
   -webkit-mask-image: url(../assets/img/discord.svg);
+=======
+  -webkit-mask-image: url(./assets/img/discord.svg);
+>>>>>>> rama-sensacion
   mask-image: url(../assets/img/discord.svg);
 }
 
 .youtube {
+<<<<<<< HEAD
   -webkit-mask-image: url(../assets/img/youtube.svg);
+=======
+  -webkit-mask-image: url(./assets/img/youtube.svg);
+>>>>>>> rama-sensacion
   mask-image: url(../assets/img/youtube.svg);
 }
 
 .instagran {
+<<<<<<< HEAD
   -webkit-mask-image: url(../assets/img/instagram.svg);
+=======
+  -webkit-mask-image: url(./assets/img/instagram.svg);
+>>>>>>> rama-sensacion
   mask-image: url(../assets/img/instagram.svg);
 }
 
 .github {
+<<<<<<< HEAD
   -webkit-mask-image: url(../assets/img/github.svg);
+=======
+  -webkit-mask-image: url(./assets/img/github.svg);
+>>>>>>> rama-sensacion
   mask-image: url(../assets/img/github.svg);
 }
 
 .twitter {
+<<<<<<< HEAD
   -webkit-mask-image: url(../assets/img/twitter.svg);
+=======
+  -webkit-mask-image: url(./assets/img/twitter.svg);
+>>>>>>> rama-sensacion
   mask-image: url(../assets/img/twitter.svg);
 }
 
 .facebook {
+<<<<<<< HEAD
   -webkit-mask-image: url(../assets/img/facebook.svg);
+=======
+  -webkit-mask-image: url(./assets/img/facebook.svg);
+>>>>>>> rama-sensacion
   mask-image: url(../assets/img/facebook.svg);
 }

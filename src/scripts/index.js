@@ -1,14 +1,20 @@
-const main = document.querySelector('#main');
+import generarInicio from './generarInicio.js';
+import generarRedesSociales from './generarRedesSociales.js';
+import formulario from './crearFormNewUser.js';
+import formularioLogin from './crearFormLogin.js';
+import crearMenu from './crearMenu.js';
 
-for (let i = 0; i < 8; i++) {
-  const div = document.createElement('div');
-  const informativo = document.createElement('div');
-  const nombreProducto = document.createElement('p')
-  const precioProducto = document.createElement('strong')
-  nombreProducto.textContent="Hamburgruesa"
-  precioProducto.textContent="$200"
-  informativo.appendChild(nombreProducto)
-  informativo.appendChild(precioProducto)
-  div.appendChild(informativo)
-  main.appendChild(div);
-}
+
+const crear_cuenta = document.querySelector('#crear_cuenta');
+const iniciar_sesion = document.querySelector('#iniciar_sesion');
+const titulo = document.querySelector('#titulo_principal');
+const menu = document.querySelector("#menu")
+
+
+generarInicio();
+generarRedesSociales();
+
+iniciar_sesion.addEventListener('click', formularioLogin);
+titulo.addEventListener('click', generarInicio);
+crear_cuenta.addEventListener('click', formulario);
+menu.addEventListener("click",crearMenu)
