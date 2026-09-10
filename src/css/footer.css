@@ -12,6 +12,7 @@ footer {
 footer > div {
   display: flex;
   align-items: center;
+  flex-flow: wrap;
 }
 
 footer > div > ul {
