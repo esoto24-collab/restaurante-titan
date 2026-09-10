@@ -66,8 +66,7 @@ footer > div > div > div div:hover {
   mask-image: url(../assets/img/youtube.svg);
 }
 
-.instagran {
-
+.instagram {
   -webkit-mask-image: url(./assets/img/instagram.svg);
   mask-image: url(../assets/img/instagram.svg);
 }
