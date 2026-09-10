@@ -13,38 +13,26 @@
 }
 
 .tarjetas > div {
-  background-image: url(../assets/img/tortugatitan.jpg);
   border: var(--borde);
   box-shadow: 5px 5px 0 black;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   cursor: pointer;
 }
 
-.tarjetas.inicio > .hamburguesa {
-  background-image: url(../assets/img/hamburguesota.jpg);
-}
-
-.tarjetas.inicio > .pizza {
-  background-image: url(../assets/img/pizza.jpg);
-}
-
-.tarjetas.inicio > .alitas {
-  background-image: url(../assets/img/alitas.jpg);
-}
-
-.tarjetas.inicio > .papas {
-  background-image: url(../assets/img/papasGigantes.jpg);
-}
-
-.tarjetas.inicio > .suchi {
-  background-image: url(../assets/img/suchi.jpg);
+.tarjetas > div > img{
+  position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-position: center;
+  cursor: pointer;
 }
 
 .tarjetas > div > div {

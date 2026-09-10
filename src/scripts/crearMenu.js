@@ -45,13 +45,18 @@ const crearMenu = () => {
   const tarjetas = document.createElement('div');
   for (let i = 0; i < 32; i++) {
     const div = document.createElement('div');
+    const imagenProducto = document.createElement('img');
     const informativo = document.createElement('div');
     const nombreProducto = document.createElement('p');
     const precioProducto = document.createElement('strong');
+    imagenProducto.src = './src/assets/img/tortugatitan.jpg';
+    imagenProducto.alt = 'Imagen de hamburguesa';
+    imagenProducto.loading = 'lazy';
     nombreProducto.textContent = 'Hamburgruesa';
     precioProducto.textContent = '$200';
     informativo.appendChild(nombreProducto);
     informativo.appendChild(precioProducto);
+    div.appendChild(imagenProducto);
     div.appendChild(informativo);
     tarjetas.appendChild(div);
   }

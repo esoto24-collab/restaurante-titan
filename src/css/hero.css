@@ -2,7 +2,7 @@
   font-family: var(--titulo);
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)),
-    url(../assets/img/hotdog\ hero.jpg);
+    url(../assets/img/hotdoghero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12,8 +12,9 @@
   align-items: center;
   display: flex;
   font-size: 4rem;
-  text-shadow: 10px 10px 50px white;
+  text-shadow: 6px 4px 5px rgba(255, 255, 255, 0.267);
   flex-flow: column;
+  text-align: center;
 }
 
 .hero > button {

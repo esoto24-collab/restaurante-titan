@@ -62,8 +62,8 @@ h1::before{
   min-width: 50px;
   min-height: 50px;
   background-color: var(--amarrillo);
-  -webkit-mask-image: url(../assets/img/alien.svg);
-  mask-image: url(../assets/img/alien.svg);
+  -webkit-mask-image: url(../assets/img/hamburguesaicono.ico);
+  mask-image: url(../assets/img/hamburguesaicono.ico);
   mask-size: cover;
 }
 
