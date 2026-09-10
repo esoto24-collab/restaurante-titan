@@ -42,7 +42,7 @@ header > nav > ul > li:hover {
 }
 
 h1 {
-  display: flex;
+  display: inline-flex;
   font-family: var(--titulo);
   text-transform: uppercase;
   color: var(--amarrillo);
@@ -56,26 +56,15 @@ h1 {
   
 }
 
-h1::before{
-  content:"";
-  display: block;
-  min-width: 50px;
+.logotipo{
+  display: flex;
+  gap: 15px;
+}
+ img{
+  display: inline-block;
   min-height: 50px;
-  background-color: var(--amarrillo);
-  -webkit-mask-image: url(../assets/img/hamburguesaicono.ico);
-  mask-image: url(../assets/img/hamburguesaicono.ico);
-  mask-size: cover;
-}
-
-h1:hover::before{
-  background-color: greenyellow
-}
-
-
-h1:hover{
-    color: var(--naranja);
-    cursor: pointer;
-}
+  min-width: 50px;
+ }
 
 .bts-header {
   display: flex;
