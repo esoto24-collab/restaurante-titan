@@ -1,3 +1,5 @@
+//import crearUsuario from 'crearUsuario.js'
+
 const main = document.querySelector('#main');
 
 const inputs = {

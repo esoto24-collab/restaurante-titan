@@ -1,5 +1,6 @@
 {
     "name": "restaurante-titan",
+    "version": "0.0.1",
     "author": "No te dire jamas te lo dire",
     "devDependencies": {
         "@eslint/js": "^10.0.1",
@@ -7,5 +8,8 @@
         "eslint-config-prettier": "^10.1.8",
         "globals": "^17.11.0",
         "prettier": "3.9.6"
+    },
+    "repository": {
+        "type": "git"
     }
 }

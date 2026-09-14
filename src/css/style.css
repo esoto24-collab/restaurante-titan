@@ -2,9 +2,9 @@
   background-color: var(--blanco);
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-auto-rows: 300px;
-  gap: 20px;
+  gap: 35px;
 }
 
 .tarjetas.inicio {
@@ -26,21 +26,26 @@
 }
 
 .tarjetas > div > img{
-  position: center;
+  position: absolute;
+  left: 0;
   object-fit: cover;
-  width: 100%;
+  width: 50%;
   height: 100%;
-  justify-content: center;
+  justify-content: start;
   background-position: center;
   cursor: pointer;
+}
+
+.tarjetas.inicio > div > img{
+  width: 100%;
 }
 
 .tarjetas > div > div {
   background-image: var(--efectoComic);
   background-size: 6px 6px;
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  right: 0;
+  width: 50%;
   background-color: var(--naranajaFuerte);
   opacity: 0.85;
   display: flex;
@@ -48,9 +53,20 @@
   border-top: var(--borde);
 }
 
+.main_menu > .tarjetas  > div > div{
+  top: 0;
+  bottom: 0;
+  border-left: var(--borde);
+
+}
+
+
 .tarjetas.inicio > div > div {
   justify-content: center;
   align-items: center;
+  width: 100%;
+  bottom: 0;
+  top: none;
 }
 
 .tarjetas > div > div > p {
@@ -109,20 +125,6 @@ tr:hover {
   background-color: #f0c62d;
 }
 
-@media (max-width: 800px) {
-  .main-formulario > div {
-    width: 100%;
-  }
-
-  header {
-    padding-bottom: 20px;
-  }
-
-  .tarjetas.inicio {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-auto-rows: 250px;
-  }
-}
 
 .main_menu {
   padding: 10px 10px;
@@ -150,4 +152,39 @@ tr:hover {
 
 .main_menu label > select {
   border: var(--borde);
+}
+
+
+.menu_hamburguesa{
+  display: none;
+  background-color: royalblue;
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 800px) {
+  .main-formulario > div {
+    width: 100%;
+  }
+
+  header {
+    padding-bottom: 20px;
+  }
+
+  .tarjetas.inicio {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: 250px;
+  }
+
+  .menu_hamburguesa{
+    display: block;
+  }
+
+  .bts-header{
+    display: none;
+  }
+
+  .navbar{
+    display: none;
+  }
 }

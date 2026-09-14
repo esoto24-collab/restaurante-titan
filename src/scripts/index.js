@@ -4,17 +4,19 @@ import formulario from './crearFormNewUser.js';
 import formularioLogin from './crearFormLogin.js';
 import crearMenu from './crearMenu.js';
 
+const usuarios = [];
 
+const inicio = document.querySelector('#inicio');
 const crear_cuenta = document.querySelector('#crear_cuenta');
 const iniciar_sesion = document.querySelector('#iniciar_sesion');
 const titulo = document.querySelector('#titulo_principal');
-const menu = document.querySelector("#menu")
-
+const menu = document.querySelector('#menu');
 
 generarInicio();
 generarRedesSociales();
 
+inicio.addEventListener('click', generarInicio);
 iniciar_sesion.addEventListener('click', formularioLogin);
 titulo.addEventListener('click', generarInicio);
 crear_cuenta.addEventListener('click', formulario);
-menu.addEventListener("click",crearMenu)
+menu.addEventListener('click', crearMenu);
