@@ -60,7 +60,7 @@ h1 {
   display: flex;
   gap: 15px;
 }
- img{
+ .logotipo > img{
   display: inline-block;
   min-height: 50px;
   min-width: 50px;
@@ -97,3 +97,11 @@ header a:link{
 header a:visited{
   color: inherit;
 }
+
+.menu_hamburguesa{
+  display: none;
+  width: 55px;
+  height: 55px;
+}
+
+

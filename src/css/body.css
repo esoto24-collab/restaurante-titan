@@ -1,4 +1,5 @@
-body {
+body{
+  position: relative;
   font-family: var(--texto);
   margin: 0px;
   display: grid;
@@ -11,6 +12,12 @@ body {
     'footer';
 }
 
+body.shadow > :not(.barra_lateral){
+  filter:  brightness(80%);
+}
+
+
+
 header {
   grid-area: header;
 }
@@ -21,4 +28,8 @@ main {
 
 footer {
   grid-area: footer;
+}
+
+aside{
+  grid-area: aside;
 }
