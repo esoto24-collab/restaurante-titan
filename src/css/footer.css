@@ -23,6 +23,7 @@ footer > div > ul {
   flex-flow: column;
   gap: 20px;
   margin-right: auto;
+
 }
 
 footer > p {
