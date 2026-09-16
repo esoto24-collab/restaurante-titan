@@ -1,28 +1,74 @@
 @font-face {
   font-family: 'ArchivoBlack';
   src: url(../assets/fonts/ArchivoBlack.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Inter';
   src: url(../assets/fonts/Inter.ttf);
+  font-display: swap;
 }
 
 @font-face {
+  font-family: 'PlusJakartaSans';
+  src: url(../assets/fonts/PlusJakartaSans.ttf);
+  font-display: swap;
+}
+
+/* Compatibilidad con código previo */
+@font-face {
   font-family: 'PlusJatarkaSans';
   src: url(../assets/fonts/PlusJakartaSans.ttf);
+  font-display: swap;
 }
 
 :root {
-  --negro: #011514;
-  --borde: 3px solid var(--negro);
-  --shadow: 3px 3px 0 var(--negro);
-  --titulo: 'ArchivoBlack';
-  --texto: 'Inter';
-  --subtitulo: 'PlusJatarkaSans';
+  /* Paleta oficial establecida */
   --rojo: #6b0504;
   --amarrillo: #f0c62d;
+  --amarillo: #f0c62d;
   --naranja: #ea7e1f;
   --naranajaFuerte: #e6451a;
-  --efectoComic: radial-gradient(rgba(0, 0, 0, 0.2) 0.2px, transparent 1.5px);
+  --naranjaFuerte: #e6451a;
+  --negro: #011514;
+  --blanco: #ffffff;
+  --fondo: #fffdf5;
+  --fondo-card: #ffffff;
+  --fondo-suave: #fff4db;
+
+  /* Bordes neobrutalistas */
+  --borde: 3px solid var(--negro);
+  --borde-fino: 2px solid var(--negro);
+  --borde-grueso: 4px solid var(--negro);
+
+  /* Bordes redondeados (Rounded Neubrutalism) */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 9999px;
+
+  /* Sombras neobrutalistas de alto contraste */
+  --shadow-xs: 2px 2px 0 var(--negro);
+  --shadow-sm: 3px 3px 0 var(--negro);
+  --shadow: 4px 4px 0 var(--negro);
+  --shadow-md: 5px 5px 0 var(--negro);
+  --shadow-lg: 7px 7px 0 var(--negro);
+  --shadow-xl: 10px 10px 0 var(--negro);
+  --shadow-hover: 6px 6px 0 var(--negro);
+
+  /* Tipografía */
+  --titulo: 'ArchivoBlack', Impact, 'Arial Black', sans-serif;
+  --texto: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --subtitulo: 'PlusJakartaSans', 'PlusJatarkaSans', 'Inter', system-ui, sans-serif;
+
+  /* Efectos y patrones */
+  --efectoComic: radial-gradient(rgba(1, 21, 20, 0.18) 0.5px, transparent 1.6px);
+  --efectoComicFuerte: radial-gradient(rgba(1, 21, 20, 0.25) 0.8px, transparent 2px);
+
+  /* Transición táctil */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }

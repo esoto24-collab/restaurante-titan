@@ -1,7 +1,16 @@
-body{
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
   position: relative;
   font-family: var(--texto);
-  margin: 0px;
+  color: var(--negro);
+  background-color: var(--fondo);
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -10,13 +19,10 @@ body{
     'header'
     'main'
     'footer';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-
-body.shadow > :not(.barra_lateral){
-  filter:  brightness(80%);
-}
-
-
 
 header {
   grid-area: header;
@@ -30,6 +36,23 @@ footer {
   grid-area: footer;
 }
 
-aside{
+aside {
   grid-area: aside;
+}
+
+/* Modal / Drawer backdrop */
+.backdrop_lateral {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(1, 21, 20, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.backdrop_lateral.visible {
+  opacity: 1;
+  pointer-events: auto;
 }

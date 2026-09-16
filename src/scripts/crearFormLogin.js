@@ -1,87 +1,61 @@
+import formulario from './crearFormNewUser.js';
+import generarInicio from './generarInicio.js';
+
 const main = document.querySelector('#main');
 
-const inputs = {
-  email: {
-    titulo: 'Correo',
-    type: 'email',
-    id: 'email',
-    placeholder: 'Ingresa tu email',
-  },
-
-  password: {
-    titulo: 'Contraseña',
-    type: 'password',
-    id: 'password',
-    placeholder: 'Ingresa tu contraseña',
-  },
-};
-
-const cajita = (dato) => {
-  console.log(dato);
-  const label = document.createElement('label');
-  label.textContent = dato.titulo;
-
-  const input = document.createElement('input');
-  input.type = dato.type;
-  input.required = false;
-  input.name = dato.id;
-  input.id = dato.id;
-  dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
-
-  label.appendChild(input);
-  return label;
-};
-
 const formularioLogin = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   main.innerHTML = '';
-  main.className = '';
-  main.classList.add('main-formulario');
-  const div = document.createElement('div');
+  main.className = 'main-formulario';
 
-  const titulo = document.createElement('h2');
-  titulo.textContent = 'Iniciar Sesion';
+  const card = document.createElement('div');
+  card.className = 'formulario-card';
 
-  const form = document.createElement('form');
-  const btnSubmit = document.createElement('button');
-  btnSubmit.type = 'submit';
-  btnSubmit.textContent = 'Guardar';
-  btnSubmit.id = 'subir';
+  card.innerHTML = `
+    <div class="formulario-header">
+      <span class="formulario-badge">ACCESO A TITANES</span>
+      <h2 class="formulario-titulo">INICIAR SESIÓN</h2>
+      <p class="formulario-subtitulo">Ingresa con tu cuenta para desbloquear promociones y acumular puntos titánicos.</p>
+    </div>
+    <form class="formulario-form" id="form_login">
+      <div class="formulario-campo">
+        <label for="login_email">Correo Electrónico:</label>
+        <input type="email" id="login_email" name="email" placeholder="ejemplo@email.com" required autocomplete="email" />
+      </div>
+      <div class="formulario-campo">
+        <label for="login_password">Contraseña:</label>
+        <input type="password" id="login_password" name="password" placeholder="Tu contraseña secreta" required autocomplete="current-password" />
+      </div>
+      <button type="submit" class="formulario-btn-submit" id="btn_login_submit">ENTRAR AL SISTEMA 🚀</button>
+      <div id="login_feedback" class="formulario-feedback"></div>
+    </form>
+    <div class="formulario-toggle-box">
+      <span>¿No tienes una cuenta aún?</span>
+      <button type="button" class="formulario-toggle-btn" id="btn_ir_crear_cuenta">Regístrate aquí</button>
+    </div>
+  `;
 
-  for (const clave in inputs) {
-    form.appendChild(cajita(inputs[clave]));
-  }
+  const form = card.querySelector('#form_login');
+  const feedback = card.querySelector('#login_feedback');
+  const btnToggle = card.querySelector('#btn_ir_crear_cuenta');
 
-  form.appendChild(btnSubmit);
+  btnToggle.addEventListener('click', formulario);
 
-  /*
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nombre = document.querySelector('#name');
-    const apellido = document.querySelector('#apellido');
-    const date = document.querySelector('#date');
-    const email = document.querySelector('#email');
+    feedback.className = 'formulario-feedback loading';
+    feedback.textContent = 'Verificando credenciales titánicas...';
 
-    const usuario = crearUsuario(nombre.value, apellido.value, date.value, email.value);
-    usuarios.push(usuario);
+    setTimeout(() => {
+      feedback.className = 'formulario-feedback success';
+      feedback.textContent = '¡Bienvenido de vuelta, Titán! Redirigiendo...';
+      setTimeout(() => {
+        generarInicio();
+      }, 1200);
+    }, 800);
+  });
 
-    nombre.value = '';
-    apellido.value = '';
-    date.value = '';
-    email.value = '';
-
-    tarjetas.innerHTML = '';
-    tarjetas.classList.remove('main-formulario');
-    tarjetas.classList.add('main-tabla');
-    tarjetas.appendChild(generarTabla());
-
-  })*/
-
-  div.appendChild(titulo);
-  div.appendChild(form);
-
-  main.appendChild(div);
+  main.appendChild(card);
 };
 
 export default formularioLogin;
-
-

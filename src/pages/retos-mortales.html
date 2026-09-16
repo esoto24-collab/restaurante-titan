@@ -1,6 +1,174 @@
-<!DOCTYPE html>
-<html lang = "es">
+<!doctype html>
+<html lang="es">
   <head>
-    <title>Retos Mortales</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retos Mortales | Restaurante Titan</title>
+    <link rel="shortcut icon" href="../assets/img/hamburguesaicono.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/root.css" />
+    <link rel="stylesheet" href="../css/body.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .retos-container {
+        max-width: 1200px;
+        margin: 2.5rem auto 4rem;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      .retos-header {
+        background-color: var(--blanco);
+        border: var(--borde-grueso);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+        background-image: var(--efectoComic);
+        background-size: 8px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .retos-reglas-card {
+        background-color: var(--amarrillo);
+        border: var(--borde-grueso);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .retos-reglas-card h3 {
+        margin: 0;
+        font-family: var(--titulo);
+        color: var(--rojo);
+        font-size: 1.6rem;
+      }
+      .retos-reglas-card ul {
+        margin: 0;
+        padding-left: 1.5rem;
+        font-family: var(--subtitulo);
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+      .btn-volver {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--blanco);
+        color: var(--negro);
+        border: var(--borde);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-xs);
+        font-family: var(--subtitulo);
+        font-weight: 800;
+        padding: 8px 18px;
+        text-decoration: none;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        width: fit-content;
+      }
+      .btn-volver:hover {
+        background-color: var(--naranja);
+        color: var(--blanco);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow);
+      }
+    </style>
   </head>
+  <body>
+    <header>
+      <a href="../../index.html" class="logotipo" style="text-decoration: none;">
+        <div class="logo-badge">
+          <img src="../assets/img/hamburguesaicono.ico" alt="Logo Titan" />
+        </div>
+        <h1 id="titulo_principal">Titan</h1>
+      </a>
+      <div class="bts-header">
+        <a href="../../index.html" class="btn-volver">← Volver al Inicio</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="retos-container">
+        <div class="retos-header">
+          <span class="menu-badge-pill">🏆 SALÓN DE LA FAMA 🏆</span>
+          <h2 class="menu-titulo">RETOS MORTALES</h2>
+          <p class="menu-subtitulo">Solo los estómagos más temerarios de la historia han logrado inscribir su nombre con letras doradas.</p>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Lugar</th>
+                <th>Titán Legendario</th>
+                <th>Platillo del Reto</th>
+                <th>Tiempo</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>🥇 1°</td>
+                <td><strong>El Devorador 3000</strong></td>
+                <td>Hamburguesa Titánica (3.5 KG)</td>
+                <td>18 min 42 seg</td>
+                <td><span class="tarjeta-pill-badge" style="position: static;">¡VICTORIA! ($5,000 MXN)</span></td>
+              </tr>
+              <tr>
+                <td>🥈 2°</td>
+                <td><strong>Doña Pelos Extrema</strong></td>
+                <td>Pizza Monstruo 4 Quesos (50 CM)</td>
+                <td>22 min 15 seg</td>
+                <td><span class="tarjeta-pill-badge" style="position: static;">¡VICTORIA! ($5,000 MXN)</span></td>
+              </tr>
+              <tr>
+                <td>🥉 3°</td>
+                <td><strong>El Tanque Rodríguez</strong></td>
+                <td>Alitas Furia Titán (2.0 KG)</td>
+                <td>24 min 58 seg</td>
+                <td><span class="tarjeta-pill-badge" style="position: static;">¡VICTORIA! ($5,000 MXN)</span></td>
+              </tr>
+              <tr>
+                <td>4°</td>
+                <td>Goliat del Norte</td>
+                <td>Hamburguesa Godzilla Cuádruple</td>
+                <td>25 min 00 seg</td>
+                <td>Tiempo Agotado</td>
+              </tr>
+              <tr>
+                <td>5°</td>
+                <td>Vikingo Hambriento</td>
+                <td>Mega Rollo Dragón XXL (32 pzas)</td>
+                <td>25 min 00 seg</td>
+                <td>Rendido al 80%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retos-reglas-card">
+          <h3>⚡ REGLAS OFICIALES DEL RETO TITÁNICO ⚡</h3>
+          <ul>
+            <li>Debes terminar el 100% del platillo (incluidas guarniciones de papas y salsas) en menos de 25 minutos.</li>
+            <li>No se permite levantarse de la mesa ni ir al baño durante el reto.</li>
+            <li>Si lo logras: tu comida es 100% GRATIS, recibes tu foto en el Salón de la Fama y $5,000 MXN en efectivo.</li>
+            <li>Si pierdes: pagas el costo regular del platillo y te llevas el trofeo simbólico del consuelo.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-bottom" style="margin-top: 0; padding-top: 0; border: none;">
+        <p>© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS RESERVADOS.</p>
+      </div>
+    </footer>
+  </body>
 </html>

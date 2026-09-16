@@ -1,19 +1,15 @@
 <!doctype html>
 <html lang="es">
-  <!-- Aqui le pusimos el lenguaje en español como pide la tarea que chad -->
   <head>
     <meta charset="UTF-8" />
-    <!-- Codificado UTF-8 (que viene por defecto) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- viewport activao para version adaptativa en movil futura -->
     <meta name="author" content="Equipo RamIvEt" />
-    <!-- Metadatos -->
     <meta
       name="description"
-      content="Restaurante que tiene por nombre 'Titan', con un diseño neobrutalista y centrado en proporcionar porciones grandes"
+      content="Restaurante Titan - Especialistas en porciones gigantescas con un auténtico estilo neobrutalista. Hamburguesas, pizzas, alitas, sushi y papas monumentales."
     />
-    <meta name="keywords" content="comida,hamburguesa,alitas,boneless,pizza,restaurante,sushi" />
-    <title>Titan</title>
+    <meta name="keywords" content="comida gigante, hamburguesa, alitas, boneless, pizza, restaurante, sushi, neobrutalismo, titan" />
+    <title>Titan | Restaurante Neobrutalista de Porciones Colosales</title>
     <link rel="shortcut icon" href="./src/assets/img/hamburguesaicono.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/root.css" />
@@ -27,57 +23,84 @@
   </head>
   <body>
     <header>
-      <div class="logotipo">
-        <img
-          src="./src/assets/img/hamburguesaicono.ico"
-          alt="Hamburguesa Pixelada"
-          title="Logo empresa"
-          loading="lazy"
-        />
+      <div class="logotipo" id="logo_btn" role="button" tabindex="0" aria-label="Ir al inicio de Restaurante Titan">
+        <div class="logo-badge">
+          <img
+            src="./src/assets/img/hamburguesaicono.ico"
+            alt="Hamburguesa Pixelada Titan"
+            title="Logo Titan"
+            loading="eager"
+          />
+        </div>
         <h1 id="titulo_principal">Titan</h1>
       </div>
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Navegación principal">
         <ul>
-          <li id="inicio">Inicio</li>
-          <li id="menu">Menu Brutal</li>
-          <li>Retos Mortales</li>
-          <li><a href="src/pages/alien.html">Juegos</a></li>
+          <li id="inicio" class="nav-item active">Inicio</li>
+          <li id="menu" class="nav-item">Menú Brutal</li>
+          <li id="nav_retos" class="nav-item">Retos Mortales</li>
+          <li class="nav-item"><a href="src/pages/alien.html">Juegos</a></li>
         </ul>
       </nav>
       <div class="bts-header">
-        <button id="crear_cuenta">Crear Cuenta</button>
-        <button id="iniciar_sesion">Iniciar Sesión</button>
+        <button id="crear_cuenta" class="btn-secondary">Crear Cuenta</button>
+        <button id="iniciar_sesion" class="btn-primary">Iniciar Sesión</button>
       </div>
-      <div class="menu_hamburguesa" id="menu_hamburguesa">
-        <img src="./src/assets/img/menu.svg">
-      </div>
+      <button class="menu_hamburguesa" id="menu_hamburguesa" aria-label="Abrir menú de navegación" type="button">
+        <img src="./src/assets/img/menu.svg" alt="Icono Menú" />
+      </button>
     </header>
+
     <main id="main"></main>
+
     <footer>
-      <div>
-        <h1>Titan</h1>
-        <ul>
-          <li>Sobre Nosotros</li>
-          <li>Aviso de Privacidad</li>
-          <li>Acerca de Nuestra Página</li>
-        </ul>
-        <div>
-          <p>Redes sociales</p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2 class="footer-brand-title">Titan</h2>
+          <p class="footer-brand-slogan">Porciones colosales para apetitos legendarios. Comida titánica hecha con orgullo y pasión.</p>
+        </div>
+        <div class="footer-nav">
+          <span class="footer-section-title">Navegación</span>
+          <ul>
+            <li id="footer_inicio">Inicio</li>
+            <li id="footer_menu">Menú Brutal</li>
+            <li id="footer_retos">Retos Mortales</li>
+            <li><a href="src/pages/alien.html">Juegos</a></li>
+            <li>Aviso de Privacidad</li>
+          </ul>
+        </div>
+        <div class="footer-social-wrapper">
+          <span class="footer-section-title">Comunidad Titán</span>
+          <p class="footer-social-subtitle">Síguenos en nuestras redes oficiales:</p>
           <div id="socialMedia"></div>
         </div>
       </div>
-      <p>© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS RESERVADOS.</p>
+      <div class="footer-bottom">
+        <p>© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS RESERVADOS.</p>
+      </div>
     </footer>
-    <div class="barra_lateral" id="barra_lateral">
-      <ul>
-          <li id="inicio">Inicio</li>
-          <li id="menu">Menu Brutal</li>
-          <li>Ajustes</li>
-          <li>Crear Cuenta</li>
-          <li>Iniciar Sesion</li>
 
+    <!-- Overlay y Cajón de Navegación Móvil -->
+    <div class="backdrop_lateral" id="backdrop_lateral"></div>
+    <div class="barra_lateral" id="barra_lateral" aria-hidden="true">
+      <div class="barra_lateral_header">
+        <div class="barra_lateral_logo">
+          <img src="./src/assets/img/hamburguesaicono.ico" alt="Logo" />
+          <span>Titan</span>
+        </div>
+        <button id="cerrar_lateral" class="btn_cerrar" aria-label="Cerrar menú lateral">✕</button>
+      </div>
+      <ul class="barra_lateral_menu">
+        <li id="mobile_inicio" class="mobile-nav-item">🏠 Inicio</li>
+        <li id="mobile_menu" class="mobile-nav-item">🍔 Menú Brutal</li>
+        <li id="mobile_retos" class="mobile-nav-item">🏆 Retos Mortales</li>
+        <li class="mobile-nav-item"><a href="src/pages/alien.html">👾 Juegos</a></li>
+        <li class="mobile-divider"></li>
+        <li id="mobile_crear_cuenta" class="mobile-btn-cuenta">Crear Cuenta</li>
+        <li id="mobile_iniciar_sesion" class="mobile-btn-login">Iniciar Sesión</li>
       </ul>
     </div>
+
     <script type="module" src="./src/scripts/index.js"></script>
   </body>
 </html>

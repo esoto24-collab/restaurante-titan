@@ -1,54 +1,141 @@
 footer {
-  border-top: var(--borde);
+  border-top: var(--borde-grueso);
   background-color: var(--rojo);
-  box-shadow: 0 -3px 0 black;
+  background-image: var(--efectoComic);
+  background-size: 8px 8px;
+  box-shadow: 0 -4px 0 var(--negro);
   display: flex;
-  flex-flow: column;
-  color: white;
+  flex-direction: column;
+  color: var(--blanco);
   font-family: var(--subtitulo);
-  padding: 10px 20px;
+  padding: 3rem 2rem 1.5rem;
+  margin-top: auto;
 }
 
-footer > div {
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-brand-title {
+  margin: 0;
+  font-family: var(--titulo);
+  color: var(--amarrillo);
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 0 var(--negro);
+  -webkit-text-stroke: 1.5px var(--negro);
+  letter-spacing: 1px;
+}
+
+.footer-brand-slogan {
+  margin: 0;
+  font-family: var(--subtitulo);
+  color: var(--fondo-suave);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 380px;
+}
+
+.footer-section-title {
+  display: inline-block;
+  font-family: var(--titulo);
+  color: var(--amarrillo);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav li {
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--blanco);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+  width: fit-content;
+}
+
+.footer-nav li:hover {
+  color: var(--amarrillo);
+  transform: translateX(4px);
+}
+
+.footer-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-social-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-social-subtitle {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--fondo-suave);
+}
+
+#socialMedia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#socialMedia a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background-color: var(--blanco);
+  border: var(--borde);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
-  flex-flow: wrap;
-}
-
-footer > div > ul {
-  list-style: none;
-  display: flex;
-  flex-flow: column;
-  gap: 20px;
-  margin-right: auto;
-}
-footer > p {
-  text-align: center;
-  font-weight: 900;
-}
-
-footer > div > div > div {
-  display: flex;
   justify-content: center;
-  flex-flow: row wrap;
-  gap: 20px;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-footer > div > div > div div {
-  width: 45px;
-  height: 45px;
-  background-color: white;
-}
-
-footer > div > div > p{
-  text-align: center;
-}
-
-footer > div > div > div div:hover {
+.icon-wrapper:hover {
   background-color: var(--amarrillo);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow);
+}
+
+.icon-wrapper:active {
+  transform: translate(1px, 1px);
+  box-shadow: var(--shadow-xs);
 }
 
 .icon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--negro);
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -58,31 +145,54 @@ footer > div > div > div div:hover {
 }
 
 .discord {
-  -webkit-mask-image: url(./assets/img/discord.svg);
+  -webkit-mask-image: url(../assets/img/discord.svg);
   mask-image: url(../assets/img/discord.svg);
 }
 
 .youtube {
-  -webkit-mask-image: url(./assets/img/youtube.svg);
+  -webkit-mask-image: url(../assets/img/youtube.svg);
   mask-image: url(../assets/img/youtube.svg);
 }
 
 .instagram {
-  -webkit-mask-image: url(./assets/img/instagram.svg);
+  -webkit-mask-image: url(../assets/img/instagram.svg);
   mask-image: url(../assets/img/instagram.svg);
 }
 
 .github {
-  -webkit-mask-image: url(./assets/img/github.svg);
+  -webkit-mask-image: url(../assets/img/github.svg);
   mask-image: url(../assets/img/github.svg);
 }
 
 .twitter {
-  -webkit-mask-image: url(./assets/img/twitter.svg);
+  -webkit-mask-image: url(../assets/img/twitter.svg);
   mask-image: url(../assets/img/twitter.svg);
 }
 
 .facebook {
-  -webkit-mask-image: url(./assets/img/facebook.svg);
+  -webkit-mask-image: url(../assets/img/facebook.svg);
   mask-image: url(../assets/img/facebook.svg);
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-family: var(--subtitulo);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--fondo-suave);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 860px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }

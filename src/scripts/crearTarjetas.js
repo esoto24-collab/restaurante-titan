@@ -1,33 +1,81 @@
 import crearMenu from './crearMenu.js';
 
 const categorias = [
-  { nombre: 'Hamburguesa', class: 'hamburguesa', url: './src/assets/img/hamburguesota.jpg', alt: 'Imagen de hamburguesa gigante'},
-  { nombre: 'Pizza',  class: 'pizza', url: './src/assets/img/pizza.jpg', alt: 'Imagen de pizza gigante'},
-  { nombre: 'Alitas',  class: 'alitas', url: './src/assets/img/alitas.jpg', alt: 'Imagen de una gran cantidad de alitas'},
-  { nombre: 'Suchi',  class: 'sushi', url: './src/assets/img/suchi.jpg', alt: 'Imagen de un gran rollo de sushi'},
-  { nombre: 'Papas',  class: 'papas', url: './src/assets/img/papasGigantes.jpg', alt: 'Imagen de unas papa fritas muy largas'},
+  {
+    nombre: 'Hamburguesas',
+    tag: 'hamburguesa',
+    itemsCount: '8 Especialidades',
+    url: './src/assets/img/hamburguesota.jpg',
+    alt: 'Hamburguesa Titánica gigante con capas de carne y queso',
+  },
+  {
+    nombre: 'Pizzas Colosales',
+    tag: 'pizza',
+    itemsCount: '6 Tamaños Familiares',
+    url: './src/assets/img/pizza.jpg',
+    alt: 'Pizza gigante rebosante de queso y pepperoni',
+  },
+  {
+    nombre: 'Alitas & Boneless',
+    tag: 'alitas',
+    itemsCount: '12 Salsas Mortales',
+    url: './src/assets/img/alitas.jpg',
+    alt: 'Montaña de alitas bañadas en salsa picante',
+  },
+  {
+    nombre: 'Sushi Gigante',
+    tag: 'suchi',
+    itemsCount: 'Mega Rollos Especiales',
+    url: './src/assets/img/suchi.jpg',
+    alt: 'Rollo de sushi gigante con aderezos especiales',
+  },
+  {
+    nombre: 'Papas Volcánicas',
+    tag: 'papas',
+    itemsCount: 'Bañadas en Tocino y Queso',
+    url: './src/assets/img/papasGigantes.jpg',
+    alt: 'Papas fritas gigantes con queso fundido y tocino',
+  },
 ];
 
 const crearTarjetas = () => {
   const tarjetas = document.querySelector('#tarjetas');
+  if (!tarjetas) return;
   tarjetas.innerHTML = '';
-  tarjetas.classList.add('inicio');
-  for (let i = 0; i < categorias.length; i++) {
-    const div = document.createElement('div');
-    const imagenTarjeta = document.createElement('img');
-    const informativo = document.createElement('div');
-    const nombreProducto = document.createElement('p');
-    div.addEventListener('click', crearMenu);
-    nombreProducto.textContent = categorias[i].nombre;
-    imagenTarjeta.src = categorias[i].url;
-    imagenTarjeta.alt = categorias[i].alt;
-    imagenTarjeta.loading = 'lazy';
-    div.classList.add(categorias[i].class)
-    informativo.appendChild(nombreProducto);
-    div.appendChild(imagenTarjeta);
-    div.appendChild(informativo);
-    tarjetas.appendChild(div);
-  }
+
+  categorias.forEach((cat) => {
+    const card = document.createElement('article');
+    card.className = `tarjeta-categoria tarjeta-${cat.tag}`;
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Explorar categoría ${cat.nombre}`);
+
+    card.innerHTML = `
+      <div class="tarjeta-img-container">
+        <img src="${cat.url}" alt="${cat.alt}" loading="lazy" />
+        <span class="tarjeta-pill-badge">${cat.itemsCount}</span>
+      </div>
+      <div class="tarjeta-info">
+        <div class="tarjeta-info-text">
+          <h4 class="tarjeta-titulo">${cat.nombre}</h4>
+          <span class="tarjeta-accion">Ver platillos →</span>
+        </div>
+      </div>
+    `;
+
+    card.addEventListener('click', () => {
+      crearMenu(cat.nombre);
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        crearMenu(cat.nombre);
+      }
+    });
+
+    tarjetas.appendChild(card);
+  });
 };
 
 export default crearTarjetas;
