@@ -17,12 +17,14 @@
   --negro: #011514;
   --borde: 3px solid var(--negro);
   --shadow: 3px 3px 0 var(--negro);
+  --shadow-hover: 5px 5px 0 var(--negro);
   --titulo: 'ArchivoBlack';
   --texto: 'Inter';
   --subtitulo: 'PlusJatarkaSans';
   --rojo: #6b0504;
   --amarrillo: #f0c62d;
   --naranja: #ea7e1f;
+  --blanco: #ffffff;
   --naranajaFuerte: #e6451a;
   --efectoComic: radial-gradient(rgba(0, 0, 0, 0.2) 0.2px, transparent 1.5px);
 }

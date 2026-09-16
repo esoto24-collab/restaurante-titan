@@ -170,7 +170,9 @@ tr:hover {
   }
 
   .menu_hamburguesa{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .bts-header{
@@ -184,6 +186,10 @@ tr:hover {
   header{
     justify-content: space-between;
     padding: 1rem 1rem;
+  }
+
+  .hero{
+    font-size: 45px;
   }
 
 }
