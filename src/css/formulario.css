@@ -8,17 +8,26 @@
 }
 
 .main-formulario > div {
-  background-color: rgba(244, 161, 66, 0.571);
+  background-color: white;
+  margin: 20px 0px;
   width: 50%;
   display: flex;
   flex-flow: column;
   align-items: center;
+  border-radius: 16px;
+  box-shadow: var(--shadow-small);
+  border: var(--borde);
+  background-image: var(--efectoComic);
+  background-size: 8px 8px;
 }
 
 .main-formulario h2 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
+  color: var(--rojo);
+  font-family: var(--titulo);
+  font-size: 2rem;
 }
 
 .main-formulario > div > form {
@@ -30,6 +39,7 @@
 }
 
 .main-formulario input {
+  border-radius: 8px;
   border: var(--borde);
   box-shadow: 5px 5px 0 black;
   display: block;
@@ -41,13 +51,15 @@
   display: flex;
   flex-flow: column;
   width: 100%;
+  font-weight: 900;
 }
 
 .main-formulario button {
   border: var(--borde);
   box-shadow: 3px 3px 0 black;
   padding: 15px 20px;
-  background-color: lightgreen;
+  background-color: var(--amarrillo);
+  font-weight: 900;
   width: 100%;
   margin-bottom: 40px;
 }

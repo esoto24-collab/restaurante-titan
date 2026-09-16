@@ -16,12 +16,14 @@
 :root {
   --negro: #011514;
   --borde: 3px solid var(--negro);
+  --shadow-small: 2px 2px 0 var(--negro);
   --shadow: 3px 3px 0 var(--negro);
   --shadow-hover: 5px 5px 0 var(--negro);
   --titulo: 'ArchivoBlack';
   --texto: 'Inter';
   --subtitulo: 'PlusJatarkaSans';
   --rojo: #6b0504;
+  --rojoFuerte: #500404;
   --amarrillo: #f0c62d;
   --naranja: #ea7e1f;
   --blanco: #ffffff;

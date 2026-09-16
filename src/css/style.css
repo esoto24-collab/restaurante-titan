@@ -157,7 +157,7 @@ tr:hover {
 
 @media (max-width: 800px) {
   .main-formulario > div {
-    width: 100%;
+    width: 90%;
   }
 
   header {
@@ -215,8 +215,32 @@ tr:hover {
 } 
 
 .barra_lateral li{
-    padding: 5px 0px;
+    padding: 10px 20px;
+    font-family: var(--subtitulo);
+    background-color: var(--rojoFuerte);
+    border: var(--borde);
 }
+
+.barra_lateral hr{
+  width: 100%;
+
+}
+
+.barra_lateral > ul :nth-last-child(-n + 2) {
+  text-align: center;
+  background-color: var(--amarrillo);
+  color: var(--negro);
+  font-weight: 1000;
+  box-shadow: var(--shadow);
+}
+
+
+
+.barra_lateral > ul :nth-last-child(-n + 2):hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
 
 .barra_lateral li:hover{
   background-color: var(--naranja);
