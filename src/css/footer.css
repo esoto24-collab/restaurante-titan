@@ -9,11 +9,13 @@ footer {
   padding: 10px 20px;
 }
 
+
 footer > div {
   display: flex;
   align-items: center;
-  flex-flow: wrap;
+  flex-flow: row wrap;
 }
+
 
 footer > div > ul {
   list-style: none;
@@ -22,6 +24,7 @@ footer > div > ul {
   gap: 20px;
   margin-right: auto;
 }
+
 footer > p {
   text-align: center;
   font-weight: 900;
