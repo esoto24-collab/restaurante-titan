@@ -1,4 +1,6 @@
-//import crearUsuario from 'crearUsuario.js'
+import crearUsuario from './crearUsuario.js';
+import { guardarUsuario } from './gestorUsuarios.js';
+import formularioLogin from './crearFormLogin.js';
 
 const main = document.querySelector('#main');
 
@@ -38,7 +40,7 @@ const inputs = {
   },
 
   passwordRepeat: {
-    titulo: 'Escribe nuevamente la constraseña',
+    titulo: 'Constraseña 2',
     type: 'password',
     id: 'password-repeat',
     placeholder: 'NUNCA LA OLVIDES!!!!',
@@ -46,7 +48,6 @@ const inputs = {
 };
 
 const cajita = (dato) => {
-  console.log(dato);
   const label = document.createElement('label');
   label.textContent = dato.titulo;
 
@@ -58,6 +59,13 @@ const cajita = (dato) => {
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
 
   label.appendChild(input);
+
+  if (dato.id === 'password-repeat') {
+    const otro = document.querySelector("#password")
+    input.addEventListener("input",()=>{
+      otro.value="ey"
+    });
+  }
   return label;
 };
 
@@ -82,7 +90,6 @@ const formulario = () => {
 
   form.appendChild(btnSubmit);
 
-  /*
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const nombre = document.querySelector('#name');
@@ -91,19 +98,14 @@ const formulario = () => {
     const email = document.querySelector('#email');
 
     const usuario = crearUsuario(nombre.value, apellido.value, date.value, email.value);
-    usuarios.push(usuario);
+    guardarUsuario(usuario);
 
-    nombre.value = '';
-    apellido.value = '';
-    date.value = '';
-    email.value = '';
+    form.reset();
 
-    tarjetas.innerHTML = '';
-    tarjetas.classList.remove('main-formulario');
-    tarjetas.classList.add('main-tabla');
-    tarjetas.appendChild(generarTabla());
-
-  })*/
+    main.innerHTML = '';
+    formularioLogin();
+    console.log('Cuenta Generada');
+  });
 
   div.appendChild(titulo);
   div.appendChild(form);

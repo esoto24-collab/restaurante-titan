@@ -71,6 +71,10 @@ h1 {
   flex-flow: wrap;
 }
 
+.bts-header.invisible{
+  display: none;
+}
+
 .bts-header > button {
   font-family: var(--subtitulo);
   font-weight: 800;
@@ -96,7 +100,7 @@ header a:visited {
   color: inherit;
 }
 
-.menu_hamburguesa {
+.menu_hamburguesa{
   background-color: var(--amarrillo);
   border: var(--borde);
   box-shadow: var(--shadow);
@@ -115,4 +119,25 @@ header a:visited {
 .menu_hamburguesa > img {
   width: 100%;
   height: 100%;
+}
+
+.usuario{
+  color: var(--blanco);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-family: var(--subtitulo);
+}
+
+.usuario.invisible{
+  display: none;
+}
+
+.usuario > div{
+  background-color: var(--amarrillo);
+  padding: 12px;
+  border-radius: 50%;
+  border: var(--borde);
 }
