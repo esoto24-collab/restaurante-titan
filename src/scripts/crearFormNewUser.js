@@ -6,6 +6,8 @@ const inputs = {
   nombre: {
     titulo: 'Nombre',
     type: 'text',
+    //minlength: '2',
+    //maxlength: '50',
     id: 'name',
     placeholder: 'Ingresa tu nombre...',
   },
@@ -13,6 +15,8 @@ const inputs = {
   apellido: {
     titulo: 'Apellido',
     type: 'text',
+    //minlength: '2',
+    //maxlength: '50',
     id: 'apellido',
     placeholder: 'Ingresa tu apellido...',
   },
@@ -20,6 +24,7 @@ const inputs = {
   fecha_nacimiento: {
     titulo: 'Fecha de nacimiento',
     type: 'date',
+    //min: '1916-01-01',
     id: 'date',
   },
 
@@ -52,7 +57,7 @@ const cajita = (dato) => {
 
   const input = document.createElement('input');
   input.type = dato.type;
-  input.required = false;
+  input.required = true;
   input.name = dato.id;
   input.id = dato.id;
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
