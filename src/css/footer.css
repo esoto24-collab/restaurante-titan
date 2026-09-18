@@ -1,5 +1,4 @@
 footer {
-  border-top: var(--borde);
   background-color: var(--rojo);
   box-shadow: 0 -3px 0 black;
   display: flex;
@@ -42,6 +41,7 @@ footer > div > div > div div {
   width: 45px;
   height: 45px;
   background-color: white;
+  transition: all 70ms ease-out !important;
 }
 
 footer > div > div > p{
@@ -79,6 +79,7 @@ footer > div > div > div div:hover {
 .github {
   -webkit-mask-image: url(./assets/img/github.svg);
   mask-image: url(../assets/img/github.svg);
+  max-width: 2.1rem;
 }
 
 .twitter {
