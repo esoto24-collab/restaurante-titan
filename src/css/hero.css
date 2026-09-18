@@ -24,8 +24,12 @@
   font-family: var(--subtitulo);
   padding: 5px 45px;
   box-shadow: 5px 5px 0 black;
+  cursor: pointer;
+  transition: all 100ms ease-out !important;
 }
 
 .hero > button:hover {
   background-color: var(--amarrillo);
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 black;
 }

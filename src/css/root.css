@@ -14,7 +14,7 @@
 }
 
 :root {
-  --negro: #050505;
+  --negro: #000000;
   --borde: 3px solid var(--negro);
   --shadow-small: 2px 2px 0 var(--negro);
   --shadow: 3px 3px 0 var(--negro);
