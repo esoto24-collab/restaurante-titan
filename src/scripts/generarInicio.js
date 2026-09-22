@@ -10,7 +10,7 @@ const generarInicio = () => {
   const hero = document.createElement('section');
   const tarjetas = document.createElement('section');
   hero.classList = 'hero';
-  hero.id = 'hero'
+  hero.id = 'hero';
   tarjetas.classList = 'tarjetas';
   tarjetas.id = 'tarjetas';
   main.appendChild(hero);

@@ -4,7 +4,7 @@ const categorias = [
   { nombre: 'Hamburguesa', class: 'hamburguesa', url: './src/assets/img/hamburguesota.jpg', alt: 'Imagen de hamburguesa gigante'},
   { nombre: 'Pizza',  class: 'pizza', url: './src/assets/img/pizza.jpg', alt: 'Imagen de pizza gigante'},
   { nombre: 'Alitas',  class: 'alitas', url: './src/assets/img/alitas.jpg', alt: 'Imagen de una gran cantidad de alitas'},
-  { nombre: 'Suchi',  class: 'sushi', url: './src/assets/img/suchi.jpg', alt: 'Imagen de un gran rollo de sushi'},
+  { nombre: 'Sushi',  class: 'sushi', url: './src/assets/img/suchi.jpg', alt: 'Imagen de un gran rollo de sushi'},
   { nombre: 'Papas',  class: 'papas', url: './src/assets/img/papasGigantes.jpg', alt: 'Imagen de unas papa fritas muy largas'},
 ];
 

@@ -58,14 +58,10 @@ h1 {
 .logotipo {
   display: flex;
   gap: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   cursor: pointer;
-  justify-content: center;
-  align-items: center;
 }
 
-.logotipo > .icono {
+.logotipo > img {
   display: inline-block;
   min-height: 55px;
   min-width: 55px;
@@ -127,6 +123,10 @@ header a:visited {
 .menu_hamburguesa > img {
   width: 100%;
   height: 100%;
+}
+
+.titulo_hamburguesa{
+  margin-top: 10px;
 }
 
 .usuario{

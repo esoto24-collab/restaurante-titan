@@ -15,6 +15,7 @@
 
 .tarjetas > div {
   border: var(--borde);
+  overflow: hidden;
   box-shadow: 5px 5px 0 black;
   position: relative;
   display: flex;
@@ -24,12 +25,12 @@
   background-position: center;
   background-size: cover;
   cursor: pointer;
-  transition: all 250ms ease-out !important;
+  transition: all 250ms ease-out;
 }
 
 .tarjetas > div:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 black;
+  box-shadow: 7px 7px 0 black;
 }
 
 .tarjetas > div > img {
@@ -41,6 +42,11 @@
   justify-content: start;
   background-position: center;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.tarjetas > div:hover > img {
+  height: 120%;
 }
 
 .tarjetas.inicio > div > img {
@@ -58,6 +64,11 @@
   opacity: 0.85;
   display: flex;
   padding: 10px 20px;
+  transition: background-color 250ms ease-out;
+}
+
+.tarjetas > div:hover > div {
+  background-color: var(--amarrillo);
 }
 
 .main_menu > .tarjetas > div > div {
@@ -176,6 +187,11 @@ tr:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 150ms ease-in;
+  }
+
+  .menu_hamburguesa:hover {
+    background-color: var(--blanco);
   }
 
   .bts-header {
@@ -216,7 +232,7 @@ tr:hover {
   display: flex;
   flex-flow: column;
   gap: 20px;
-  padding: 10px;
+  padding: 15px;
   color: white;
 }
 
@@ -225,6 +241,16 @@ tr:hover {
   font-family: var(--subtitulo);
   background-color: var(--rojoFuerte);
   border: var(--borde);
+  border-color: var(--negro);
+  box-shadow: var(--shadow);
+  transition: all 175ms ease-out;
+}
+
+.barra_lateral li:hover {
+  transform: translate(-2px, -2px);
+  background-color: var(--amarrillo);
+  box-shadow: var(--shadow-hover);
+  color: var(--negro);
 }
 
 .barra_lateral hr {
@@ -233,19 +259,16 @@ tr:hover {
 
 .barra_lateral > ul :nth-last-child(-n + 2) {
   text-align: center;
-  background-color: var(--amarrillo);
+  background-color: var(--blanco);
   color: var(--negro);
   font-weight: 1000;
   box-shadow: var(--shadow);
 }
 
 .barra_lateral > ul :nth-last-child(-n + 2):hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
-}
-
-.barra_lateral li:hover {
+  transform: translate(+3px, +3px);
   background-color: var(--naranja);
+  box-shadow: none;
 }
 
 .barra_lateral a {
@@ -271,6 +294,13 @@ tr:hover {
   justify-content: center;
   align-items: center;
   font-family: var(--titulo);
+  transition: all 120ms ease-out;
+}
+
+.salir:hover {
+  background-color: var(--blanco);
+  transform: translate(+3px, +3px);
+  box-shadow: none;
 }
 
 .superior_barra{
