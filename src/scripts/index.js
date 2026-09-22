@@ -60,3 +60,6 @@ salir.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
   body.classList.toggle('shadow');
 });
+
+
+

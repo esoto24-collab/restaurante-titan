@@ -1,4 +1,11 @@
+import generarInicio from './generarInicio.js';
+import { obtenerUsuarios } from './gestorUsuarios.js';
+import { asignarPerfil } from './perfil.js';
+
+const botones_header = document.querySelector('#botones_header');
+const usuario = document.querySelector('#usuario');
 const main = document.querySelector('#main');
+const usuarios = obtenerUsuarios();
 
 const inputs = {
   email: {
@@ -53,28 +60,25 @@ const formularioLogin = () => {
 
   form.appendChild(btnSubmit);
 
-  /*
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nombre = document.querySelector('#name');
-    const apellido = document.querySelector('#apellido');
-    const date = document.querySelector('#date');
     const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
 
-    const usuario = crearUsuario(nombre.value, apellido.value, date.value, email.value);
-    usuarios.push(usuario);
-
-    nombre.value = '';
-    apellido.value = '';
-    date.value = '';
-    email.value = '';
-
-    tarjetas.innerHTML = '';
-    tarjetas.classList.remove('main-formulario');
-    tarjetas.classList.add('main-tabla');
-    tarjetas.appendChild(generarTabla());
-
-  })*/
+    for (let i = 0; i < usuarios.length; i++) {
+      if (email.value === usuarios[i].getCorreo() && password.value === usuarios[i].getPassword()) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+        botones_header.classList.add('invisible');
+        usuario.classList.remove('invisible');
+        asignarPerfil(usuarios[i]);
+        generarInicio();
+        break;
+      }
+    }
+  });
 
   div.appendChild(titulo);
   div.appendChild(form);
@@ -83,5 +87,3 @@ const formularioLogin = () => {
 };
 
 export default formularioLogin;
-
-

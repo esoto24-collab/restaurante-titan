@@ -64,13 +64,6 @@ const cajita = (dato) => {
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
 
   label.appendChild(input);
-
-  if (dato.id === 'password-repeat') {
-    const otro = document.querySelector("#password")
-    input.addEventListener("input",()=>{
-      otro.value="ey"
-    });
-  }
   return label;
 };
 
@@ -101,8 +94,9 @@ const formulario = () => {
     const apellido = document.querySelector('#apellido');
     const date = document.querySelector('#date');
     const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
 
-    const usuario = crearUsuario(nombre.value, apellido.value, date.value, email.value);
+    const usuario = crearUsuario(nombre.value, apellido.value, date.value, email.value,password.value);
     guardarUsuario(usuario);
 
     form.reset();

@@ -1,19 +1,30 @@
 <!doctype html>
 <html lang="es">
-  <!-- Aqui le pusimos el lenguaje en español como pide la tarea que chad -->
   <head>
     <meta charset="UTF-8" />
-    <!-- Codificado UTF-8 (que viene por defecto) -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.titan.com/inicio" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- viewport activao para version adaptativa en movil futura -->
     <meta name="author" content="Equipo RamIvEt" />
-    <!-- Metadatos -->
+    <link rel="alternate" hreflang="es" href="https://www.titan.com/inicio" />
     <meta
       name="description"
       content="Restaurante que tiene por nombre 'Titan', con un diseño neobrutalista y centrado en proporcionar porciones grandes"
     />
     <meta name="keywords" content="comida,hamburguesa,alitas,boneless,pizza,restaurante,sushi" />
-    <title>Titan</title>
+
+    <meta property="og:title" content="Restaurante Titan" />
+    <meta property="og:description" content="Come como un verdadero titan" />
+    <meta property="og:image" content="https://i.pinimg.com/736x/a1/2c/71/a12c71449464667a570554de733ec1f0.jpg" />
+    <meta property="og:url" content="https://www.titan.com/inicio" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Restaurante Titan" />
+    <meta name="twitter:description" content="Comida gigante y sabrosa" />
+    <meta name="twitter:image" content="https://es.pinterest.com/pin/415175659424076502/" />
+
+    <title>Restaurante Titan | Comida Brutal y Extrema</title>
     <link rel="shortcut icon" href="./src/assets/img/hamburguesaicono.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/root.css" />
@@ -33,6 +44,8 @@
           alt="Hamburguesa Pixelada"
           title="Logo empresa"
           loading="lazy"
+          width="55"
+          height="55"
         />
         <h1 id="titulo_principal">Titan</h1>
       </div>
@@ -44,22 +57,29 @@
           <li><a href="src/pages/alien.html">Juegos</a></li>
         </ul>
       </nav>
-      <div class="bts-header">
+      <div class="bts-header" id="botones_header">
         <button id="crear_cuenta">Crear Cuenta</button>
         <button id="iniciar_sesion">Iniciar Sesión</button>
       </div>
-      <div class="usuario invisible">
-        <p>Novato Sensacion</p>
-        <div>N</div>
+      <div class="usuario invisible" id="usuario">
+        <p id="nombre_usuario"></p>
+        <div id="letra_usuario"></div>
       </div>
       <div class="menu_hamburguesa" id="menu_hamburguesa">
-        <img src="./src/assets/img/menu.svg" />
+        <img
+          src="./src/assets/img/menu.svg"
+          alt="menu hamburguesa"
+          title="Icono Menu Hamburguesa"
+          loading="lazy"
+          width="45"
+          height="45"
+        />
       </div>
     </header>
     <main id="main"></main>
     <footer>
       <div>
-        <h1>Titan</h1>
+        <h2>Titan</h2>
         <ul>
           <li>Sobre Nosotros</li>
           <li>Aviso de Privacidad</li>
@@ -74,7 +94,7 @@
     </footer>
     <div class="barra_lateral" id="barra_lateral">
       <div class="superior_barra">
-        <h1>Titan</h1>
+        <h2>Titan</h2>
         <div class="salir" id="salir">X</div>
       </div>
       <ul>

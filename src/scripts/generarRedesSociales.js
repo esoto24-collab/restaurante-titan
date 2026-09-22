@@ -5,7 +5,7 @@ const generarRedLink = (i) => {
   const link = document.createElement('a');
   link.href = 'https://github.com/esoto24-collab/restaurante-titan';
   link.target = '_blank';
-  link.rel = 'noopener';
+  link.rel = 'noopener noreferrer';
   link.ariaLabel = redes[i].albl;
   const icon = document.createElement('div');
   icon.classList.add('icon');
