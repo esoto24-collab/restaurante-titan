@@ -215,6 +215,10 @@ tr:hover {
     width: 35px;
     height: 35px;
   }
+
+  .usuario{
+    display: none;
+  }
 }
 
 .barra_lateral {
@@ -257,7 +261,13 @@ tr:hover {
   width: 100%;
 }
 
-.barra_lateral > ul :nth-last-child(-n + 2) {
+.lateral-formulario{
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.lateral-formulario > li{
   text-align: center;
   background-color: var(--blanco);
   color: var(--negro);
@@ -265,8 +275,8 @@ tr:hover {
   box-shadow: var(--shadow);
 }
 
-.barra_lateral > ul :nth-last-child(-n + 2):hover {
-  transform: translate(+3px, +3px);
+.lateral-formulario > li:hover{
+  transform: translate(3px, 3px);
   background-color: var(--naranja);
   box-shadow: none;
 }
@@ -311,4 +321,32 @@ tr:hover {
 
 .superior_barra > h1{
   margin-right: auto;
+}
+
+.invisible{
+  display: none;
+}
+
+.usuario_opciones{
+  position: absolute;
+  right: 2%;
+  top: 111%;
+  border-radius: 16px;
+  border: var(--borde);
+  background-color: var(--rojo);
+}
+
+.usuario_opciones > ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--blanco);
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+.usuario_opciones > ul{
+  margin: 5px 10px;
+  padding: 4px 8px;
 }

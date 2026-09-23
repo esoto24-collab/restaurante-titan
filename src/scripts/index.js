@@ -17,6 +17,8 @@ const lateral_crear = document.querySelector('#lateral_crear');
 const salir = document.querySelector('#salir');
 const lateral_menu = document.querySelector('#lateral_menu');
 const menu_hamburguesa = document.querySelector('#menu_hamburguesa');
+const usuario = document.querySelector("#usuario");
+const user_options = document.querySelector("#user_options")
 
 generarInicio();
 generarRedesSociales();
@@ -44,11 +46,13 @@ lateral_inicio.addEventListener('click', () => {
   body.classList.toggle('shadow');
 });
 
+
 lateral_crear.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
   formulario();
   body.classList.toggle('shadow');
 });
+
 
 lateral_iniciar.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
@@ -60,6 +64,10 @@ salir.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
   body.classList.toggle('shadow');
 });
+
+usuario.addEventListener('click',()=>{
+  user_options.classList.toggle('invisible')
+})
 
 
 

@@ -2,6 +2,8 @@ import generarInicio from './generarInicio.js';
 import { obtenerUsuarios } from './gestorUsuarios.js';
 import { asignarPerfil } from './perfil.js';
 
+const lateral_perfil = document.querySelector("#lateral_perfil")
+const lateral_formulario = document.querySelector("#lateral_formulario")
 const botones_header = document.querySelector('#botones_header');
 const usuario = document.querySelector('#usuario');
 const main = document.querySelector('#main');
@@ -73,6 +75,8 @@ const formularioLogin = () => {
         });
         botones_header.classList.add('invisible');
         usuario.classList.remove('invisible');
+        lateral_formulario.classList.add('invisible');
+        lateral_perfil.classList.remove('invisible');
         asignarPerfil(usuarios[i]);
         generarInicio();
         break;

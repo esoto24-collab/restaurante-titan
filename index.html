@@ -15,7 +15,10 @@
 
     <meta property="og:title" content="Restaurante Titan" />
     <meta property="og:description" content="Come como un verdadero titan" />
-    <meta property="og:image" content="https://i.pinimg.com/736x/a1/2c/71/a12c71449464667a570554de733ec1f0.jpg" />
+    <meta
+      property="og:image"
+      content="https://i.pinimg.com/736x/a1/2c/71/a12c71449464667a570554de733ec1f0.jpg"
+    />
     <meta property="og:url" content="https://www.titan.com/inicio" />
     <meta property="og:type" content="website" />
 
@@ -47,7 +50,13 @@
           width="55"
           height="55"
         />
-        <img src="./src/assets/img/TITAN-TITULO-LETRAS-SVG.svg" alt="Imagen con texto que dice titan" height="50" loading="lazy" id="titulo_principal">
+        <img
+          src="./src/assets/img/TITAN-TITULO-LETRAS-SVG.svg"
+          alt="Imagen con texto que dice titan"
+          height="50"
+          loading="lazy"
+          id="titulo_principal"
+        />
       </div>
       <nav class="navbar">
         <ul>
@@ -62,8 +71,8 @@
         <button id="iniciar_sesion">Iniciar Sesión</button>
       </div>
       <div class="usuario invisible" id="usuario">
-        <p id="nombre_usuario"></p>
-        <div id="letra_usuario"></div>
+        <div id="letra_usuario">N</div>
+        <p id="nombre_usuario">Novato</p>
       </div>
       <div class="menu_hamburguesa" id="menu_hamburguesa">
         <img
@@ -75,11 +84,25 @@
           height="45"
         />
       </div>
+      <div id="user_options" class="usuario_opciones invisible">
+        <ul>
+          <li>Carrito</li>
+          <li>Pedidos</li>
+          <li>Configuracion</li>
+          <li>Dashboard</li>
+          <li>Salir</li>
+        </ul>
+      </div>
     </header>
     <main id="main"></main>
     <footer>
       <div>
-        <img src="./src/assets/img/TITAN-TITULO-LETRAS-SVG.svg" alt="Imagen con texto que dice titan" height="50" loading="lazy">
+        <img
+          src="./src/assets/img/TITAN-TITULO-LETRAS-SVG.svg"
+          alt="Imagen con texto que dice titan"
+          height="50"
+          loading="lazy"
+        />
         <ul>
           <li>Sobre Nosotros</li>
           <li>Aviso de Privacidad</li>
@@ -94,15 +117,24 @@
     </footer>
     <div class="barra_lateral" id="barra_lateral">
       <div class="superior_barra">
-        <img src="./src/assets/img/TITAN-TITULO-LETRAS-SVG.svg" alt="Imagen con texto que dice titan" height="50" loading="lazy" class="titulo_hamburguesa">
+        <img
+          src="./src/assets/img/TITAN-TITULO-LETRAS-SVG.svg"
+          alt="Imagen con texto que dice titan"
+          height="50"
+          loading="lazy"
+          class="titulo_hamburguesa"
+        />
         <div class="salir" id="salir">X</div>
       </div>
       <ul>
         <li id="lateral_inicio">Inicio</li>
         <li id="lateral_menu">Menu Brutal</li>
         <li>Ajustes</li>
-        <li id="lateral_crear">Crear Cuenta</li>
-        <li id="lateral_iniciar">Iniciar Sesion</li>
+        <div class="lateral-formulario" id="lateral_formulario">
+          <li id="lateral_crear">Crear Cuenta</li>
+          <li id="lateral_iniciar">Iniciar Sesion</li>
+        </div>
+        <li class="invisible" id="lateral_perfil">Perfil</li>
       </ul>
     </div>
     <script type="module" src="./src/scripts/index.js"></script>

@@ -6,6 +6,7 @@ header {
   border-bottom: var(--borde);
   box-shadow: 0 2px 0 black;
   background-color: var(--rojo);
+  position: relative;
 }
 
 header > nav > ul {
@@ -132,11 +133,21 @@ header a:visited {
 .usuario{
   color: var(--blanco);
   display: flex;
-  gap: 20px;
+  gap: 12px;
   justify-content: center;
   align-items: center;
-  font-weight: 900;
+  font-weight: 700;
   font-family: var(--subtitulo);
+  border: var(--borde);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.usuario:hover{
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .usuario.invisible{
@@ -144,8 +155,23 @@ header a:visited {
 }
 
 .usuario > div{
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--amarrillo);
-  padding: 12px;
+  padding: 8px;
   border-radius: 50%;
-  border: var(--borde);
+  border: 2px solid black;
+  color: var(--negro);
 }
+
+
+.usuario > p{
+  line-height: 1;
+  font-size: 1rem;
+  letter-spacing: 2px
+}
+
+
