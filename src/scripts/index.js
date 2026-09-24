@@ -1,3 +1,4 @@
+import { asignarPerfil } from './perfil.js';
 import generarInicio from './generarInicio.js';
 import generarRedesSociales from './generarRedesSociales.js';
 import formulario from './crearFormNewUser.js';
@@ -19,6 +20,7 @@ const lateral_menu = document.querySelector('#lateral_menu');
 const menu_hamburguesa = document.querySelector('#menu_hamburguesa');
 const usuario = document.querySelector("#usuario");
 const user_options = document.querySelector("#user_options")
+const desactivarUsuario = document.querySelector("#desactivar_usuario")
 
 generarInicio();
 generarRedesSociales();
@@ -67,6 +69,11 @@ salir.addEventListener('click', () => {
 
 usuario.addEventListener('click',()=>{
   user_options.classList.toggle('invisible')
+})
+
+desactivarUsuario.addEventListener("click",()=>{
+  console.log("Desactivar Usuario")
+  asignarPerfil(null)
 })
 
 
