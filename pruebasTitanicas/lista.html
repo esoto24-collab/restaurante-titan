@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        min-height: 100dvh;
+    }
+
+    ul{
+        display: flex;
+        flex-flow: column;
+        padding: 0px;
+        list-style: none;
+    }
+
+    li{
+        background-color: gainsboro;
+        text-align: center;
+        padding: 10px 20px;
+        margin: 0px;
+    }
+
+    .principal{
+        background-color: gray;
+    }
+
+    .invisible{
+        display: none;
+    }
+
+    .secundario:hover{
+        background-color: yellow;
+    }
+
+
+</style>
+<body>
+    <ul>
+        <li class="principal" id="one">Opcion 1</li>
+        <li class="secundario">Opcion 2</li>
+        <li class="secundario">Opcion 3</li>
+        <li class="secundario">Opcion 4</li>
+    </ul>
+</body>
+<script>
+    const one = document.querySelector('#one')
+    const secundario = document.querySelectorAll('.secundario')
+
+    one.addEventListener('click',()=>{
+       for(let i=0 ; i<secundario.length ; i++){
+            secundario[i].classList.toggle('invisible')
+       }
+    })
+
+</script>
+</html>

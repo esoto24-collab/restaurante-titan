@@ -18,9 +18,13 @@ const lateral_crear = document.querySelector('#lateral_crear');
 const salir = document.querySelector('#salir');
 const lateral_menu = document.querySelector('#lateral_menu');
 const menu_hamburguesa = document.querySelector('#menu_hamburguesa');
-const usuario = document.querySelector("#usuario");
-const user_options = document.querySelector("#user_options")
-const desactivarUsuario = document.querySelector("#desactivar_usuario")
+const usuario = document.querySelector('#usuario');
+const user_options = document.querySelector('#user_options');
+const desactivarUsuario = document.querySelector('#desactivar_usuario');
+const lateral_perfil = document.querySelector('#lateral_perfil');
+
+
+const perfil_opcion = document.querySelectorAll('.perfil-opcion')
 
 generarInicio();
 generarRedesSociales();
@@ -31,11 +35,11 @@ titulo.addEventListener('click', generarInicio);
 crear_cuenta.addEventListener('click', formulario);
 menu.addEventListener('click', crearMenu);
 
-lateral_menu.addEventListener("click",()=>{
+lateral_menu.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
-  crearMenu()
+  crearMenu();
   body.classList.toggle('shadow');
-})
+});
 
 menu_hamburguesa.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
@@ -48,13 +52,11 @@ lateral_inicio.addEventListener('click', () => {
   body.classList.toggle('shadow');
 });
 
-
 lateral_crear.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
   formulario();
   body.classList.toggle('shadow');
 });
-
 
 lateral_iniciar.addEventListener('click', () => {
   barra_lateral.classList.toggle('visible');
@@ -67,14 +69,19 @@ salir.addEventListener('click', () => {
   body.classList.toggle('shadow');
 });
 
-usuario.addEventListener('click',()=>{
-  user_options.classList.toggle('invisible')
-})
+usuario.addEventListener('click', () => {
+  user_options.classList.toggle('invisible');
+});
 
-desactivarUsuario.addEventListener("click",()=>{
-  console.log("Desactivar Usuario")
-  asignarPerfil(null)
-})
+desactivarUsuario.addEventListener('click', () => {
+  console.log('Desactivar Usuario');
+  asignarPerfil(null);
+});
 
+lateral_perfil.addEventListener('click', () => {
+  for(let i=0; i<perfil_opcion.length; i++){
+    perfil_opcion[i].classList.toggle('invisible')
+  }
+});
 
 
