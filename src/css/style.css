@@ -229,7 +229,6 @@ tr:hover {
   background-color: var(--rojo);
   height: 100%;
   left: 0;
-  display: none;
 }
 
 .barra_lateral > ul {
@@ -386,3 +385,113 @@ ul > .perfil-opcion:hover {
   box-shadow: none;
 }
 
+aside{
+  background-color: var(--rojo);
+}
+
+
+.barra_lateral.alternativo li{
+  background-color: white;
+  color: black;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+
+
+.barra_lateral.alternativo li::before{
+  content: "";
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.barra_lateral li:nth-child(1)::before{
+  background-image: url(../assets/img/audio-bars-graphic.svg);
+}
+
+.barra_lateral li:nth-child(2)::before{
+  background-image: url(../assets/img/order-svgrepo-com.svg);
+}
+
+.barra_lateral li:nth-child(3)::before{
+  background-image: url(../assets/img/one-hamburguer.svg);
+}
+
+.barra_lateral li:nth-child(4)::before{
+  background-image: url(../assets/img/groupsvg.svg);
+}
+
+.barra_lateral li:nth-child(5)::before{
+  background-image: url(../assets/img/exitsvg.svg);
+}
+
+.contenido_dashboard{
+  display: flex;
+  flex-flow: column;
+  padding: 10px 20px;
+}
+
+.contenido_dashboard > .superior{
+  display: flex;
+  flex-flow: wrap;
+  margin-bottom: 20px;
+}
+
+.contenido_dashboard > .superior > h2{ 
+  margin-right: auto;
+}
+
+
+.contenido_dashboard > .superior > div{ 
+  display: flex;
+  gap: 10px;
+  font-size: small;
+}
+
+.contenido_dashboard > .superior > div >button{ 
+  background-color: var(--amarrillo);
+  border: var(--borde-small);
+  box-shadow: var(--shadow-small);
+  padding: 5px 20px;
+}
+
+
+.contenido_dashboard > .superior > div >button::before{ 
+ content: "+";
+ padding-right: 5px;
+}
+
+.contenido_dashboard > .datos_tarjetas{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.contenido_dashboard > .datos_tarjetas > div{
+  display: flex;
+  flex-flow: column;
+  border: var(--borde);
+  box-shadow: var(--shadow);
+  padding: 5px 20px;
+}
+
+.contenido_dashboard > .datos_tarjetas > div:nth-child(2n){
+  background-color: var(--amarrillo);
+}
+
+.contenido_dashboard > .datos_tarjetas > div > h6{
+  margin: 0px;
+}
+
+
+.contenido_dashboard > .datos_tarjetas > div > h3{
+  font-size: x-large;
+  font-weight: bolder;
+}

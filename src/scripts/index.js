@@ -4,6 +4,7 @@ import generarRedesSociales from './generarRedesSociales.js';
 import formulario from './crearFormNewUser.js';
 import formularioLogin from './crearFormLogin.js';
 import crearMenu from './crearMenu.js';
+import { generarDashboard } from './dashboard.js';
 
 const body = document.body;
 const inicio = document.querySelector('#inicio');
@@ -22,6 +23,7 @@ const usuario = document.querySelector('#usuario');
 const user_options = document.querySelector('#user_options');
 const desactivarUsuario = document.querySelector('#desactivar_usuario');
 const lateral_perfil = document.querySelector('#lateral_perfil');
+const dashboard_lateral = document.querySelector("#dashboard_lateral")
 
 
 const perfil_opcion = document.querySelectorAll('.perfil-opcion')
@@ -84,4 +86,9 @@ lateral_perfil.addEventListener('click', () => {
   }
 });
 
+dashboard_lateral.addEventListener("click",()=>{
+  generarDashboard();
+})
+
+generarDashboard();
 

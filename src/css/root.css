@@ -15,6 +15,7 @@
 
 :root {
   --negro: #000000;
+  --borde-small: 2px solid var(--negro);
   --borde: 3px solid var(--negro);
   --shadow-small: 2px 2px 0 var(--negro);
   --shadow: 3px 3px 0 var(--negro);

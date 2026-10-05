@@ -30,6 +30,16 @@ footer {
   grid-area: footer;
 }
 
-aside{
-  grid-area: aside;
+.dashboard_barra_lateral{
+  grid-area: lateral;
+  width: 100%;
 }
+
+.dashboard{
+    grid-template-rows: 1fr;
+   grid-template-columns: 0.3fr 1fr;
+     grid-template-areas:
+    'lateral main';
+}
+
+
