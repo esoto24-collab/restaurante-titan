@@ -69,17 +69,17 @@ h1 {
   align-self: center;
 }
 
-.bts-header {
+.bts__header {
   display: flex;
   gap: 20px;
   flex-flow: wrap;
 }
 
-.bts-header.invisible{
+.bts__header.invisible {
   display: none;
 }
 
-.bts-header > button {
+.bts__header > button {
   font-family: var(--subtitulo);
   font-weight: 800;
   border: 3px solid var(--negro);
@@ -90,7 +90,7 @@ h1 {
   transition: all 100ms ease-out !important;
 }
 
-.bts-header > button:hover {
+.bts__header > button:hover {
   background-color: orange;
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0 black;
@@ -105,7 +105,7 @@ header a:visited {
   color: inherit;
 }
 
-.menu_hamburguesa{
+.menu__hamburguesa {
   background-color: var(--amarrillo);
   border: var(--borde);
   box-shadow: var(--shadow);
@@ -117,20 +117,21 @@ header a:visited {
   cursor: pointer;
 }
 
-.menu_hamburguesa:hover {
+.menu__hamburguesa:hover {
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-hover);
 }
-.menu_hamburguesa > img {
+
+.menu__hamburguesa > img {
   width: 100%;
   height: 100%;
 }
 
-.titulo_hamburguesa{
+.titulo__hamburguesa {
   margin-top: 10px;
 }
 
-.usuario{
+.usuario {
   color: var(--blanco);
   display: flex;
   gap: 12px;
@@ -145,16 +146,16 @@ header a:visited {
   border-radius: 20px;
 }
 
-.usuario:hover{
+.usuario:hover {
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-hover);
 }
 
-.usuario.invisible{
+.usuario.invisible {
   display: none;
 }
 
-.usuario > div{
+.usuario > div {
   width: 36px;
   height: 36px;
   display: flex;
@@ -167,11 +168,8 @@ header a:visited {
   color: var(--negro);
 }
 
-
-.usuario > p{
+.usuario > p {
   line-height: 1;
   font-size: 1rem;
   letter-spacing: 2px
 }
-
-

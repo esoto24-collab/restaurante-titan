@@ -2,9 +2,9 @@ import generarInicio from './generarInicio.js';
 import { obtenerUsuarios } from './gestorUsuarios.js';
 import { asignarPerfil } from './perfil.js';
 
-const lateral_perfil = document.querySelector("#lateral_perfil")
-const lateral_formulario = document.querySelector("#lateral_formulario")
-const botones_header = document.querySelector('#botones_header');
+const barra_lateral_perfil = document.querySelector("#barra-#barra-lateral__perfil")
+const barra_lateral_formulario = document.querySelector("#barra-lateral__formulario")
+const botones__header = document.querySelector('#botones__header');
 const usuario = document.querySelector('#usuario');
 const main = document.querySelector('#main');
 const usuarios = obtenerUsuarios();
@@ -44,7 +44,7 @@ const cajita = (dato) => {
 const formularioLogin = () => {
   main.innerHTML = '';
   main.className = '';
-  main.classList.add('main-formulario');
+  main.classList.add('main__formulario');
   const div = document.createElement('div');
 
   const titulo = document.createElement('h2');
@@ -73,10 +73,10 @@ const formularioLogin = () => {
           top: 0,
           behavior: 'smooth',
         });
-        botones_header.classList.add('invisible');
+        botones__header.classList.add('invisible');
         usuario.classList.remove('invisible');
-        lateral_formulario.classList.add('invisible');
-        lateral_perfil.classList.remove('invisible');
+        barra_lateral_formulario.classList.add('invisible');
+        barra_lateral_perfil.classList.remove('invisible');
         asignarPerfil(usuarios[i]);
         generarInicio();
         break;

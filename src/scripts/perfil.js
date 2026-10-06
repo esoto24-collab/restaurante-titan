@@ -1,8 +1,8 @@
-const nombre_usuario = document.querySelector('#nombre_usuario');
-const letra_usuario = document.querySelector('#letra_usuario');
-const botones_header = document.querySelector('#botones_header');
+const nombre__usuario = document.querySelector('#nombre__usuario');
+const usuario_letra = document.querySelector('#usuario_letra');
+const botones__header = document.querySelector('#botones__header');
 const usuario = document.querySelector('#usuario');
-const user_options = document.querySelector("#user_options")
+const user__options = document.querySelector("#user__options")
 let perfil = null;
 
 export const asignarPerfil = (nuevoPerfil) => {
@@ -10,14 +10,14 @@ export const asignarPerfil = (nuevoPerfil) => {
   if (perfil != null) {
     actualizarPerfil();
   } else {
-    botones_header.classList.toggle('invisible');
+    botones__header.classList.toggle('invisible');
     usuario.classList.toggle('invisible');
-    user_options.classList.toggle('invisible')
+    user__options.classList.toggle('invisible')
   }
 };
 
 const actualizarPerfil = () => {
   const primera_letra = perfil.getNombre().charAt(0).toUpperCase();
-  nombre_usuario.textContent = perfil.getNombre();
-  letra_usuario.textContent = primera_letra;
+  nombre__usuario.textContent = perfil.getNombre();
+  usuario_letra.textContent = primera_letra;
 };

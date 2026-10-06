@@ -19,7 +19,7 @@ const crearMenu = () => {
   });
   main.innerHTML = '';
   main.className = '';
-  main.classList.add('main_menu');
+  main.classList.add('main__menu');
 
   const parrafo = document.createElement('h5');
   parrafo.textContent = 'Menu';
