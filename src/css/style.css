@@ -73,7 +73,7 @@
   background-color: var(--amarrillo);
 }
 
-.main_menu > .tarjetas > div > div {
+.main__menu > .tarjetas > div > div {
   top: 0;
   bottom: 0;
   border-left: var(--borde);
@@ -100,7 +100,7 @@
   margin-right: 0px;
 }
 
-.main-tabla {
+.main__tabla {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,20 +143,20 @@ tr:hover {
   background-color: #f0c62d;
 }
 
-.main_menu {
+.main__menu {
   padding: 1.5vh 1.5vh;
   display: flex;
   flex-flow: column;
 }
 
-.main_menu > div:first-child {
+.main__menu > div:first-child {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
   align-items: center;
 }
 
-.main_menu label {
+.main__menu label {
   padding: 1vh 3vh;
   background-color: var(--naranja);
   border: var(--borde);
@@ -167,12 +167,12 @@ tr:hover {
   box-shadow: var(--shadow);
 }
 
-.main_menu label > select {
+.main__menu label > select {
   border: var(--borde);
 }
 
 @media (max-width: 800px) {
-  .main-formulario > div {
+  .main__formulario > div {
     width: 90%;
   }
 
@@ -185,18 +185,18 @@ tr:hover {
     grid-auto-rows: 37.5vh;
   }
 
-  .menu_hamburguesa {
+  .menu__hamburguesa {
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 150ms ease-in;
   }
 
-  .menu_hamburguesa:hover {
+  .menu__hamburguesa:hover {
     background-color: var(--blanco);
   }
 
-  .bts-header {
+  .bts__header {
     display: none;
   }
 
@@ -223,7 +223,7 @@ tr:hover {
   }
 }
 
-.barra_lateral {
+.barra-lateral {
   position: absolute;
   bottom: 0;
   background-color: var(--rojo);
@@ -232,7 +232,7 @@ tr:hover {
   display: none;
 }
 
-.barra_lateral > ul {
+.barra-lateral > ul {
   list-style: none;
   margin: 0;
   display: flex;
@@ -242,7 +242,7 @@ tr:hover {
   color: white;
 }
 
-.barra_lateral li {
+.barra-lateral li {
   padding: 1.5vh 3vh;
   font-family: var(--subtitulo);
   background-color: var(--rojoFuerte);
@@ -256,24 +256,24 @@ tr:hover {
     color 175ms ease-out;
 }
 
-.barra_lateral li:hover {
+.barra-lateral li:hover {
   transform: translate(-2px, -2px);
   background-color: var(--amarrillo);
   box-shadow: var(--shadow-hover);
   color: var(--negro);
 }
 
-.barra_lateral hr {
+.barra-lateral hr {
   width: 100%;
 }
 
-.lateral-formulario {
+.barra-lateral__formulario {
   display: flex;
   flex-flow: column;
   gap: 1.5vh;
 }
 
-.lateral-formulario > li {
+.barra-lateral__formulario > li {
   text-align: center;
   background-color: var(--blanco);
   color: var(--negro);
@@ -281,18 +281,18 @@ tr:hover {
   box-shadow: var(--shadow);
 }
 
-.lateral-formulario > li:hover {
+.barra-lateral__formulario > li:hover {
   transform: translate(3px, 3px);
   background-color: var(--naranja);
   box-shadow: none;
 }
 
-.barra_lateral a {
+.barra-lateral a {
   color: inherit;
   text-decoration: none;
 }
 
-.barra_lateral.visible {
+.barra-lateral.visible {
   width: 75%;
   box-shadow: 30px 0px 60px var(--negro);
   border-right: 3px solid var(--negro);
@@ -321,14 +321,14 @@ tr:hover {
   box-shadow: none;
 }
 
-.superior_barra {
+.barra-lateral__superior {
   display: flex;
   flex-flow: wrap;
   align-items: center;
   margin: 0px 3vh;
 }
 
-.superior_barra > h1 {
+.barra-lateral__superior > h1 {
   margin-right: auto;
 }
 
@@ -336,7 +336,7 @@ tr:hover {
   display: none;
 }
 
-.usuario_opciones {
+.usuario__opciones {
   position: absolute;
   right: 2%;
   top: 111%;
@@ -345,7 +345,7 @@ tr:hover {
   background-color: var(--rojo);
 }
 
-.usuario_opciones > ul {
+.usuario__opciones > ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -355,13 +355,13 @@ tr:hover {
   gap: 5px;
 }
 
-.usuario_opciones > ul {
+.usuario__opciones > ul {
   margin: 0.8vh 1.5vh;
   padding: 0.6vh 1.2vh;
 }
 
 
-.lista-desplegable{
+.lista__desplegable {
   list-style: none;
   padding: 0;
   display: flex;
@@ -369,7 +369,7 @@ tr:hover {
   gap: 1vh;
 }
 
-ul > .perfil-opcion {
+ul > .perfil__opcion {
   text-align: center;
   background-color: var(--blanco);
   color: var(--negro);
@@ -380,9 +380,8 @@ ul > .perfil-opcion {
   box-shadow: var(--shadow);
 }
 
-ul > .perfil-opcion:hover {
+ul > .perfil__opcion:hover {
   transform: translate(3px, 3px);
   background-color: var(--naranja);
   box-shadow: none;
 }
-

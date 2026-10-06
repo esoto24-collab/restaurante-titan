@@ -1,4 +1,4 @@
-.main-formulario {
+.main__formulario {
   display: flex;
   justify-content: center;
   background-image: url(../assets/img/sddefault.jpg);
@@ -7,7 +7,7 @@
   background-size: cover;
 }
 
-.main-formulario > div {
+.main__formulario > div {
   background-color: white;
   margin: 20px 0px;
   width: 50%;
@@ -21,7 +21,7 @@
   background-size: 8px 8px;
 }
 
-.main-formulario h2 {
+.main__formulario h2 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -30,7 +30,7 @@
   font-size: 2rem;
 }
 
-.main-formulario > div > form {
+.main__formulario > div > form {
   display: flex;
   gap: 30px;
   flex-flow: column;
@@ -38,7 +38,7 @@
   width: 60%;
 }
 
-.main-formulario input {
+.main__formulario input {
   border-radius: 8px;
   border: var(--borde);
   box-shadow: 5px 5px 0 black;
@@ -47,11 +47,11 @@
   transition: all 100ms ease-out !important;
 }
 
-.main-formulario input:focus {
+.main__formulario input:focus {
   box-shadow: 8px 8px 0 black;
-} 
+}
 
-.main-formulario label {
+.main__formulario label {
   font-family: var(--subtitulo);
   display: flex;
   flex-flow: column;
@@ -59,7 +59,7 @@
   font-weight: 900;
 }
 
-.main-formulario button {
+.main__formulario button {
   border: var(--borde);
   box-shadow: 3px 3px 0 black;
   padding: 15px 20px;
@@ -71,7 +71,7 @@
   transition: all 100ms ease-out !important;
 }
 
-.main-formulario button:hover {
+.main__formulario button:hover {
   background-color: var(--amarrillo);
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0 black;

@@ -47,7 +47,7 @@ const inputs = {
   passwordRepeat: {
     titulo: 'Constraseña 2',
     type: 'password',
-    id: 'password-repeat',
+    id: 'password__repeat',
     placeholder: 'NUNCA LA OLVIDES!!!!',
   },
 };
@@ -70,7 +70,7 @@ const cajita = (dato) => {
 const formulario = () => {
   main.innerHTML = '';
   main.className = '';
-  main.classList.add('main-formulario');
+  main.classList.add('main__formulario');
   const div = document.createElement('div');
 
   const titulo = document.createElement('h2');

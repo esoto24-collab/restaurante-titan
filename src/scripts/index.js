@@ -7,24 +7,24 @@ import crearMenu from './crearMenu.js';
 
 const body = document.body;
 const inicio = document.querySelector('#inicio');
-const crear_cuenta = document.querySelector('#crear_cuenta');
-const iniciar_sesion = document.querySelector('#iniciar_sesion');
-const titulo = document.querySelector('#titulo_principal');
+const crear_cuenta = document.querySelector('#crear__cuenta');
+const iniciar_sesion = document.querySelector('#iniciar__sesion');
+const titulo = document.querySelector('#titulo__principal');
 const menu = document.querySelector('#menu');
-const barra_lateral = document.querySelector('#barra_lateral');
-const lateral_inicio = document.querySelector('#lateral_inicio');
-const lateral_iniciar = document.querySelector('#lateral_iniciar');
-const lateral_crear = document.querySelector('#lateral_crear');
+const barra_lateral = document.querySelector('#barra-lateral');
+const lateral_inicio = document.querySelector('#barra-lateral__inicio');
+const lateral_iniciar = document.querySelector('#barra-lateral__iniciar');
+const lateral_crear = document.querySelector('#barra-lateral__crear');
 const salir = document.querySelector('#salir');
-const lateral_menu = document.querySelector('#lateral_menu');
-const menu_hamburguesa = document.querySelector('#menu_hamburguesa');
+const lateral_menu = document.querySelector('#barra-lateral__menu');
+const menu_hamburguesa = document.querySelector('#menu__hamburguesa');
 const usuario = document.querySelector('#usuario');
-const user_options = document.querySelector('#user_options');
-const desactivarUsuario = document.querySelector('#desactivar_usuario');
-const lateral_perfil = document.querySelector('#lateral_perfil');
+const user_options = document.querySelector('#user__options');
+const desactivar_usuario = document.querySelector('#desactivar__usuario');
+const lateral_perfil = document.querySelector('#barra-lateral__perfil');
 
 
-const perfil_opcion = document.querySelectorAll('.perfil-opcion')
+const perfil_opcion = document.querySelectorAll('.perfil_opcion')
 
 generarInicio();
 generarRedesSociales();
@@ -73,7 +73,7 @@ usuario.addEventListener('click', () => {
   user_options.classList.toggle('invisible');
 });
 
-desactivarUsuario.addEventListener('click', () => {
+desactivar_usuario.addEventListener('click', () => {
   console.log('Desactivar Usuario');
   asignarPerfil(null);
 });

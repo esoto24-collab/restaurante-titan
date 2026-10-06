@@ -6,7 +6,7 @@ const main = document.querySelector('#main');
 const generarInicio = () => {
   main.innerHTML = '';
   main.className = '';
-  main.classList.add('main-inicio');
+  main.classList.add('main__inicio');
   const hero = document.createElement('section');
   const tarjetas = document.createElement('section');
   hero.classList = 'hero';
