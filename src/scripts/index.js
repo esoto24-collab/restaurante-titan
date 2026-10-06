@@ -20,16 +20,10 @@ const salir = document.querySelector('#salir');
 const lateral_menu = document.querySelector('#barra-lateral__menu');
 const menu_hamburguesa = document.querySelector('#menu__hamburguesa');
 const usuario = document.querySelector('#usuario');
-<<<<<<< HEAD
-const user_options = document.querySelector('#user_options');
-const desactivarUsuario = document.querySelector('#desactivar_usuario');
-const lateral_perfil = document.querySelector('#lateral_perfil');
 const dashboard_lateral = document.querySelector("#dashboard_lateral")
-=======
 const user_options = document.querySelector('#user__options');
 const desactivar_usuario = document.querySelector('#desactivar__usuario');
 const lateral_perfil = document.querySelector('#barra-lateral__perfil');
->>>>>>> 9d902c0e327c745cdadb7411a1571fa2ed6933f7
 
 
 const perfil_opcion = document.querySelectorAll('.perfil_opcion')
