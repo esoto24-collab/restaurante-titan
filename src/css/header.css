@@ -173,3 +173,39 @@ header a:visited {
   font-size: 1rem;
   letter-spacing: 2px
 }
+
+.usuario__opciones {
+  position: absolute;
+  right: 2%;
+  top: 111%;
+  border-radius: 16px;
+  border: var(--borde);
+  background-color: var(--rojo);
+}
+
+.section__user{
+  position: relative;
+}
+
+.usuario__opciones > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--blanco);
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+.usuario__opciones > ul {
+  margin: 0.8vh 1.5vh;
+  padding: 0.6vh 1.2vh;
+}
+
+.lista__desplegable {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  gap: 1vh;
+}

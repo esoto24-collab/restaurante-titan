@@ -1,3 +1,5 @@
+import { numeroUsuarios} from "./gestorUsuarios.js";
+
 const body = document.body;
 
 const botones = ['Pedido', 'Cliente', 'Platillo'];
@@ -16,7 +18,7 @@ const datos = [
   },
   {
     titulo: 'CLIENTES',
-    numero: 197,
+    numero: 20,
   },
 ];
 
@@ -28,7 +30,7 @@ export function generarDashboard() {
   body.classList.add('dashboard');
   const barra_lateral = document.createElement('div');
   barra_lateral.classList.add('dashboard_barra_lateral');
-  barra_lateral.classList.add('barra_lateral');
+  barra_lateral.classList.add('barra-lateral');
   barra_lateral.classList.add('alternativo');
 
 const lista = document.createElement('ul');
@@ -41,6 +43,9 @@ const lista = document.createElement('ul');
   const main = document.createElement('main');
   main.classList.add('contenido_dashboard')
 
+  const titulotePagina = document.createElement("h1");
+  titulotePagina.textContent="TITAN"
+  barra_lateral.appendChild(titulotePagina)
   barra_lateral.appendChild(lista)
   body.appendChild(barra_lateral);
 
@@ -66,10 +71,13 @@ const lista = document.createElement('ul');
     const contenidoTarjeta = document.createElement('h3');
     tituloTarjeta.textContent = datos[i].titulo
     contenidoTarjeta.textContent = datos[i].numero
+    if(i == 3){
+      contenidoTarjeta.textContent = numeroUsuarios();
+    }
     t.appendChild(tituloTarjeta)
     t.appendChild(contenidoTarjeta)
     tarjetas.appendChild(t);
-    console.log('ey');
+
   }
 
   contenido_superior.classList.add("superior")

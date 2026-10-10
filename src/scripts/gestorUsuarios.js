@@ -7,3 +7,7 @@ export function guardarUsuario(usuario) {
 export function obtenerUsuarios() {
   return usuarios;
 }
+
+export function numeroUsuarios(){
+  return usuarios.length;
+}

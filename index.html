@@ -70,9 +70,20 @@
         <button id="crear__cuenta">Crear Cuenta</button>
         <button id="iniciar__sesion">Iniciar Sesión</button>
       </div>
-      <div class="usuario ivisible" id="usuario">
-        <div id="usuario__letra">N</div>
-        <p id="usuario__nombre">Novato</p>
+      <div class="section__user">
+        <div class="usuario ivisible" id="usuario">
+          <div id="usuario__letra">N</div>
+          <p id="nombre__usuario">Novato</p>
+        </div>
+        <div id="user__options" class="usuario__opciones invisible">
+          <ul>
+            <li>Carrito</li>
+            <li>Pedidos</li>
+            <li>Configuracion</li>
+            <li id="option__dashboard">Dashboard</li>
+            <li id="desactivar__usuario">Salir</li>
+          </ul>
+        </div>
       </div>
       <div class="menu__hamburguesa" id="menu__hamburguesa">
         <img
@@ -83,15 +94,6 @@
           width="45"
           height="45"
         />
-      </div>
-      <div id="user__options" class="usuario__opciones invisible">
-        <ul>
-          <li>Carrito</li>
-          <li>Pedidos</li>
-          <li>Configuracion</li>
-          <li>Dashboard</li>
-          <li id="desactivar__usuario">Salir</li>
-        </ul>
       </div>
     </header>
     <main id="main"></main>
@@ -115,7 +117,7 @@
       </div>
       <p>© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS RESERVADOS.</p>
     </footer>
-    <div class="barra-lateral" id="barra-lateral">
+    <div class="barra-lateral invisible" id="barra-lateral">
       <div class="barra-lateral__superior">
         <img
           src="./src/assets/img/TITAN-TITULO-LETRAS-SVG.svg"
@@ -134,14 +136,14 @@
           <li id="barra-lateral__crear">Crear Cuenta</li>
           <li id="barra-lateral__iniciar">Iniciar Sesion</li>
         </div>
-          <ul class="lista__desplegable">
-            <li class="invisible" id="barra-lateral__perfil">Perfil</li>
-            <li class="invisible perfil__opcion">Carrito</li>
-            <li class="invisible perfil__opcion">Pedidos</li>
-            <li class="invisible perfil__opcion">Configuracion</li>
-            <li class="invisible perfil__opcion">Dashboard</li>
-            <li class="invisible perfil__opcion">Salir</li>
-          </ul>
+        <ul class="lista__desplegable invisibl">
+          <li id="barra-lateral__perfil">Perfil</li>
+          <li class="invisible perfil__opcion">Carrito</li>
+          <li class="invisible perfil__opcion">Pedidos</li>
+          <li class="invisible perfil__opcion">Configuracion</li>
+          <li class="invisible perfil__opcion" id="dashboard__lateral">Dashboard</li>
+          <li class="invisible perfil__opcion">Salir</li>
+        </ul>
       </ul>
     </div>
     <script type="module" src="./src/scripts/index.js"></script>

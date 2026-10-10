@@ -20,13 +20,12 @@ const salir = document.querySelector('#salir');
 const lateral_menu = document.querySelector('#barra-lateral__menu');
 const menu_hamburguesa = document.querySelector('#menu__hamburguesa');
 const usuario = document.querySelector('#usuario');
-const dashboard_lateral = document.querySelector("#dashboard_lateral")
+const dashboard_lateral = document.querySelector('#dashboard__lateral');
 const user_options = document.querySelector('#user__options');
 const desactivar_usuario = document.querySelector('#desactivar__usuario');
 const lateral_perfil = document.querySelector('#barra-lateral__perfil');
-
-
-const perfil_opcion = document.querySelectorAll('.perfil_opcion')
+const option__dashboard = document.querySelector('#option__dashboard');
+const perfil_opcion = document.querySelectorAll('.perfil__opcion');
 
 generarInicio();
 generarRedesSociales();
@@ -71,9 +70,10 @@ salir.addEventListener('click', () => {
   body.classList.toggle('shadow');
 });
 
-usuario.addEventListener('click', () => {
+usuario.addEventListener('mouseenter', () => {
   user_options.classList.toggle('invisible');
 });
+
 
 desactivar_usuario.addEventListener('click', () => {
   console.log('Desactivar Usuario');
@@ -81,14 +81,21 @@ desactivar_usuario.addEventListener('click', () => {
 });
 
 lateral_perfil.addEventListener('click', () => {
-  for(let i=0; i<perfil_opcion.length; i++){
-    perfil_opcion[i].classList.toggle('invisible')
+  console.log('ey');
+  for (let i = 0; i < perfil_opcion.length; i++) {
+    perfil_opcion[i].classList.toggle('invisible');
   }
 });
 
-dashboard_lateral.addEventListener("click",()=>{
+
+dashboard_lateral.addEventListener('click', () => {
   generarDashboard();
-})
+});
 
-generarDashboard();
 
+option__dashboard.addEventListener('click', () => {
+  console.log('ey');
+  generarDashboard();
+});
+
+//generarDashboard();
