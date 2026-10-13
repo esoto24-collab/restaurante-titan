@@ -1,11 +1,42 @@
 import crearMenu from './crearMenu.js';
 
 const categorias = [
-  { nombre: 'Hamburguesa', class: 'hamburguesa', url: './src/assets/img/hamburguesota.jpg', alt: 'Imagen de hamburguesa gigante'},
-  { nombre: 'Pizza',  class: 'pizza', url: './src/assets/img/pizza.jpg', alt: 'Imagen de pizza gigante'},
-  { nombre: 'Alitas',  class: 'alitas', url: './src/assets/img/alitas.jpg', alt: 'Imagen de una gran cantidad de alitas'},
-  { nombre: 'Sushi',  class: 'sushi', url: './src/assets/img/suchi.jpg', alt: 'Imagen de un gran rollo de sushi'},
-  { nombre: 'Papas',  class: 'papas', url: './src/assets/img/papasGigantes.jpg', alt: 'Imagen de unas papa fritas muy largas'},
+  {
+    nombre: 'Hamburguesa',
+    class: 'hamburguesa',
+    url: './src/assets/img/hamburguesota.jpg',
+    alt: 'Imagen de hamburguesa gigante',
+  },
+  {
+    nombre: 'Pizza',
+    class: 'pizza',
+    url: './src/assets/img/pizza.jpg',
+    alt: 'Imagen de pizza gigante',
+  },
+  {
+    nombre: 'Alitas',
+    class: 'alitas',
+    url: './src/assets/img/alitas.jpg',
+    alt: 'Imagen de una gran cantidad de alitas',
+  },
+  {
+    nombre: 'Sushi',
+    class: 'sushi',
+    url: './src/assets/img/suchi.jpg',
+    alt: 'Imagen de un gran rollo de sushi',
+  },
+  {
+    nombre: 'Papas',
+    class: 'papas',
+    url: './src/assets/img/papasGigantes.jpg',
+    alt: 'Imagen de unas papa fritas muy largas',
+  },
+  {
+    nombre: 'Papas',
+    class: 'papas',
+    url: './src/assets/img/papasGigantes.jpg',
+    alt: 'Imagen de unas papa fritas muy largas',
+  },
 ];
 
 const crearTarjetas = () => {
@@ -22,7 +53,7 @@ const crearTarjetas = () => {
     imagenTarjeta.src = categorias[i].url;
     imagenTarjeta.alt = categorias[i].alt;
     imagenTarjeta.loading = 'lazy';
-    div.classList.add(categorias[i].class)
+    div.classList.add(categorias[i].class);
     informativo.appendChild(nombreProducto);
     div.appendChild(imagenTarjeta);
     div.appendChild(informativo);

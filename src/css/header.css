@@ -88,6 +88,7 @@ h1 {
   padding: 3px 20px;
   cursor: pointer;
   transition: all 100ms ease-out !important;
+  border-radius: var(--radio-medio);
 }
 
 .bts__header > button:hover {

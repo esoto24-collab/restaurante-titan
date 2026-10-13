@@ -9,12 +9,13 @@
 }
 
 .tarjetas.inicio {
-  grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
   grid-auto-rows: 37.5vh;
 }
 
 .tarjetas > div {
   border: var(--borde);
+  border-radius: var(--radio-medio);
   overflow: hidden;
   box-shadow: var(--shadow);
   position: relative;
@@ -48,7 +49,7 @@
 }
 
 .tarjetas > div:hover > img {
-  transform: scale(1.2, 1.2);
+  transform: scale(1.1, 1.1);
 }
 
 .tarjetas.inicio > div > img {
@@ -181,7 +182,7 @@ tr:hover {
   }
 
   .tarjetas.inicio {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     grid-auto-rows: 37.5vh;
   }
 

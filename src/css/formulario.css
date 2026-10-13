@@ -61,6 +61,7 @@
 
 .main__formulario button {
   border: var(--borde);
+  border-radius: var(--radio-medio);
   box-shadow: 3px 3px 0 black;
   padding: 15px 20px;
   background-color: var(--amarrillo);

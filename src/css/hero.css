@@ -20,6 +20,7 @@
 .hero > button {
   background-color: var(--naranajaFuerte);
   border: var(--borde);
+  border-radius: var(--radio-medio);
   font-size: x-large;
   font-family: var(--subtitulo);
   padding: 5px 45px;

@@ -17,6 +17,7 @@
   --negro: #000000;
   --borde-small: 2px solid var(--negro);
   --borde: 3px solid var(--negro);
+  --radio-medio: 7px;
   --shadow-small: 2px 2px 0 var(--negro);
   --shadow: 3px 3px 0 var(--negro);
   --shadow-hover: 5px 5px 0 var(--negro);
