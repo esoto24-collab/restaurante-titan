@@ -12,7 +12,7 @@ header {
 header > nav > ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: var(--gap-medio);
   color: white;
   padding: 0;
 }
@@ -71,7 +71,7 @@ h1 {
 
 .bts__header {
   display: flex;
-  gap: 20px;
+  gap: var(--gap-medio);
   flex-flow: wrap;
 }
 
@@ -172,7 +172,7 @@ header a:visited {
 .usuario > p {
   line-height: 1;
   font-size: 1rem;
-  letter-spacing: 2px
+  letter-spacing: 2px;
 }
 
 .usuario__opciones {
@@ -184,7 +184,7 @@ header a:visited {
   background-color: var(--rojo);
 }
 
-.section__user{
+.section__user {
   position: relative;
 }
 
@@ -209,4 +209,19 @@ header a:visited {
   display: flex;
   flex-flow: column;
   gap: 1vh;
+}
+
+@media (max-width: 1000px) {
+  header > nav > ul {
+    gap: var(--gap-chico);
+  }
+
+  header{
+    padding: 20px;
+  }
+
+  .bts__header{
+     gap: var(--gap-chico);
+     align-self: center;
+  }
 }

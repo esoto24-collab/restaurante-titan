@@ -224,6 +224,8 @@ tr:hover {
   }
 }
 
+
+
 .barra-lateral {
   position: absolute;
   bottom: 0;
@@ -461,4 +463,13 @@ aside{
 .contenido_dashboard > .datos_tarjetas > div > h3{
   font-size: x-large;
   font-weight: bolder;
+}
+
+@media (max-width: 400px) {
+
+  .tarjetas.inicio {
+    grid-template-columns: repeat(auto-fill, 100%);
+    grid-auto-rows: 50vh;
+  }
+
 }
