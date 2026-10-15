@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ball {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+        transition: transform 1s ease-in;
+      }
+
+      body {
+        height: 100dvh;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball"></div>
+  </body>
+  <script>
+    const ball = document.querySelector('.ball');
+    let x = 0;
+    let y = 0;
+    const paso = 50;
+
+    document.addEventListener('keydown', (e) => {
+      const maxX = window.innerWidth - ball.offsetWidth;
+      const maxY = window.innerHeight - ball.offsetHeight;
+
+      switch (e.key) {
+        case 'w':
+          y -= paso;
+          break;
+        case 's':
+          y += paso;
+          break;
+        case 'a':
+          x -= paso;
+          break;
+        case 'd':
+          x += paso;
+          break;
+      }
+
+      x = Math.max(0, Math.min(x, maxX));
+      y = Math.max(0, Math.min(y, maxY));
+
+      ball.style.transform = "translate("+x+"px, "+y+"px)";
+    });
+  </script>
+</html>

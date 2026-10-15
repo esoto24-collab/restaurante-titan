@@ -5,6 +5,7 @@ import formulario from './crearFormNewUser.js';
 import formularioLogin from './crearFormLogin.js';
 import crearMenu from './crearMenu.js';
 import { generarDashboard } from './dashboard.js';
+import { crearTarjetasJuegos } from './juegos.js';
 
 const body = document.body;
 const inicio = document.querySelector('#inicio');
@@ -26,6 +27,7 @@ const desactivar_usuario = document.querySelector('#desactivar__usuario');
 const lateral_perfil = document.querySelector('#barra-lateral__perfil');
 const option__dashboard = document.querySelector('#option__dashboard');
 const perfil_opcion = document.querySelectorAll('.perfil__opcion');
+const juegos = document.querySelector("#juegos")
 
 generarInicio();
 generarRedesSociales();
@@ -97,5 +99,9 @@ option__dashboard.addEventListener('click', () => {
   console.log('ey');
   generarDashboard();
 });
+
+juegos.addEventListener("click",()=>{
+  crearTarjetasJuegos()
+})
 
 //generarDashboard();

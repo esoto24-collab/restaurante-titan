@@ -116,11 +116,12 @@ header a:visited {
   padding: 8px;
   border-radius: 16px;
   cursor: pointer;
+  transition: transform 1s ease-in;
 }
 
 .menu__hamburguesa:hover {
   transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-ñhover);
 }
 
 .menu__hamburguesa > img {

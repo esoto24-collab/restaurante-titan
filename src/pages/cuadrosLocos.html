@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap;
+        min-height: 100dvh;
+        background-color: black;
+      }
+
+      .contenedor {
+        display: flex;
+        flex-flow: wrap;
+        width: 600px;
+        height: 600px;
+      }
+      .cuadro {
+        width: 300px;
+        height: 300px;
+      }
+
+      @keyframes size {
+        0% {
+          transform: scale(1);
+        }
+
+        25% {
+          transform: scale(0.5);
+          background-color: lightcoral;
+        }
+
+        50% {
+          transform: scale(0.25);
+        }
+
+        75% {
+          transform: scale(0.5);
+          background-color: darkred;
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .red {
+        background-color: red;
+        animation: size 10s ease-out infinite;
+      }
+
+      @keyframes giro {
+        0% {
+          transform: rotate(0);
+        }
+
+        25% {
+          transform: rotate(90deg);
+          background-color: lightblue;
+        }
+
+        50% {
+          transform: rotate(180deg);
+        }
+
+        75% {
+          transform: rotate(270deg);
+          background-color: darkblue;
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .blue {
+        background-color: blue;
+        animation: giro 4s ease-in infinite;
+      }
+
+      @keyframes deformacion {
+        0% {
+          transform: skewX(45deg);
+        }
+
+        25% {
+          transform: skewX(90deg);
+          background-color: lightgreen;
+        }
+
+        50% {
+          transform: skewX(135deg);
+        }
+
+        75% {
+          transform: skewX(180deg);
+          background-color: darkgreen;
+        }
+
+        100% {
+          transform: skewX(225deg);
+        }
+      }
+
+      @keyframes deformacion2 {
+        0% {
+          transform: skewY(315deg);
+        }
+
+        25% {
+          transform: skewY(270deg);
+          background-color: lightyellow;
+        }
+
+        50% {
+          transform: skewY(225deg);
+        }
+
+        75% {
+          transform: skewY(180deg);
+          background-color: darkgoldenrod;
+        }
+
+        100% {
+          transform: skewY(135deg);
+        }
+      }
+      .green {
+        background-color: green;
+        animation: deformacion 1s ease-in infinite;
+      }
+
+      .yelow {
+        background-color: yellow;
+        animation: deformacion2 20s ease-in infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="cuadro red"></div>
+      <div class="cuadro blue"></div>
+      <div class="cuadro green"></div>
+      <div class="cuadro yelow"></div>
+    </div>
+  </body>
+</html>

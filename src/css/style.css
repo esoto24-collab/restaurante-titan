@@ -473,3 +473,25 @@ aside{
   }
 
 }
+
+.main__juegos{
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.main__juegos > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  grid-auto-rows: 120px;
+  gap: 20px;
+}
+
+.main__juegos > div  > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: var(--radio-medio);
+}
