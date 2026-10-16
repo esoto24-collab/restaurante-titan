@@ -34,3 +34,12 @@
   --naranajaFuerte: #e6451a;
   --efectoComic: radial-gradient(rgba(0, 0, 0, 0.2) 0.2px, transparent 1.5px);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
