@@ -220,37 +220,10 @@ tr:hover {
     width: 90%;
   }
 
-  header {
-    padding-bottom: 3vh;
-  }
 
   .tarjetas.inicio {
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     grid-auto-rows: 37.5vh;
-  }
-
-  .menu__hamburguesa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 150ms ease-in;
-  }
-
-  .menu__hamburguesa:hover {
-    background-color: var(--blanco);
-  }
-
-  .bts__header {
-    display: none;
-  }
-
-  .navbar {
-    display: none;
-  }
-
-  header {
-    justify-content: space-between;
-    padding: 1rem 1rem;
   }
 
   .hero {
@@ -262,9 +235,6 @@ tr:hover {
     height: 35px;
   }
 
-  .usuario {
-    display: none;
-  }
 }
 
 .barra-lateral {

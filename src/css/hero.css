@@ -15,22 +15,25 @@
   text-shadow: 6px 4px 5px rgba(255, 255, 255, 0.267);
   flex-flow: column;
   text-align: center;
-}
 
-.hero > button {
-  background-color: var(--naranajaFuerte);
-  border: var(--borde);
-  border-radius: var(--radio-medio);
-  font-size: x-large;
-  font-family: var(--subtitulo);
-  padding: 5px 45px;
-  box-shadow: 5px 5px 0 black;
-  cursor: pointer;
-  transition: all 100ms ease-out !important;
-}
+  & button {
+    background-color: var(--naranajaFuerte);
+    border: var(--borde);
+    border-radius: var(--radio-medio);
+    font-size: x-large;
+    font-family: var(--subtitulo);
+    padding: 5px 45px;
+    box-shadow: 5px 5px 0 black;
+    cursor: pointer;
+    transition:
+      background-color 250ms,
+      transform 250ms,
+      box-shadow 250ms ease-out;
 
-.hero > button:hover {
-  background-color: var(--amarrillo);
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 black;
+    &:hover {
+      background-color: var(--amarrillo);
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 black;
+    }
+  }
 }

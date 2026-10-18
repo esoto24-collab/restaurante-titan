@@ -32,9 +32,9 @@ const categorias = [
     alt: 'Imagen de unas papa fritas muy largas',
   },
   {
-    nombre: 'Papas',
+    nombre: 'boneless',
     class: 'papas',
-    url: './src/assets/img/papasGigantes.jpg',
+    url: './src/assets/img/bonele.jpg',
     alt: 'Imagen de unas papa fritas muy largas',
   },
 ];
