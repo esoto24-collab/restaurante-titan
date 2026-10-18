@@ -45,6 +45,18 @@ header {
         transform: translate(-2px, -2px);
         box-shadow: 7px 7px 0 black;
       }
+
+      &:focus-visible {
+        background-color: orange;
+        transform: translate(-2px, -2px);
+        box-shadow: 7px 7px 0 black;
+      }
+
+      &:active {
+        background-color: orange;
+        transform: translate(0px, 0px);
+        box-shadow: 5px 5px 0 black;
+      }
     }
   }
 
@@ -179,8 +191,8 @@ header {
       display: none;
     }
 
-    .section__user{
-        display: none;
+    .section__user {
+      display: none;
     }
 
     .menu-hamburguesa {

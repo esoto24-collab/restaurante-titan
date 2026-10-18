@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img id="pedro" src="../assets/img/pedro.jpg" alt="" />
+  </body>
+  <script>
+    const sonidoPedro = new Audio(
+      '../assets/audio/la canción de pedro ｜｜ PEDRO - Raffaella Carrà, Jaxomy, Agatino Romero (Remix - Letra).mp3'
+    );
+    const pedro = document.querySelector('#pedro');
+    let grados = 0;
+    const movimiento = 4;
+    let intervaloRotacion = null; 
+
+    document.addEventListener('click', () => {
+      sonidoPedro.currentTime = 0;
+      sonidoPedro.play()
+      if (intervaloRotacion) return;
+
+      intervaloRotacion = setInterval(() => {
+        grados += movimiento;
+        pedro.style.transform = `rotate(${grados}deg)`;
+      }, 50);
+    });
+  </script>
+</html>

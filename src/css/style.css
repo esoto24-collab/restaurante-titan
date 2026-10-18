@@ -499,3 +499,9 @@ aside {
   border: 1px solid black;
   border-radius: var(--radio-medio);
 }
+
+
+*:focus-visible {
+  outline: 3px solid var(--amarrillo);
+  outline-offset: 2px;
+}

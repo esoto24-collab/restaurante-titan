@@ -27,11 +27,9 @@ footer {
       gap: 20px;
     }
 
-    p{
+    p {
       text-align: center;
     }
-
-
   }
 
   p {
@@ -53,6 +51,10 @@ footer {
   mask-position: center;
 
   &:hover {
+    background-color: var(--amarrillo);
+  }
+
+  &:focus-visible {
     background-color: var(--amarrillo);
   }
 }
