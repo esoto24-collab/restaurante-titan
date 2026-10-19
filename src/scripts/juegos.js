@@ -17,6 +17,10 @@ const juegos = [
     name: 'Pedro',
     direccion: '/src/pages/pedro.html',
   },
+  {
+    name: 'Snake',
+    direccion: '/src/pages/snake.html'
+  }
 ];
 
 export const crearTarjetasJuegos = () => {

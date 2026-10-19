@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100dvh;
+        background-color: #578a34;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr;
+        grid-template-areas:
+          'header'
+          'main';
+
+        .cabeza {
+          background-color: blue;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+        }
+
+        header {
+          background-color: #4a752c;
+          display: flex;
+          padding: 10px 20px;
+          grid-area: header;
+
+          .puntajes {
+            display: flex;
+            gap: 40px;
+
+            p {
+              color: white;
+              font-size: large;
+              margin: 0px;
+              display: flex;
+              gap: 5px;
+              align-items: end;
+
+              &::before {
+                content: '';
+                display: block;
+                height: 40px;
+                width: 40px;
+                background-image: url('../assets/img/apple-svgrepo-com.svg');
+                background-position: center;
+                background-size: cover;
+              }
+            }
+
+            .trofeo {
+              &::before {
+                background-image: url('../assets/img/light-svgrepo-com.svg');
+              }
+            }
+          }
+        }
+
+        main {
+          grid-area: main;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .area {
+            background-color: #aad751;
+            width: 500px;
+            height: 500px;
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(5, 100px);
+
+            & :nth-child(even) {
+              background-color:  #a2d149;
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="puntajes">
+        <p id="manzanas">0</p>
+        <p class="trofeo" id="record">0</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="area" id="area">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="cabeza" id="snake"></div>
+    </main>
+  </body>
+  <script>
+    const snake = document.querySelector('#snake');
+    const area = document.querySelector('#area');
+    let x = 0;
+    let y = 0;
+    const paso = 100;
+
+    document.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case 'w':
+          console.log('ey');
+          y -= paso;
+          break;
+        case 's':
+          console.log('ey ey');
+          y += paso;
+          break;
+        case 'a':
+          console.log('ey ey ey');
+          x -= paso;
+          break;
+        case 'd':
+          console.log('ey ey ey');
+          x += paso;
+          break;
+      }
+
+      snake.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+      snake.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+    });
+  </script>
+</html>
