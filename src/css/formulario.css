@@ -8,7 +8,7 @@
 }
 
 .main__formulario > div {
-  background-color: white;
+  background-color: var(--color-fondo-tarjeta);
   margin: 20px 0px;
   width: max(600px, 50%);
   display: flex;
@@ -25,7 +25,7 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
-  color: var(--rojo);
+  color: var(--color-titulo-form);
   font-family: var(--titulo);
   font-size: 2rem;
 }
@@ -41,18 +41,19 @@
 .main__formulario input {
   border-radius: 8px;
   border: var(--borde);
-  box-shadow: 5px 5px 0 black;
+  box-shadow: 5px 5px 0 var(--color-sombra);
   display: block;
   height: 60px;
-  transition: all 100ms ease-out !important;
+  transition: all 100ms ease-out;
 }
 
 .main__formulario input:focus {
-  box-shadow: 8px 8px 0 black;
+  box-shadow: 8px 8px 0 var(--color-sombra);
 }
 
 .main__formulario label {
   font-family: var(--subtitulo);
+  color: var(--color-titulo-form);
   display: flex;
   flex-flow: column;
   width: 100%;
@@ -62,18 +63,18 @@
 .main__formulario button {
   border: var(--borde);
   border-radius: var(--radio-medio);
-  box-shadow: 3px 3px 0 black;
+  box-shadow: 3px 3px 0 var(--color-sombra);
   padding: 15px 20px;
-  background-color: var(--amarrillo);
+  background-color: var(--color-boton-form);
   font-weight: 900;
   width: min(80%, 20rem);
   margin-bottom: 40px;
   cursor: pointer;
-  transition: all 100ms ease-out !important;
+  transition: all 100ms ease-out;
 }
 
 .main__formulario button:hover {
-  background-color: var(--amarrillo);
+  background-color: var(--color-boton-form);
   transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 black;
+  box-shadow: 7px 7px 0 var(--color-sombra);
 }

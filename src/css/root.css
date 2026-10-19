@@ -33,6 +33,10 @@
   --blanco: #ffffff;
   --naranajaFuerte: #e6451a;
   --efectoComic: radial-gradient(rgba(0, 0, 0, 0.2) 0.2px, transparent 1.5px);
+  --color-fondo-tarjeta: #ffffff;
+  --color-sombra: #000000;
+  --color-titulo-form: #d62828;
+  --color-boton-form: #fcbf49;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -42,4 +46,13 @@
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo-tarjeta: #1e1e1e;
+    --color-sombra: #0a0a0a;
+    --color-titulo-form: #ff4d4d;
+    --color-boton-form: #d4a373;
+  }
 }
