@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  font-size: 4rem;
+  font-size: clamp(3rem, 0.2rem + 10vw, 6rem);
   text-shadow: 6px 4px 5px rgba(255, 255, 255, 0.267);
   flex-flow: column;
   text-align: center;
@@ -20,7 +20,7 @@
     background-color: var(--naranajaFuerte);
     border: var(--borde);
     border-radius: var(--radio-medio);
-    font-size: x-large;
+    font-size: clamp(1.5rem, 0.2rem + 6vw, 2rem);
     font-family: var(--subtitulo);
     padding: 5px 45px;
     box-shadow: 5px 5px 0 black;

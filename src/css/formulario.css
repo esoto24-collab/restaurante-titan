@@ -10,7 +10,7 @@
 .main__formulario > div {
   background-color: white;
   margin: 20px 0px;
-  width: 50%;
+  width: max(600px, 50%);
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -35,7 +35,7 @@
   gap: 30px;
   flex-flow: column;
   align-items: center;
-  width: 60%;
+  width: calc(70% - 1rem);
 }
 
 .main__formulario input {
@@ -66,7 +66,7 @@
   padding: 15px 20px;
   background-color: var(--amarrillo);
   font-weight: 900;
-  width: 100%;
+  width: min(80%, 20rem);
   margin-bottom: 40px;
   cursor: pointer;
   transition: all 100ms ease-out !important;
