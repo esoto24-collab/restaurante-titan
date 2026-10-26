@@ -27,6 +27,8 @@ header {
     flex-flow: wrap;
 
     button {
+      background-color: var(--blanco);
+      color: var(--negro);
       font-family: var(--subtitulo);
       font-weight: 800;
       border: 3px solid var(--negro);
@@ -43,44 +45,52 @@ header {
       &:hover {
         background-color: orange;
         transform: translate(-2px, -2px);
-        box-shadow: 7px 7px 0 black;
+        box-shadow: 7px 7px 0 var(--negro);
       }
 
       &:focus-visible {
         background-color: orange;
         transform: translate(-2px, -2px);
-        box-shadow: 7px 7px 0 black;
+        box-shadow: 7px 7px 0 var(--negro);
       }
 
       &:active {
         background-color: orange;
         transform: translate(0px, 0px);
-        box-shadow: 5px 5px 0 black;
+        box-shadow: 5px 5px 0 var(--negro);
       }
     }
   }
 
+  .cuadritos{
+    display: flex;
+    gap: 20px;
+  }
+
+  .modo,
   .menu-hamburguesa {
     background-color: var(--amarrillo);
     border: var(--borde);
     box-shadow: var(--shadow);
-    display: none;
     width: 50px;
     height: 50px;
     padding: 8px;
     border-radius: 16px;
     cursor: pointer;
-    transition: transform 1s ease-in;
 
     &:hover {
       transform: translate(-2px, -2px);
-      box-shadow: var(--shadow-ñhover);
+      box-shadow: var(--shadow-hover);
     }
 
     img {
       width: 100%;
       height: 100%;
     }
+  }
+
+  .menu-hamburguesa {
+    display: none;
   }
 
   .section__user {

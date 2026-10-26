@@ -1,4 +1,5 @@
 body {
+  background-color: var(--blanco);
   position: relative;
   font-family: var(--texto);
   margin: 0px;

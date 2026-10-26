@@ -87,7 +87,9 @@ h1 {
   font-size: large;
   padding: 3px 20px;
   cursor: pointer;
-  transition: all 100ms ease-out !important;
+  color: var(--negro);
+  background-color: red;
+  transition: all 100ms ease-out;
   border-radius: var(--radio-medio);
 }
 

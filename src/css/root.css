@@ -39,13 +39,29 @@
   --color-boton-form: #fcbf49;
 }
 
+:root.dark {
+  --negro: #ffffff;
+  --blanco: #000000;
+  --color-fondo-tarjeta: #000000;
+  --color-sombra: #ffffff;
+  --borde-small: 2px solid var(--negro);
+  --borde: 3px solid var(--negro);
+  --shadow-small: 2px 2px 0 var(--negro);
+  --shadow: 3px 3px 0 var(--negro);
+  --shadow-hover: 5px 5px 0 var(--negro);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
