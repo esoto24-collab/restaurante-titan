@@ -32,33 +32,72 @@ const categorias = [
     alt: 'Imagen de unas papa fritas muy largas',
   },
   {
-    nombre: 'boneless',
-    class: 'papas',
+    nombre: 'Boneless',
+    class: 'boneless',
     url: './src/assets/img/bonele.jpg',
-    alt: 'Imagen de unas papa fritas muy largas',
+    alt: 'Imagen de un boneless muy grande',
   },
 ];
 
-const crearTarjetas = () => {
+const contenedorBusqueda = document.createElement('div');
+contenedorBusqueda.classList.add('contenedor-busqueda');
+
+const labelBusqueda = document.createElement('label');
+labelBusqueda.textContent = 'Búsqueda';
+labelBusqueda.setAttribute('for', 'input-buscador');
+labelBusqueda.classList.add('label-busqueda');
+
+const inputBusqueda = document.createElement('input');
+inputBusqueda.id = 'input-buscador';
+inputBusqueda.classList.add('buscador-menu');
+inputBusqueda.placeholder = 'Buscar categoría...';
+
+contenedorBusqueda.appendChild(labelBusqueda);
+contenedorBusqueda.appendChild(inputBusqueda);
+
+const crearTarjetas = (datos = categorias) => {
   const tarjetas = document.querySelector('#tarjetas');
-  tarjetas.innerHTML = '';
-  tarjetas.classList.add('inicio');
-  for (let i = 0; i < categorias.length; i++) {
+  
+  if (!tarjetas.contains(contenedorBusqueda)) {
+    tarjetas.classList.add('inicio');
+    tarjetas.appendChild(contenedorBusqueda);
+  }
+
+  Array.from(tarjetas.children).forEach(nodo => {
+    if (nodo !== contenedorBusqueda) {
+      nodo.remove();
+    }
+  });
+
+  datos.forEach(categoria => {
     const div = document.createElement('div');
     const imagenTarjeta = document.createElement('img');
     const informativo = document.createElement('div');
     const nombreProducto = document.createElement('p');
+    
     div.addEventListener('click', crearMenu);
-    nombreProducto.textContent = categorias[i].nombre;
-    imagenTarjeta.src = categorias[i].url;
-    imagenTarjeta.alt = categorias[i].alt;
+    
+    div.style.cursor = 'pointer'; 
+
+    nombreProducto.textContent = categoria.nombre;
+    imagenTarjeta.src = categoria.url;
+    imagenTarjeta.alt = categoria.alt;
     imagenTarjeta.loading = 'lazy';
-    div.classList.add(categorias[i].class);
+    div.classList.add(categoria.class);
+    
     informativo.appendChild(nombreProducto);
     div.appendChild(imagenTarjeta);
     div.appendChild(informativo);
     tarjetas.appendChild(div);
-  }
+  });
 };
+
+inputBusqueda.addEventListener('input', (e) => {
+    const termino = e.target.value.toLowerCase();
+    const resultados = categorias.filter(item => 
+        item.nombre.toLowerCase().includes(termino)
+    );
+    crearTarjetas(resultados);
+});
 
 export default crearTarjetas;

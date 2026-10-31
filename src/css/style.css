@@ -1,3 +1,45 @@
+.contenedor-busqueda {
+  background-color: var(--naranajaFuerte);
+  grid-column: 1 / -1; 
+  align-self: center;  
+  justify-self: center; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px; 
+  padding: 14px 20px;
+  margin-bottom: 2rem; 
+  cursor:default; 
+}
+
+.label-busqueda {
+  font-family: var(--titulo); 
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--negro);
+  margin-bottom: 8px;
+  align-self: center;
+}
+
+.buscador-menu {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border: var(--borde);
+  border-radius: var(--radio-medio); 
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: 
+    box-shadow 250ms,
+    transform 250ms ease-out;
+}
+
+.buscador-menu:focus {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 black;
+}
+
 .tarjetas {
   background-color: var(--blanco);
   padding: 4vh;
@@ -5,7 +47,6 @@
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-auto-rows: 50vh;
   gap: 5vh;
-  cursor: pointer;
 }
 
 .tarjetas.inicio {
