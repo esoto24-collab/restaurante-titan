@@ -27,7 +27,10 @@ const desactivar_usuario = document.querySelector('#desactivar__usuario');
 const lateral_perfil = document.querySelector('#barra-lateral__perfil');
 const option__dashboard = document.querySelector('#option__dashboard');
 const perfil_opcion = document.querySelectorAll('.perfil__opcion');
-const juegos = document.querySelector("#juegos")
+const juegos = document.querySelector('#juegos');
+const cambiarModo = document.querySelector('#cambiarModo');
+const root = document.documentElement;
+const iconoModo = document.querySelector('#iconoModo');
 
 generarInicio();
 generarRedesSociales();
@@ -76,7 +79,6 @@ usuario.addEventListener('mouseenter', () => {
   user_options.classList.toggle('invisible');
 });
 
-
 desactivar_usuario.addEventListener('click', () => {
   console.log('Desactivar Usuario');
   asignarPerfil(null);
@@ -89,19 +91,27 @@ lateral_perfil.addEventListener('click', () => {
   }
 });
 
-
 dashboard_lateral.addEventListener('click', () => {
   generarDashboard();
 });
-
 
 option__dashboard.addEventListener('click', () => {
   console.log('ey');
   generarDashboard();
 });
 
-juegos.addEventListener("click",()=>{
-  crearTarjetasJuegos()
-})
+juegos.addEventListener('click', () => {
+  crearTarjetasJuegos();
+});
+
+cambiarModo.addEventListener('click', () => {
+  console.log('dark');
+  root.classList.toggle('dark');
+  if (root.classList.contains('dark')) {
+    iconoModo.src = './src/assets/img/sun-svgrepo-com.svg';
+  } else {
+    iconoModo.src = './src/assets/img/moon-svgrepo-com.svg';
+  }
+});
 
 //generarDashboard();

@@ -14,6 +14,7 @@
 }
 
 .tarjetas > div {
+  color: var(--negro);
   border: var(--borde);
   border-radius: var(--radio-medio);
   overflow: hidden;
@@ -475,6 +476,7 @@ aside {
 }
 
 .main__juegos {
+  color: var(--negro);
   display: flex;
   flex-flow: column;
   text-align: center;
@@ -492,7 +494,7 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid var(--negro);
   border-radius: var(--radio-medio);
 }
 
