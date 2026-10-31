@@ -42,7 +42,7 @@ footer {
   width: 45px;
   height: 45px;
   background-color: white;
-  transition: all 70ms ease-out !important;
+  transition: all 70ms ease-out;
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;

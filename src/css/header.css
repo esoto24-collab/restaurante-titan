@@ -31,7 +31,7 @@ header > nav > ul > li::before {
   height: 2px;
   position: absolute;
   bottom: 0;
-  transition: all 0.5s ease !important;
+  transition: all 0.5s ease;
 }
 
 header > nav > ul > li:hover::before {
@@ -87,7 +87,7 @@ h1 {
   font-size: large;
   padding: 3px 20px;
   cursor: pointer;
-  transition: all 100ms ease-out !important;
+  transition: all 100ms ease-out;
   border-radius: var(--radio-medio);
 }
 
