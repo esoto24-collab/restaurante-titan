@@ -10,6 +10,7 @@ const inputs = {
     type: 'text',
     id: 'name',
     placeholder: 'Ingresa tu nombre...',
+    error: 'error-nombre-msg',
   },
 
   apellido: {
@@ -17,12 +18,14 @@ const inputs = {
     type: 'text',
     id: 'apellido',
     placeholder: 'Ingresa tu apellido...',
+    error: 'error-apellido-msg',
   },
 
   fecha_nacimiento: {
     titulo: 'Fecha de nacimiento',
     type: 'date',
     id: 'date',
+    error: 'error-fecha-nacimiento-msg',
   },
 
   email: {
@@ -30,6 +33,7 @@ const inputs = {
     type: 'email',
     id: 'email',
     placeholder: 'ejemplo@email.com',
+    error: 'error-email-msg',
   },
 
   password: {
@@ -57,8 +61,14 @@ const cajita = (dato) => {
   input.name = dato.id;
   input.id = dato.id;
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
+  input.dataset.errorPara = dato.error;
+
+  const span = document.createElement('span');
+  span.id=dato.error
+  span.textContent = 'eyy';
 
   label.appendChild(input);
+  label.appendChild(span);
   return label;
 };
 

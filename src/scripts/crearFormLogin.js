@@ -2,8 +2,8 @@ import generarInicio from './generarInicio.js';
 import { obtenerUsuarios } from './gestorUsuarios.js';
 import { asignarPerfil } from './perfil.js';
 
-const barra_lateral_perfil = document.querySelector("#lista__desplegable")
-const barra_lateral_formulario = document.querySelector("#barra-lateral__formulario")
+const barra_lateral_perfil = document.querySelector('#lista__desplegable');
+const barra_lateral_formulario = document.querySelector('#barra-lateral__formulario');
 const botones__header = document.querySelector('#botones__header');
 const usuario = document.querySelector('#usuario');
 const main = document.querySelector('#main');
@@ -15,6 +15,7 @@ const inputs = {
     type: 'email',
     id: 'email',
     placeholder: 'Ingresa tu email',
+    error: 'error-email-msg',
   },
 
   password: {
@@ -22,6 +23,7 @@ const inputs = {
     type: 'password',
     id: 'password',
     placeholder: 'Ingresa tu contraseña',
+    error: 'error-password-msg',
   },
 };
 
@@ -35,8 +37,14 @@ const cajita = (dato) => {
   input.name = dato.id;
   input.id = dato.id;
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
+  input.dataset.errorPara = dato.error;
+
+  const span = document.createElement('span');
+  span.textContent="uyy"
+  span.id = dato.error;
 
   label.appendChild(input);
+  label.appendChild(span);
   return label;
 };
 
@@ -50,7 +58,7 @@ const formularioLogin = () => {
   titulo.textContent = 'Iniciar Sesion';
 
   const form = document.createElement('form');
-  form.noValidate = true
+  form.noValidate = true;
   const btnSubmit = document.createElement('button');
   btnSubmit.type = 'submit';
   btnSubmit.textContent = 'Guardar';
