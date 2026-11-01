@@ -116,10 +116,10 @@ const formulario = () => {
     guardarUsuario(usuario);
 
     if (
-      mostrarError(nombre) ||
-      mostrarError(apellido) ||
-      mostrarError(date) ||
-      mostrarError(email) ||
+      mostrarError(nombre) &&
+      mostrarError(apellido) &&
+      mostrarError(date) &&
+      mostrarError(email) &&
       mostrarError(password)
     ) {
       form.reset();
