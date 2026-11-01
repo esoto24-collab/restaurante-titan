@@ -63,6 +63,10 @@ const cajita = (dato) => {
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
   input.dataset.errorPara = dato.error;
 
+  input.addEventListener("input",()=>{
+    mostrarError(input,input.value)
+  })
+
   const span = document.createElement('span');
   span.id=dato.error
   span.textContent = 'eyy';
@@ -127,5 +131,12 @@ const formulario = () => {
 
   main.appendChild(div);
 };
+
+
+function mostrarError(input,mensaje){
+  const mensajeError = document.getElementById(input.dataset.errorPara)
+  mensajeError.style.display = "block"
+  mensajeError.textContent = mensaje
+}
 
 export default formulario;
