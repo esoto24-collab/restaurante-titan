@@ -33,7 +33,7 @@ const cajita = (dato) => {
 
   const input = document.createElement('input');
   input.type = dato.type;
-  input.required = false;
+  input.required = true;
   input.name = dato.id;
   input.id = dato.id;
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');

@@ -63,12 +63,8 @@ const cajita = (dato) => {
   dato.placeholder != undefined ? (input.placeholder = dato.placeholder) : (input.placeholder = '');
   input.dataset.errorPara = dato.error;
 
-  input.addEventListener("input",()=>{
-    mostrarError(input,input.value)
-  })
-
   const span = document.createElement('span');
-  span.id=dato.error
+  span.id = dato.error;
   span.textContent = 'eyy';
 
   label.appendChild(input);
@@ -119,11 +115,19 @@ const formulario = () => {
     */
     guardarUsuario(usuario);
 
-    form.reset();
+    if (
+      mostrarError(nombre) ||
+      mostrarError(apellido) ||
+      mostrarError(date) ||
+      mostrarError(email) ||
+      mostrarError(password)
+    ) {
+      form.reset();
 
-    main.innerHTML = '';
-    formularioLogin();
-    console.log('Cuenta Generada');
+      main.innerHTML = '';
+      formularioLogin();
+      console.log('Cuenta Generada');
+    }
   });
 
   div.appendChild(titulo);
@@ -132,11 +136,18 @@ const formulario = () => {
   main.appendChild(div);
 };
 
+function mostrarError(input) {
+  const mensajeError = document.getElementById(input.dataset.errorPara);
+  mensajeError.style.display = 'block';
+  //mensajeError.textContent = mensaje;
 
-function mostrarError(input,mensaje){
-  const mensajeError = document.getElementById(input.dataset.errorPara)
-  mensajeError.style.display = "block"
-  mensajeError.textContent = mensaje
+  if (!input.checkValidity()) {
+    mensajeError.textContent = input.validationMessage;
+    console.log(input.validationMessage);
+    return false;
+  }
+
+  return true;
 }
 
 export default formulario;
