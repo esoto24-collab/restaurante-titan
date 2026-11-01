@@ -26,7 +26,6 @@ const inputs = {
 };
 
 const cajita = (dato) => {
-  console.log(dato);
   const label = document.createElement('label');
   label.textContent = dato.titulo;
 
@@ -51,6 +50,7 @@ const formularioLogin = () => {
   titulo.textContent = 'Iniciar Sesion';
 
   const form = document.createElement('form');
+  form.noValidate = true
   const btnSubmit = document.createElement('button');
   btnSubmit.type = 'submit';
   btnSubmit.textContent = 'Guardar';

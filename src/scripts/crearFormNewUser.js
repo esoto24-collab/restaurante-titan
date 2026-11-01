@@ -8,8 +8,6 @@ const inputs = {
   nombre: {
     titulo: 'Nombre',
     type: 'text',
-    //minlength: '2',
-    //maxlength: '50',
     id: 'name',
     placeholder: 'Ingresa tu nombre...',
   },
@@ -17,8 +15,6 @@ const inputs = {
   apellido: {
     titulo: 'Apellido',
     type: 'text',
-    //minlength: '2',
-    //maxlength: '50',
     id: 'apellido',
     placeholder: 'Ingresa tu apellido...',
   },
@@ -26,7 +22,6 @@ const inputs = {
   fecha_nacimiento: {
     titulo: 'Fecha de nacimiento',
     type: 'date',
-    //min: '1916-01-01',
     id: 'date',
   },
 
@@ -77,6 +72,7 @@ const formulario = () => {
   titulo.textContent = 'Crear Cuenta';
 
   const form = document.createElement('form');
+  form.noValidate = true;
   const btnSubmit = document.createElement('button');
   btnSubmit.type = 'submit';
   btnSubmit.textContent = 'Guardar';
@@ -96,7 +92,17 @@ const formulario = () => {
     const email = document.querySelector('#email');
     const password = document.querySelector('#password');
 
-    const usuario = crearUsuario(nombre.value, apellido.value, date.value, email.value,password.value);
+    const usuario = crearUsuario(
+      nombre.value,
+      apellido.value,
+      date.value,
+      email.value,
+      password.value
+    );
+    /*
+    const usuario = Object.fromEntries(new FormData(form));
+    console.log(usuario)
+    */
     guardarUsuario(usuario);
 
     form.reset();
