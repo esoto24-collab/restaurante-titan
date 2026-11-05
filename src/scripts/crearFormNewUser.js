@@ -11,6 +11,7 @@ const inputs = {
     id: 'name',
     placeholder: 'Ingresa tu nombre...',
     error: 'error-nombre-msg',
+    errorTexto: 'El campo contiene caracteres no validos',
   },
 
   apellido: {
@@ -19,6 +20,7 @@ const inputs = {
     id: 'apellido',
     placeholder: 'Ingresa tu apellido...',
     error: 'error-apellido-msg',
+    errorTexto: 'El campo contiene caracteres no validos',
   },
 
   fecha_nacimiento: {
@@ -44,7 +46,7 @@ const inputs = {
   },
 
   passwordRepeat: {
-    titulo: 'Constraseña 2',
+    titulo: 'Confirmar Constraseña',
     type: 'password',
     id: 'password__repeat',
     placeholder: 'NUNCA LA OLVIDES!!!!',
@@ -65,7 +67,7 @@ const cajita = (dato) => {
 
   const span = document.createElement('span');
   span.id = dato.error;
-  span.textContent = 'eyy';
+  span.textContent = dato.errorTexto;
 
   label.appendChild(input);
   label.appendChild(span);
