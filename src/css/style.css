@@ -1,19 +1,19 @@
 .contenedor-busqueda {
   background-color: var(--naranajaFuerte);
-  grid-column: 1 / -1; 
-  align-self: center;  
-  justify-self: center; 
+  grid-column: 1 / -1;
+  align-self: center;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px; 
+  max-width: 500px;
   padding: 14px 20px;
-  margin-bottom: 2rem; 
-  cursor:default; 
+  margin-bottom: 2rem;
+  cursor: default;
 }
 
 .label-busqueda {
-  font-family: var(--titulo); 
+  font-family: var(--titulo);
   font-size: 1.5rem;
   font-weight: 900;
   color: var(--negro);
@@ -27,10 +27,10 @@
   font-size: 1rem;
   background-color: #ffffff;
   border: var(--borde);
-  border-radius: var(--radio-medio); 
+  border-radius: var(--radio-medio);
   box-shadow: var(--shadow);
   outline: none;
-  transition: 
+  transition:
     box-shadow 250ms,
     transform 250ms ease-out;
 }
@@ -73,7 +73,7 @@
 }
 
 .tarjetas > .comida:hover {
-  transform: scale(1.03) translate(-15px,-15px);
+  transform: scale(1.03) translate(-15px, -15px);
   box-shadow: 18px 18px 0 var(--negro);
 }
 
@@ -93,14 +93,14 @@
   transition: transform 150ms ease-in-out;
 }
 
-.tarjetas > .comida > img{
+.tarjetas > .comida > img {
   position: static;
   left: none;
   width: 100%;
-  height: 50%; 
+  height: 50%;
 }
 
-.tarjetas > .comida:hover > img{
+.tarjetas > .comida:hover > img {
   transform: none;
 }
 
@@ -126,31 +126,46 @@
   transition: background-color 250ms ease-out;
 }
 
-
-.tarjetas > .comida > div{
+.tarjetas > .comida > div {
   position: static;
   left: none;
   width: 100%;
   height: 100%;
   opacity: 1;
-  font-weight: bold; 
+  font-weight: bold;
   font-size: 1.5rem;
+  flex-wrap: wrap;
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button{
+      border: var(--borde);
+      font-size: medium;
+      font-weight: normal;
+      padding: 0.5rem 1rem;
+      border-radius: 16px;
+    }
+  }
 }
 
-.tarjetas > .comida:nth-child(even) > div{
-  background-color: var(--blanco); 
+.tarjetas > .comida:nth-child(even) > div {
+  background-color: var(--blanco);
 }
 
-.tarjetas > .comida:nth-child(5n +2) > div{
-  background-color: pink; 
+.tarjetas > .comida:nth-child(5n + 2) > div {
+  background-color: pink;
 }
 
-.tarjetas > .comida:nth-child(5n +2):hover > div{
+.tarjetas > .comida:nth-child(5n + 2):hover > div {
   background-color: var(--amarrillo);
 }
 
-.tarjetas > .comida:nth-child(even):hover > div{
-  background-color: var(--amarrillo); 
+.tarjetas > .comida:nth-child(even):hover > div {
+  background-color: var(--amarrillo);
 }
 
 .tarjetas > div:hover > div {
@@ -262,7 +277,6 @@ tr:hover {
     width: 90%;
   }
 
-
   .tarjetas.inicio {
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     grid-auto-rows: 37.5vh;
@@ -272,7 +286,6 @@ tr:hover {
     width: 35px;
     height: 35px;
   }
-
 }
 
 .barra-lateral {
@@ -538,7 +551,6 @@ aside {
   border: 1px solid var(--negro);
   border-radius: var(--radio-medio);
 }
-
 
 *:focus-visible {
   outline: 3px solid var(--amarrillo);

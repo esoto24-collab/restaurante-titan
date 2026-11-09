@@ -50,13 +50,19 @@ const crearMenu = () => {
     const informativo = document.createElement('div');
     const nombreProducto = document.createElement('p');
     const precioProducto = document.createElement('strong');
+    const addComida = document.createElement("button")
+    const contendorBoton = document.createElement("div")
+
     imagenProducto.src = './src/assets/img/tortugatitan.jpg';
     imagenProducto.alt = 'Imagen de hamburguesa';
     imagenProducto.loading = 'lazy';
     nombreProducto.textContent = 'Hamburgruesa';
     precioProducto.textContent = '$200';
+    addComida.textContent="Añadir al carrito"
+    contendorBoton.appendChild(addComida)
     informativo.appendChild(nombreProducto);
     informativo.appendChild(precioProducto);
+    informativo.appendChild(contendorBoton)
     div.appendChild(imagenProducto);
     div.appendChild(informativo);
     tarjetas.appendChild(div);
