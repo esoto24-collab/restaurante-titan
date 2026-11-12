@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'ArchivoBlack';
+  src: url(../assets/fonts/ArchivoBlack.ttf);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../assets/fonts/Inter.ttf);
+}
+
+@font-face {
+  font-family: 'PlusJatarkaSans';
+  src: url(../assets/fonts/PlusJakartaSans.ttf);
+}
+
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #6b0504;
+  --color-red-dark: #500404;
+  --color-yellow: #f0c62d;
+  --color-orange: #ea7e1f;
+  --color-orange-dark: #e6451a;
+
+  --font-title: 'ArchivoBlack', sans-serif;
+  --font-subtitle: 'PlusJatarkaSans', sans-serif;
+  --font-text: 'Inter', sans-serif;
+
+  --border-md: 3px solid var(--color-black);
+  --radio-medio: 16px;
+
+  --sombra-media: 3px 3px 0 var(--color-black);
+  --sombra-grande: 7px 7px 0 var(--color-black);
+  --sombra-media-hover: 5px 5px 0 var(--color-black);
+}
+
+:root.dark {
+  --color-white: #000000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+* {
+  font-family: var(--font-text);
+}
+
+body {
+  display: grid;
+  background-color: var(--color-white);
+    grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+  'header'
+  'hero'
+  'footer';
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-red-dark);
+  border-bottom: var(--border-md);
+
+  h2 {
+    font-family: var(--font-title);
+    color: var(--color-yellow);
+    text-shadow: var(--sombra-media);
+    font-size: 3.1rem;
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
+  }
+}
+
+section {
+  grid-area: hero;
+  font-family: var(--font-title);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(../assets/img/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom: var(--borde);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: clamp(3rem, 0.2rem + 10vw, 6rem);
+  text-shadow: 6px 4px 5px rgba(255, 255, 255, 0.267);
+  flex-flow: column;
+  text-align: center;
+
+  button {
+    background-color: var(--color-yellow);
+    border: var(--border-md);
+    border-radius: var(--radio-medio);
+    font-size: clamp(1.5rem, 0.2rem + 6vw, 2rem);
+    font-family: var(--font-subtitle);
+    padding: 0.5rem 2rem;
+    box-shadow: var(--sombra-media);
+    cursor: pointer;
+  }
+}
+
+footer{
+  grid-area: footer;
+  background-color: var(--color-red-dark);
+}
