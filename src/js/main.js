@@ -1,12 +1,13 @@
 import '../components/socialCard/socialCard.js';
 import '../components/functionalCard/functionalCard.js';
+import '../components/formCampo/formCampo.js';
 import { generarRedesSociales } from './redesSociales.js';
 
-const btncambiarTema = document.querySelector('#modo')
-const root = document.documentElement
+const btncambiarTema = document.querySelector('#modo');
+const root = document.documentElement;
 
-const links = document.querySelector("#links")
-links.appendChild(generarRedesSociales())
+//const links = document.querySelector("#links")
+document.querySelector('footer').appendChild(generarRedesSociales());
 
 /*
 btncambiarTema.addEventListener('click', () => {

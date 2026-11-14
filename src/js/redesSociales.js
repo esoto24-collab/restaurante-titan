@@ -11,6 +11,7 @@ const linksSVG = [
 
 export function generarRedesSociales() {
   const contenedor = document.createElement('div');
+  contenedor.classList.add("links")
   linksSVG.forEach((svg) => {
     const socialCard = document.createElement('social-card');
     socialCard.setAttribute('imagen', svg);
@@ -18,5 +19,3 @@ export function generarRedesSociales() {
   });
   return contenedor
 }
-
-

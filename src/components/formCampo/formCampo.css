@@ -1,0 +1,70 @@
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  gap: 5px;
+
+  label {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  input {
+    border: 3px solid black;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 3px 3px 0 black;
+    transition: all 0.15s ease-in-out;
+
+    &:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 black;
+    }
+
+    &:focus {
+      border-color: #000;
+      box-shadow: 4px 4px 0 #000;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: #d32f2f;
+      box-shadow: 3px 3px 0 #d32f2f;
+      animation: shake 0.3s ease-in-out;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-color: #2e7d32;
+      box-shadow: 3px 3px 0 #2e7d32;
+    }
+  }
+
+  input:invalid:not(:placeholder-shown) ~ span {
+    display: block;
+    animation: fadeInSlide 0.2s ease-in-out forwards;
+  }
+
+  span {
+    display: none;
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+}

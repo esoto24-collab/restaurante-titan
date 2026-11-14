@@ -65,13 +65,14 @@ body {
   grid-template-rows: auto 1fr auto;
   grid-template-areas: 
   'header'
-  'hero'
+  'main'
   'footer';
 }
 
 header {
   grid-area: header;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
@@ -87,10 +88,15 @@ header {
     letter-spacing: 0.35rem;
     text-transform: uppercase;
   }
+
+  .botones-especiales{
+    display: flex;
+    gap: 1rem;
+  }
 }
 
-section {
-  grid-area: hero;
+.hero {
+
   font-family: var(--font-title);
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(../assets/img/hero.jpg);
@@ -119,7 +125,21 @@ section {
   }
 }
 
+main{
+  grid-area: main;
+}
+
 footer{
+  display: flex;
+  flex-flow: column;
   grid-area: footer;
   background-color: var(--color-red-dark);
+
+  .links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
+
+
