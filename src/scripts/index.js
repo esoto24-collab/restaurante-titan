@@ -6,6 +6,7 @@ import formularioLogin from './crearFormLogin.js';
 import crearMenu from './crearMenu.js';
 import { generarDashboard } from './dashboard.js';
 import { crearTarjetasJuegos } from './juegos.js';
+import { obtenerTemaOscuro, guardarTemaOscuro } from './storage.js';
 
 const body = document.body;
 const inicio = document.querySelector('#inicio');
@@ -31,6 +32,11 @@ const juegos = document.querySelector('#juegos');
 const cambiarModo = document.querySelector('#cambiarModo');
 const root = document.documentElement;
 const iconoModo = document.querySelector('#iconoModo');
+
+if (obtenerTemaOscuro()) {
+  root.classList.add('dark');
+  iconoModo.src = './src/assets/img/sun-svgrepo-com.svg';
+}
 
 generarInicio();
 generarRedesSociales();
@@ -105,13 +111,13 @@ juegos.addEventListener('click', () => {
 });
 
 cambiarModo.addEventListener('click', () => {
-  console.log('dark');
-  root.classList.toggle('dark');
-  if (root.classList.contains('dark')) {
+  const esOscuro = root.classList.toggle('dark');
+  guardarTemaOscuro(esOscuro);
+
+  if (esOscuro) {
     iconoModo.src = './src/assets/img/sun-svgrepo-com.svg';
   } else {
     iconoModo.src = './src/assets/img/moon-svgrepo-com.svg';
   }
 });
 
-//generarDashboard();
