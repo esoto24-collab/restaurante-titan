@@ -1,7 +1,16 @@
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-4px); }
-  40%, 80% { transform: translateX(4px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
 }
 
 @keyframes fadeInSlide {
@@ -54,11 +63,11 @@
       border-color: #2e7d32;
       box-shadow: 3px 3px 0 #2e7d32;
     }
-  }
 
-  input:invalid:not(:placeholder-shown) ~ span {
-    display: block;
-    animation: fadeInSlide 0.2s ease-in-out forwards;
+    &:invalid:not(:placeholder-shown) ~ span {
+      display: block;
+      animation: fadeInSlide 0.2s ease-in-out forwards;
+    }
   }
 
   span {

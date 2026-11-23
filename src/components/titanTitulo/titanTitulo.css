@@ -1,0 +1,14 @@
+:host {
+  display: block;
+
+  h2 {
+    font-family: var(--font-title);
+    color: var(--color-yellow);
+    text-shadow: var(--sombra-media);
+    font-size: clamp(1.5rem, 1.5rem + 2.5vw, 3.9rem);
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin: 0; 
+  }
+}

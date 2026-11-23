@@ -9,10 +9,73 @@
         margin: 0px;
         padding: 0px;
       }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100dvh;
+      }
+
+      .categoria-opciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.6rem, 1.5vw, 1rem);
+        align-items: center;
+      }
+
+      categoria-opcion {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        background-color: var(--color-orange, orange);
+        background-image: radial-gradient(rgba(0, 0, 0, 0.2) 0.2px, transparent 1.5px);
+        background-size: 1vh 1vh;
+        padding: clamp(0.35rem, 0.8vw, 0.5rem) clamp(1.1rem, 2.5vw, 1.6rem);
+        border: 2px solid var(--element-color-black, #000);
+        border-radius: 16px;
+        box-shadow: 3px 3px 0 var(--element-color-black, #000);
+        color: #000;
+        font-weight: 600;
+        transition:
+          background-color 140ms ease,
+          box-shadow 140ms ease,
+          transform 140ms ease;
+
+        &:hover {
+          background-color: var(--color-yellow, yellow);
+          box-shadow: 5px 5px 0 var(--element-color-black, #000);
+          transform: translate(-2px, -2px);
+        }
+
+        &.activa {
+          background-color: var(--color-yellow, yellow);
+          background-image: radial-gradient(rgba(0, 0, 0, 0.34) 0.35px, transparent 1.5px);
+          box-shadow: 2px 2px 0 var(--element-color-black, #000);
+          transform: translate(1px, 1px);
+        }
+      }
+      h2 {
+        font-family: var(--font-title);
+        color: var(--color-yellow);
+        text-shadow: var(--sombra-media);
+        font-size: 3rem;
+        font-size: clamp(1.5rem, 1.5rem + 2.5vw, 3.9rem);
+        -webkit-text-stroke: 2px black;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+      }
     </style>
   </head>
   <body>
-
+    <h2>TITAN</h2>
+    <div class="categoria-opciones">
+      <categoria-opcion class="activa">Hamburguesa</categoria-opcion>
+      <categoria-opcion>Pizza</categoria-opcion>
+      <categoria-opcion>Hotdog</categoria-opcion>
+    </div>
     <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

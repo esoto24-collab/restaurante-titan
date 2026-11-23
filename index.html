@@ -9,23 +9,66 @@
   </head>
   <body>
     <header>
-      <h2>Titan</h2>
+      <titan-titulo></titan-titulo>
       <div class="botones-especiales">
-        <functional-card imagen="/src/assets/svg/moon.svg"></functional-card>
-        <functional-card imagen="/src/assets/svg/menu.svg"></functional-card>
+        <functional-card
+          class="botones-especiales__tema ocultar"
+          imagen="/src/assets/svg/moon.svg"
+          id="tema"
+        ></functional-card>
+        <functional-card id="menu-hamburguesa" imagen="/src/assets/svg/menu.svg"></functional-card>
       </div>
     </header>
-    <main>
-      <section class="hero">
-        SIN COMIDA NO HAY GLORIA
-        <button>Ordenar</button>
-      </section>
-      <section id="categoria">
-        <h1>Apartados Menu</h1>
-        Mira nuestros distintos tipos de comida
-      </section>
+    <main id="contenido-main" class="menu">
+      <h1>Menu Titanico</h1>
+      <em>Mira nuestras deliciosas comidas</em>
+      <h3>Categorias</h3>
+      <div>
+        <div>Hotdogs</div>
+        <div>Pizza</div>
+        <div>Hamburguesas</div>
+        <div>Sushi</div>
+      </div>
     </main>
-    <footer></footer>
+    <footer>
+      <strong>© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS RESERVADOS.</strong>
+    </footer>
+    <div class="barra-lateral ocultar" id="barra-lateral">
+      <div class="barra-lateral__titulares">
+        <titan-titulo></titan-titulo>
+        <functional-card imagen="/src/assets/svg/error.svg" id="salir-barra"></functional-card>
+      </div>
+      <ul>
+        <li>
+          <opcion-menu imagen="/src/assets/svg/home.svg" texto="Inicio"></opcion-menu>
+        </li>
+        <li>
+          <opcion-menu imagen="/src/assets/svg/list-menu-2.svg" texto="Menu"></opcion-menu>
+        </li>
+        <li>
+          <opcion-menu imagen="/src/assets/svg/cup-2.svg" texto="Records"></opcion-menu>
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <li>
+          <opcion-menu imagen="/src/assets/svg/crear-cuenta.svg" texto="Crear cuenta">
+          </opcion-menu>
+        </li>
+        <li>
+          <opcion-menu imagen="/src/assets/svg/log-in.svg" texto="Iniciar Sesion"> </opcion-menu>
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <li>
+          <opcion-menu id="opcion-tema" imagen="/src/assets/svg/moon.svg" texto="Modo Oscuro">
+          </opcion-menu>
+        </li>
+      </ul>
+    </div>
+
+    <div class="filtro-oscuro ocultar" id="filtro-oscuro"></div>
     <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
