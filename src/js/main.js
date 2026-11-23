@@ -4,9 +4,13 @@ import '../components/formCampo/formCampo.js';
 import '../components/categoriaCard/categoriaCard.js';
 import '../components/titanTitulo/titanTitulo.js';
 import '../components/opcionMenu/opcionMenu.js';
+import '../components/opcionCategoria/opcionCategoria.js'
+import '../components/comidaCard/comidaCard.js'
+
 
 import { generarRedesSociales } from './redesSociales.js';
 import { generarCategorias } from './categorias.js';
+import { generarComidas } from './comidas.js';
 
 const btnTema = document.querySelector('#tema');
 const btnMenuHamburguesa = document.querySelector('#menu-hamburguesa');
@@ -97,4 +101,6 @@ function navegarA(nombreVista) {
 }
 
 //navegarA('inicio');
-document.querySelector('#categorias').appendChild(generarCategorias());
+//document.querySelector('#categorias').appendChild(generarCategorias());
+
+document.querySelector("main").appendChild(generarComidas())

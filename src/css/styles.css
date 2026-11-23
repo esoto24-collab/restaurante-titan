@@ -22,6 +22,10 @@
   --color-yellow: #f0c62d;
   --color-orange: #ea7e1f;
   --color-orange-dark: #e6451a;
+  --efecto-comic: radial-gradient(
+    rgba(0, 0, 0, 0.2) 0.2px,
+    transparent 1.5px
+  );
 
   --font-title: 'ArchivoBlack', sans-serif;
   --font-subtitle: 'PlusJatarkaSans', sans-serif;
@@ -40,7 +44,7 @@
   --color-red-dark: #1e1e24;
   --color-black: #f4f4f6;
   --color-yellow: #ffd60a;
- --color-orange: #ff5722;
+  --color-orange: #ff5722;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -98,12 +102,11 @@ header {
   }
 }
 
-main{
-    grid-area: main;
+main {
+  grid-area: main;
 }
 
-.inicio{
-
+.inicio {
   .tiposComidas {
     padding-top: 1rem;
 
@@ -115,7 +118,10 @@ main{
 
   .categorias {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min(100%, 350px), 1fr)
+    );
     gap: 20px;
     padding: 1rem 2rem;
   }
@@ -123,7 +129,12 @@ main{
   .hero {
     font-family: var(--font-title);
     background-image:
-      linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(../assets/img/hero.jpg);
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url(../assets/img/hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -232,7 +243,28 @@ footer {
   scrollbar-gutter: stable;
 }
 
-
-.menu{
+.menu {
   padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .informacion {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .opciones-categorias {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .comidas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%,300px), 1fr));
+    padding: 5px 10px;
+    gap: 15px;
+  }
 }

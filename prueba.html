@@ -1,81 +1,227 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Menu Titanico</title>
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/styles.css" />
     <style>
-      * {
-        margin: 0px;
-        padding: 0px;
+      /* Espacio inferior para que .barra-compra no tape el footer ni las últimas tarjetas */
+      footer {
+        padding-bottom: calc(
+          5.5rem + env(safe-area-inset-bottom, 0px)
+        );
       }
 
-      body {
+      .barra-compra {
+        position: fixed;
+        inset: auto 0 0 0;
+        z-index: 40;
         display: flex;
-        justify-content: center;
         align-items: center;
-        min-height: 100dvh;
-      }
-
-      .categoria-opciones {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(0.6rem, 1.5vw, 1rem);
-        align-items: center;
-      }
-
-      categoria-opcion {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        user-select: none;
-        background-color: var(--color-orange, orange);
-        background-image: radial-gradient(rgba(0, 0, 0, 0.2) 0.2px, transparent 1.5px);
-        background-size: 1vh 1vh;
-        padding: clamp(0.35rem, 0.8vw, 0.5rem) clamp(1.1rem, 2.5vw, 1.6rem);
-        border: 2px solid var(--element-color-black, #000);
-        border-radius: 16px;
-        box-shadow: 3px 3px 0 var(--element-color-black, #000);
-        color: #000;
-        font-weight: 600;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.75rem 1.25rem
+          calc(0.75rem + env(safe-area-inset-bottom, 0px));
+        background-color: var(--color-red-dark);
+        border-top: var(--border-md);
+        box-shadow: 0 -4px 0 var(--element-color-black);
+        color: #ffffff;
         transition:
-          background-color 140ms ease,
-          box-shadow 140ms ease,
-          transform 140ms ease;
+          transform 200ms ease,
+          opacity 200ms ease;
 
-        &:hover {
-          background-color: var(--color-yellow, yellow);
-          box-shadow: 5px 5px 0 var(--element-color-black, #000);
-          transform: translate(-2px, -2px);
+        &.ocultar {
+          transform: translateY(100%);
+          opacity: 0;
+          pointer-events: none;
         }
 
-        &.activa {
-          background-color: var(--color-yellow, yellow);
-          background-image: radial-gradient(rgba(0, 0, 0, 0.34) 0.35px, transparent 1.5px);
-          box-shadow: 2px 2px 0 var(--element-color-black, #000);
-          transform: translate(1px, 1px);
+        .barra-compra__resumen {
+          display: flex;
+          flex-direction: column;
+          gap: 0.125rem;
         }
-      }
-      h2 {
-        font-family: var(--font-title);
-        color: var(--color-yellow);
-        text-shadow: var(--sombra-media);
-        font-size: 3rem;
-        font-size: clamp(1.5rem, 1.5rem + 2.5vw, 3.9rem);
-        -webkit-text-stroke: 2px black;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
+
+        .barra-compra__cantidad {
+          font-family: var(--font-text);
+          font-size: 0.875rem;
+          opacity: 0.9;
+        }
+
+        .barra-compra__total {
+          font-family: var(--font-title);
+          font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+          color: var(--color-yellow);
+          letter-spacing: 0.02em;
+        }
+
+        .barra-compra__boton {
+          font-family: var(--font-title);
+          font-size: 1rem;
+          padding: 0.65rem 1.5rem;
+          background-color: var(--color-yellow);
+          color: var(--element-color-black);
+          border: var(--border-md);
+          border-radius: var(--radio-medio);
+          box-shadow: var(--sombra-media);
+          cursor: pointer;
+          transition:
+            transform 120ms ease,
+            box-shadow 120ms ease;
+
+          &:hover:not(:disabled) {
+            transform: translate(-1px, -1px);
+            box-shadow: var(--sombra-media-hover);
+          }
+
+          &:active:not(:disabled) {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 var(--element-color-black);
+          }
+
+          &:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+            box-shadow: none;
+          }
+        }
       }
     </style>
   </head>
   <body>
-    <h2>TITAN</h2>
-    <div class="categoria-opciones">
-      <categoria-opcion class="activa">Hamburguesa</categoria-opcion>
-      <categoria-opcion>Pizza</categoria-opcion>
-      <categoria-opcion>Hotdog</categoria-opcion>
+    <header>
+      <titan-titulo></titan-titulo>
+      <div class="botones-especiales">
+        <functional-card
+          class="botones-especiales__tema ocultar"
+          imagen="/src/assets/svg/moon.svg"
+          id="tema"
+        ></functional-card>
+        <functional-card
+          id="menu-hamburguesa"
+          imagen="/src/assets/svg/menu.svg"
+        ></functional-card>
+      </div>
+    </header>
+
+    <main id="contenido-main" class="menu">
+      <div class="informacion">
+        <h1>Menu Titanico</h1>
+        <em>Mira nuestras deliciosas comidas</em>
+      </div>
+      <h3>Categorias</h3>
+      <div class="opciones-categorias">
+        <opcion-categoria texto="Hamburguesa"></opcion-categoria>
+        <opcion-categoria texto="Pizza"></opcion-categoria>
+        <opcion-categoria texto="Papas"></opcion-categoria>
+      </div>
+      <div class="comidas">
+        <comida-card></comida-card>
+        <comida-card></comida-card>
+        <comida-card></comida-card>
+        <comida-card></comida-card>
+        <comida-card></comida-card>
+        <comida-card></comida-card>
+        <comida-card></comida-card>
+      </div>
+    </main>
+
+    <footer>
+      <strong
+        >© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS
+        RESERVADOS.</strong
+      >
+    </footer>
+
+    <div class="barra-lateral ocultar" id="barra-lateral">
+      <div class="barra-lateral__titulares">
+        <titan-titulo></titan-titulo>
+        <functional-card
+          imagen="/src/assets/svg/error.svg"
+          id="salir-barra"
+        ></functional-card>
+      </div>
+      <ul>
+        <li>
+          <opcion-menu
+            imagen="/src/assets/svg/home.svg"
+            texto="Inicio"
+          ></opcion-menu>
+        </li>
+        <li>
+          <opcion-menu
+            imagen="/src/assets/svg/list-menu-2.svg"
+            texto="Menu"
+          ></opcion-menu>
+        </li>
+        <li>
+          <opcion-menu
+            imagen="/src/assets/svg/cup-2.svg"
+            texto="Records"
+          ></opcion-menu>
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <li>
+          <opcion-menu
+            imagen="/src/assets/svg/crear-cuenta.svg"
+            texto="Crear cuenta"
+          >
+          </opcion-menu>
+        </li>
+        <li>
+          <opcion-menu
+            imagen="/src/assets/svg/log-in.svg"
+            texto="Iniciar Sesion"
+          >
+          </opcion-menu>
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <li>
+          <opcion-menu
+            id="opcion-tema"
+            imagen="/src/assets/svg/moon.svg"
+            texto="Modo Oscuro"
+          >
+          </opcion-menu>
+        </li>
+      </ul>
     </div>
+
+    <div class="filtro-oscuro ocultar" id="filtro-oscuro"></div>
+
+    <!-- Barra fija inferior de compra -->
+    <aside
+      class="barra-compra"
+      id="barra-compra"
+      aria-label="Resumen de compra"
+    >
+      <div class="barra-compra__resumen">
+        <span class="barra-compra__cantidad" id="cantidad-compra"
+          >0 artículos</span
+        >
+        <strong class="barra-compra__total" id="total-compra"
+          >$0.00</strong
+        >
+      </div>
+      <button
+        type="button"
+        class="barra-compra__boton"
+        id="boton-comprar"
+        disabled
+      >
+        Comprar
+      </button>
+    </aside>
+
     <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

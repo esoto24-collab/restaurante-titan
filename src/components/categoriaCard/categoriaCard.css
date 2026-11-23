@@ -1,4 +1,6 @@
 :host {
+  background-image: var(--efecto-comic);
+  background-size: 1vh 1vh;
   background-color: var(--color-orange);
   border: 2px solid black;
   border-radius: 12px;
