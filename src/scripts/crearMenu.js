@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2';
 import { obtenerCarrito, guardarCarrito } from './storage.js';
+import { obtenerProductos, obtenerPedidos, crearPedido } from './api.js';
 
 const imagenesPorCategoria = {
   Hamburguesas: './src/assets/img/hamburguesota.jpg',
@@ -46,26 +47,78 @@ export default async function crearMenu() {
     <h3 style="font-family: var(--titulo); margin-top: 0;">Tu Pedido Titanico</h3>
     <ul id="lista-carrito" style="margin: 1rem 0; list-style: none; padding: 0;"></ul>
     <p id="total-carrito" style="font-weight: 900; font-size: 1.2rem;">Total: $0 MXN</p>
-    <div style="margin-top: 1rem; display: flex; gap: var(--gap-chico); flex-wrap: wrap;">
-      <button id="btn-confirmar-pedido" style="padding: 0.6rem 1.2rem; border: var(--borde); border-radius: var(--radio-medio); box-shadow: var(--shadow-small); background: var(--naranajaFuerte); color: #fff; font-weight: 800; cursor: pointer;">
-        Confirmar Pedido
-      </button>
-      <button id="btn-vaciar-carrito" style="padding: 0.6rem 1.2rem; border: var(--borde); border-radius: var(--radio-medio); box-shadow: var(--shadow-small); background: var(--rojo); color: #fff; font-weight: 800; cursor: pointer;">
-        Vaciar Carrito
-      </button>
-    </div>
-  `; // Aqui pedi ayuda a la IA para el estilo ya que me daba error tras error, aunque de todas formas me lo dejo bien feo y tuve que modificarlo más
+
+    <form id="form-pedido" style="margin-top: 1rem;">
+      <input type="text" id="input-cliente" placeholder="Tu nombre para el pedido" required minlength="3"
+        style="display: block; width: 100%; max-width: 300px; padding: 0.5rem; margin-bottom: 0.8rem; border: var(--borde);" />
+      <div style="display: flex; gap: var(--gap-chico); flex-wrap: wrap;">
+        <button type="submit" id="btn-confirmar-pedido" style="padding: 0.6rem 1.2rem; border: var(--borde); border-radius: var(--radio-medio); box-shadow: var(--shadow-small); background: var(--naranajaFuerte); color: #fff; font-weight: 800; cursor: pointer;">
+          Confirmar Pedido
+        </button>
+        <button type="button" id="btn-vaciar-carrito" style="padding: 0.6rem 1.2rem; border: var(--borde); border-radius: var(--radio-medio); box-shadow: var(--shadow-small); background: var(--rojo); color: #fff; font-weight: 800; cursor: pointer;">
+          Vaciar Carrito
+        </button>
+      </div>
+    </form>
+
+    <h4 style="font-family: var(--titulo); margin: 1.5rem 0 0.5rem;">Pedidos Registrados</h4>
+    <ul id="lista-pedidos" style="list-style: none; padding: 0; margin: 0;"></ul>
+  `; //Aqui sigo pidiendo ayuda a la IA porque el estilo del form esta roñoso son que me muestre los errores
 
   main.append(barraSuperior, estadoDiv, gridDiv, carritoBox);
   renderizarCarrito(main);
 
-  try {
-    const respuesta = await fetch('./src/data/menu.json');
-    if (!respuesta.ok) {
-      throw new Error(`Error ${respuesta.status}: No se pudo obtener el menu.`);
-    }
+  carritoBox.querySelector('#btn-vaciar-carrito').onclick = async () => {
+    const resultado = await Swal.fire({
+      title: '¿Vaciar el pedido?',
+      text: 'Se eliminaran todos los platillos guardados.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#e63946',
+      cancelButtonColor: '#333',
+      confirmButtonText: 'Si, vaciar',
+      cancelButtonText: 'Cancelar',
+    });
 
-    const platillos = await respuesta.json();
+    if (resultado.isConfirmed) {
+      guardarCarrito([]);
+      renderizarCarrito(main);
+    }
+  };
+
+  carritoBox.querySelector('#form-pedido').onsubmit = async (e) => {
+    e.preventDefault();
+    const carrito = obtenerCarrito();
+    if (carrito.length === 0) return;
+
+    const cliente = carritoBox.querySelector('#input-cliente').value.trim();
+    const items = carrito.map((item) => ({ id: item.id, cantidad: item.cantidad }));
+
+    try {
+      const creado = await crearPedido({ cliente, items });
+      Swal.fire({
+        icon: 'success',
+        title: 'Pedido enviado',
+        text: `Folio #${creado.id} — Total: $${creado.total} MXN.`,
+        confirmButtonColor: '#ff5400',
+      });
+
+      guardarCarrito([]);
+      renderizarCarrito(main);
+      e.target.reset();
+      await cargarPedidos(carritoBox);
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message,
+        confirmButtonColor: '#e63946',
+      });
+    }
+  };
+
+  try {
+    const platillos = await obtenerProductos();
     estadoDiv.style.display = 'none';
 
     const selectCategoria = barraSuperior.querySelector('#filtro-categoria');
@@ -97,10 +150,10 @@ export default async function crearMenu() {
               ${platillo.descripcion} (${platillo.calorias})
             </p>
             <div>
-              <button class="btn-agregar">+ Agregar al pedido</button>
+              <button class="btn-agregar">Agregar al pedido</button>
             </div>
           </div>
-        `;  
+        `;
 
         card.querySelector('.btn-agregar').addEventListener('click', (e) => {
           e.stopPropagation();
@@ -134,6 +187,28 @@ export default async function crearMenu() {
       confirmButtonColor: '#ff5400',
     });
   }
+
+  await cargarPedidos(carritoBox);
+}
+
+async function cargarPedidos(contenedor) {
+  const lista = contenedor.querySelector('#lista-pedidos');
+  try {
+    const pedidos = await obtenerPedidos();
+    if (pedidos.length === 0) {
+      lista.innerHTML = '<li>No hay pedidos registrados.</li>';
+      return;
+    }
+    lista.innerHTML = pedidos
+      .map(
+        (p) => `<li style="padding: 0.4rem 0; border-bottom: 1px dashed var(--negro);">
+          <strong>#${p.id}</strong> — ${p.cliente} ($${p.total} MXN)
+        </li>`
+      )
+      .join('');
+  } catch (error) {
+    lista.innerHTML = `<li style="color: var(--rojo);">No se pudieron cargar los pedidos: ${error.message}</li>`;
+  } // Muestro los errores al cargar los pedidos (si hay, obviamente)
 }
 
 function agregarAlCarrito(platillo, contenedor) {
@@ -182,36 +257,4 @@ function renderizarCarrito(contenedor) {
     .join('');
 
   totalEl.textContent = `Total: $${total} MXN`;
-
-  contenedor.querySelector('#btn-vaciar-carrito').onclick = async () => {
-    const resultado = await Swal.fire({
-      title: '¿Vaciar el pedido?',
-      text: 'Se eliminaran todos los platillos guardados.',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#e63946',
-      cancelButtonColor: '#333',
-      confirmButtonText: 'Si, vaciar',
-      cancelButtonText: 'Cancelar',
-    });
-
-    if (resultado.isConfirmed) {
-      guardarCarrito([]);
-      renderizarCarrito(contenedor);
-    }
-  };
-
-  contenedor.querySelector('#btn-confirmar-pedido').onclick = () => {
-    if (obtenerCarrito().length === 0) return;
-
-    Swal.fire({
-      icon: 'success',
-      title: 'Pedido enviado',
-      text: `Total de $${total} MXN.`,
-      confirmButtonColor: '#ff5400',
-    });
-
-    guardarCarrito([]);
-    renderizarCarrito(contenedor);
-  };
 }

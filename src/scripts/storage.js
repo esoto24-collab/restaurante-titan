@@ -29,3 +29,26 @@ export function obtenerTemaOscuro() {
 export function guardarTemaOscuro(esOscuro) {
   localStorage.setItem(TEMA_KEY, JSON.stringify({ dark: esOscuro }));
 }
+
+export function guardarConTTL(clave, datos, ttlMs) {
+  const registro = {
+    datos,
+    expira: Date.now() + ttlMs,
+  };
+  localStorage.setItem(clave, JSON.stringify(registro));
+}
+
+export function leerConTTL(clave) {
+  try {
+    const raw = localStorage.getItem(clave);
+    if (!raw) return null;
+    const registro = JSON.parse(raw);
+    if (Date.now() > registro.expira) {
+      localStorage.removeItem(clave);
+      return null;
+    }
+    return registro.datos;
+  } catch {
+    return null;
+  }
+}
