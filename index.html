@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Document</title>
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/styles.css" />
@@ -16,56 +19,94 @@
           imagen="/src/assets/svg/moon.svg"
           id="tema"
         ></functional-card>
-        <functional-card id="menu-hamburguesa" imagen="/src/assets/svg/menu.svg"></functional-card>
+        <functional-card
+          id="menu-hamburguesa"
+          imagen="/src/assets/svg/menu.svg"
+        ></functional-card>
       </div>
     </header>
-    <main id="contenido-main" class="menu">
-      <div class="informacion">
-        <h1>Menu Titanico</h1>
-        <em>Mira nuestras deliciosas comidas</em>
-      </div>
-      <h3>Categorias</h3>
-      <div class="opciones-categorias">
-        <opcion-categoria texto="Hamburguesa"></opcion-categoria>
-        <opcion-categoria texto="Pizza"></opcion-categoria>
-        <opcion-categoria texto="Papas"></opcion-categoria>
-      </div>
-
-
+    <main id="contenido-main">
+      
     </main>
     <footer>
-      <strong>© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS RESERVADOS.</strong>
+      <strong
+        >© 1892 TITAN ENTERPRISES, INC. TODOS LOS DERECHOS
+        RESERVADOS.</strong
+      >
     </footer>
     <div class="barra-lateral ocultar" id="barra-lateral">
       <div class="barra-lateral__titulares">
         <titan-titulo></titan-titulo>
-        <functional-card imagen="/src/assets/svg/error.svg" id="salir-barra"></functional-card>
+        <functional-card
+          imagen="/src/assets/svg/error.svg"
+          id="salir-barra"
+        ></functional-card>
       </div>
       <ul>
         <li>
-          <opcion-menu imagen="/src/assets/svg/home.svg" texto="Inicio"></opcion-menu>
+          <opcion-menu
+            id="opcion-inicio"
+            imagen="/src/assets/svg/home.svg"
+            texto="Inicio"
+          ></opcion-menu>
         </li>
         <li>
-          <opcion-menu imagen="/src/assets/svg/list-menu-2.svg" texto="Menu"></opcion-menu>
+          <opcion-menu
+            id="opcion-menu"
+            imagen="/src/assets/svg/list-menu-2.svg"
+            texto="Menu"
+          ></opcion-menu>
         </li>
+        <!--
         <li>
           <opcion-menu imagen="/src/assets/svg/cup-2.svg" texto="Records"></opcion-menu>
         </li>
-      </ul>
+      --></ul>
       <hr />
       <ul>
         <li>
-          <opcion-menu imagen="/src/assets/svg/crear-cuenta.svg" texto="Crear cuenta">
+          <opcion-menu
+            id="opcion-crear-cuenta"
+            imagen="/src/assets/svg/crear-cuenta.svg"
+            texto="Crear cuenta"
+          >
           </opcion-menu>
         </li>
         <li>
-          <opcion-menu imagen="/src/assets/svg/log-in.svg" texto="Iniciar Sesion"> </opcion-menu>
+          <opcion-menu
+            id="opcion-iniciar-sesion"
+            imagen="/src/assets/svg/log-in.svg"
+            texto="Iniciar Sesion"
+          >
+          </opcion-menu>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <opcion-menu
+            id="opcion-perfil"
+            imagen="/src/assets/svg/user.svg"
+            texto="Perfil"
+          >
+          </opcion-menu>
+        </li>
+        <li>
+          <opcion-menu
+            id="opcion-crear-cuenta"
+            imagen="/src/assets/svg/stats.svg"
+            texto="Estadisticas"
+          >
+          </opcion-menu>
         </li>
       </ul>
       <hr />
       <ul>
         <li>
-          <opcion-menu id="opcion-tema" imagen="/src/assets/svg/moon.svg" texto="Modo Oscuro">
+          <opcion-menu
+            id="opcion-tema"
+            imagen="/src/assets/svg/moon.svg"
+            texto="Modo Oscuro"
+          >
           </opcion-menu>
         </li>
       </ul>

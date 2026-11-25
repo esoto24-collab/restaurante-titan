@@ -14,7 +14,7 @@
   .comida__imagen {
     display: block;
     border-bottom: 2px solid black;
-    height: 320px;
+    height: clamp(200px,200px+1vh,300px);
     object-fit: cover;
   }
 
@@ -28,7 +28,7 @@
     h3 {
       font-size: 1.25rem;
       font-weight: 800;
-      color: black;
+      color: var(--color-black);
       line-height: 1.2;
       margin: 0;
     }
@@ -37,13 +37,13 @@
       margin: 0;
       font-size: 0.95rem;
       line-height: 1.45;
-      color: #3a3a3a;
+      color: var(--color-italico);
       flex-grow: 1;
     }
 
     hr {
       border: none;
-      border-top: 2px dashed #111111;
+      border-top: 2px dashed var(--color-negro-comida);
       margin: 4px 0;
     }
 
@@ -55,19 +55,19 @@
       strong {
         font-size: clamp(1rem,1rem + 0.3vw,2rem);
         font-weight: 800;
-        color: #111111;
+        color: var(--color-negro-comida);
       }
 
       button {
         flex-grow: 0.5;
         background-color: #ff9f1c;
-        color: #111111;
+        color: black;
         font-weight: 700;
         font-size: 0.9rem;
         padding: 10px 14px;
-        border: 2px solid #111111;
+        border: 2px solid black;
         border-radius: 10px;
-        box-shadow: 3px 3px 0px #111111;
+        box-shadow: 3px 3px 0px black;
         cursor: pointer;
         transition:
           transform 0.12s ease,
@@ -77,12 +77,12 @@
         &:hover {
           background-color: var(--color-yellow);
           transform: translate(-1px, -1px);
-          box-shadow: 4px 4px 0px #111111;
+          box-shadow: 4px 4px 0px black;
         }
 
         &:active {
           transform: translate(2px, 2px);
-          box-shadow: 1px 1px 0px #111111;
+          box-shadow: 1px 1px 0px black;
         }
       }
     }

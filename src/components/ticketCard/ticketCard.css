@@ -1,0 +1,126 @@
+@keyframes ticketFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-width: 800px;
+  min-width: 0;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  border-left: 8px solid #f0c62d;
+  background-color: #ea7e1f10;
+  border-radius: 8px;
+  padding: clamp(0.75rem, 3vw, 1rem);
+  gap: 10px;
+  box-shadow: 2px 2px 0 #000000;
+  animation: ticketFadeUp 0.35s ease-out backwards;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .ticket__estado,
+  .ticket__dinero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  hr {
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-top: 1.5px dashed #000000;
+  }
+
+  .ticket__estado {
+    strong,
+    span,
+    time {
+      font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+      overflow-wrap: anywhere;
+    }
+
+    p {
+      display: inline-flex;
+      gap: 6px;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #000000;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      box-shadow: 2px 2px 0 #000000;
+      font-size: clamp(0.75rem, 3vw, 0.85rem);
+      background-color: #ffffff;
+      font-weight: 800;
+      margin: 0;
+      white-space: nowrap;
+      transition: transform 0.18s ease;
+    }
+
+    p::before {
+      content: '';
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #f0c62d;
+      border: 1px solid #000000;
+    }
+  }
+
+  .ticket__dinero {
+    p {
+      margin: 0;
+      font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+      color: #5a5a5a;
+      font-weight: 500;
+    }
+
+    strong {
+      color: #6b0504;
+      margin: 0;
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+  }
+}
+
+:host(:hover) {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #000000;
+  background-color: #ea7e1f22;
+
+  .ticket__estado p {
+    transform: translateY(-1px);
+  }
+}
+
+:host(:active) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000000;
+}
+
+

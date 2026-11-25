@@ -1,5 +1,7 @@
 import styles from './formCampo.css' with { type: 'css' };
 
+const PATRON_SOLO_LETRAS = '^[A-Za-zÀ-ÿ\\u00f1\\u00d1\\s\'\\-]+$';
+
 const template = document.createElement('template');
 template.innerHTML = /* html */ `
     <label for="campo">Campo</label>
@@ -39,20 +41,36 @@ class FormCampo extends HTMLElement {
     const span = html.querySelector('span');
     span.id = this.getAttribute('error') ?? 'error-campo-msg';
 
+    if(this.getAttribute("tipo")=="text"){
+      input.pattern=PATRON_SOLO_LETRAS
+    }
+
     this.shadowRoot.appendChild(html);
 
-    const renderedInput = this.shadowRoot.querySelector('input');
-    const renderedSpan = this.shadowRoot.querySelector('span');
+    this.enlazarEventos()
+  }
 
-   renderedInput.addEventListener('input', () => {
-      if (renderedInput.validity.valid) {
-        renderedSpan.textContent = '';
-        renderedSpan.style.display = 'none';
+  enlazarEventos(){
+    const input = this.shadowRoot.querySelector('input');
+    const span = this.shadowRoot.querySelector('span');
+
+    const validar = () => {
+      if (input.validity.valid) {
+        span.textContent = '';
+        span.style.display = 'none';
       } else {
-        renderedSpan.textContent = this.obtenerMensajeError(renderedInput);
-        renderedSpan.style.display = 'block';
+        span.textContent = this.obtenerMensajeError(input);
+        span.style.display = 'block';
       }
-    });
+    };
+
+    const marcarInteraccion = () => {
+      this.setAttribute('data-interacted', 'true');
+      validar();
+    };
+
+    input.addEventListener('input', marcarInteraccion);
+    input.addEventListener('change', marcarInteraccion);
   }
 
   obtenerMensajeError(input) {
@@ -124,7 +142,7 @@ class FormCampo extends HTMLElement {
   }
 
   set minimo(value) {
-    this.setAttribute('minimo',value);
+    this.setAttribute('minimo', value);
   }
 
   get maximo() {
@@ -132,7 +150,7 @@ class FormCampo extends HTMLElement {
   }
 
   set maximo(value) {
-    this.setAttribute('maximo',value);
+    this.setAttribute('maximo', value);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
