@@ -1,87 +1,77 @@
 <?php
 require __DIR__ . '/helpers.php';
+require __DIR__ . '/db.php';
 
-$metodo = $_SERVER['REQUEST_METHOD'];
-if ($metodo !== 'GET' && $metodo !== 'POST') {
-    responder(['error' => 'Método no permitido'], 405);
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    responder(['error' => 'Metodo no permitido'], 405);
 }
 
-$archivo = __DIR__ . '/data/pedidos.json';
-$contenido = file_exists($archivo) ? file_get_contents($archivo) : '';
-$decodificado = json_decode($contenido, true);
-$pedidos = is_array($decodificado) ? $decodificado : [];
-
-if ($metodo === 'GET') {
-    if (isset($_GET['id'])) {
-        $idBuscado = trim($_GET['id']);
-        foreach ($pedidos as $pedido) {
-            if ((string) $pedido['id'] === $idBuscado) {
-                responder($pedido);
-            }
-        }
-        responder(['error' => 'Pedido no encontrado'], 404);
-    }
-    responder($pedidos);
-}
-
-$entrada = json_decode(file_get_contents('php://input'), true);
-if (!is_array($entrada)) {
-    responder(['error' => 'Cuerpo JSON inválido'], 422);
-}
-
-$cliente = trim($entrada['cliente'] ?? '');
+$entrada = leerJson();
+$nombre = trim($entrada['nombre'] ?? '');
+$email = trim($entrada['email'] ?? '');
 $items = $entrada['items'] ?? [];
 
-if ($cliente === '' || mb_strlen($cliente) < 3) {
-    responder(['error' => 'El nombre del cliente es obligatorio (mínimo 3 caracteres)'], 422);
-} //La alerta esta te indica cuantos caracteres tienes escritos aparte
-
-if (!is_array($items) || count($items) === 0) {
-    responder(['error' => 'El pedido debe incluir al menos un platillo'], 422);
+if (strlen($nombre) < 3 || !filter_var($email, FILTER_VALIDATE_EMAIL) || !is_array($items) || count($items) === 0) {
+    responder(['error' => 'Datos incompletos o invalidos'], 422);
 }
 
-$productos = require __DIR__ . '/data/catalogo.php';
-$total = 0;
-$itemsValidados = [];
+try {
+    $pdo = conectar();
 
-foreach ($items as $item) {
-    $idProd = (int) ($item['id'] ?? 0);
-    $cantidad = (int) ($item['cantidad'] ?? 0);
+    $buscarPrecio = $pdo->prepare('SELECT precio FROM productos WHERE id = :id');
+    $lineas = [];
+    $total = 0;
 
-    if ($idProd <= 0 || $cantidad <= 0) {
-        responder(['error' => 'Cada platillo debe tener un ID y una cantidad positiva'], 422);
-    }
+    foreach ($items as $item) {
+        $productoId = (int) ($item['id'] ?? 0);
+        $cantidad = (int) ($item['cantidad'] ?? 0);
 
-    foreach ($productos as $p) {
-        if ($p['id'] === $idProd) {
-            $total += $p['precio'] * $cantidad;
-            $itemsValidados[] = [
-                'id' => $p['id'],
-                'nombre' => $p['nombre'],
-                'cantidad' => $cantidad,
-                'subtotal' => $p['precio'] * $cantidad,
-            ];
+        $buscarPrecio->execute(['id' => $productoId]);
+        $fila = $buscarPrecio->fetch();
+
+        if (!$fila || $cantidad < 1) {
+            responder(['error' => 'Producto o cantidad invalidos'], 422);
         }
+
+        $precio = (float) $fila['precio'];
+        $total += $precio * $cantidad;
+        $lineas[] = ['id' => $productoId, 'cantidad' => $cantidad, 'precio' => $precio];
     }
+
+    $pdo->beginTransaction();
+    try {
+        $stmt = $pdo->prepare('INSERT INTO pedidos (nombre, email, total) VALUES (:nombre, :email, :total)');
+        $stmt->execute(['nombre' => $nombre, 'email' => $email, 'total' => $total]);
+        $pedidoId = (int) $pdo->lastInsertId();
+
+        $stmtItem = $pdo->prepare(
+            'INSERT INTO pedido_items (pedido_id, producto_id, cantidad, precio_unitario)
+             VALUES (:pedido, :producto, :cantidad, :precio)'
+        );
+        foreach ($lineas as $l) {
+            $stmtItem->execute([
+                'pedido' => $pedidoId,
+                'producto' => $l['id'],
+                'cantidad' => $l['cantidad'],
+                'precio' => $l['precio'],
+            ]);
+        }
+
+        $pdo->commit();
+    } catch (Throwable $e) {
+        $pdo->rollBack();
+        throw $e;
+    }
+
+    responder([
+        'id' => $pedidoId,
+        'nombre' => $nombre,
+        'email' => $email,
+        'items' => $lineas,
+        'total' => $total,
+        'creado' => date('c'),
+    ], 201);
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    responder(['error' => 'No se pudo guardar el pedido'], 500);
 }
-
-if (count($itemsValidados) === 0) {
-    responder(['error' => 'Ninguno de los platillos seleccionados existe en el catálogo'], 422);
-}
-
-$pedido = [
-    'id' => uniqid('ped_'),
-    'cliente' => $cliente,
-    'items' => $itemsValidados,
-    'total' => $total,
-    'creado' => date('c'),
-];
-
-$pedidos[] = $pedido;
-file_put_contents(
-    $archivo,
-    json_encode($pedidos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
-    LOCK_EX
-);
-
-responder($pedido, 201);

@@ -47,3 +47,42 @@ export async function crearPedido(pedido) {
   }
   return datos;
 }
+
+export async function crearProducto(producto) {
+  const respuesta = await fetch(URL_PRODUCTOS, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(producto),
+  });
+  const datos = await respuesta.json();
+  if (!respuesta.ok) {
+    throw new Error(datos.error ?? "No se pudo crear el producto");
+  }
+  localStorage.removeItem(`cache:${URL_PRODUCTOS}`);
+  return datos;
+}
+
+export async function actualizarProducto(id, producto) {
+  const respuesta = await fetch(`${URL_PRODUCTOS}?id=${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(producto),
+  });
+  const datos = await respuesta.json();
+  if (!respuesta.ok) {
+    throw new Error(datos.error ?? "No se pudo actualizar el producto");
+  }
+  localStorage.removeItem(`cache:${URL_PRODUCTOS}`);
+  return datos;
+}
+
+export async function eliminarProducto(id) {
+  const respuesta = await fetch(`${URL_PRODUCTOS}?id=${id}`, {
+    method: "DELETE",
+  });
+  if (!respuesta.ok) {
+    const datos = await respuesta.json();
+    throw new Error(datos.error ?? "No se pudo eliminar el producto");
+  }
+  localStorage.removeItem(`cache:${URL_PRODUCTOS}`);
+}

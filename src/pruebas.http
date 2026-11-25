@@ -1,0 +1,90 @@
+@baseUrl = http://localhost/restaurante-titan/src/api
+
+### 1. Listar todos los productos (200)
+GET {{baseUrl}}/productos.php
+
+### 2. Buscar producto por nombre (200)
+GET {{baseUrl}}/productos.php?buscar=Burger
+
+### 3. Obtener un producto existente (200)
+GET {{baseUrl}}/productos.php?id=1
+
+### 4. Obtener un producto inexistente (404)
+GET {{baseUrl}}/productos.php?id=999
+
+### 5. Crear un producto nuevo (201) -> generará el id 5
+POST {{baseUrl}}/productos.php
+Content-Type: application/json
+
+{
+  "nombre": "Hot Dog Titanico",
+  "precio": 190,
+  "categoria": "Tacos",
+  "calorias": "2,100 kcal",
+  "descripcion": "Salchicha de medio metro con tocino y queso fundido."
+}
+
+### 6. Crear producto con datos inválidos (422)
+POST {{baseUrl}}/productos.php
+Content-Type: application/json
+
+{
+  "nombre": "AB",
+  "precio": -50
+}
+
+### 7. Actualizar producto id=5 (200)
+PUT {{baseUrl}}/productos.php?id=5
+Content-Type: application/json
+
+{
+  "nombre": "Hot Dog Titanico Doble",
+  "precio": 220,
+  "categoria": "Tacos",
+  "calorias": "2,800 kcal",
+  "descripcion": "Doble salchicha de medio metro con tocino y queso fundido."
+}
+
+### 8. Actualizar sin enviar id (400)
+PUT {{baseUrl}}/productos.php
+Content-Type: application/json
+
+{
+  "nombre": "Sin ID",
+  "precio": 100,
+  "categoria": "Tacos",
+  "calorias": "500 kcal",
+  "descripcion": "Prueba de error 400"
+}
+
+### 9. Eliminar producto sin pedidos id=5 (204)
+DELETE {{baseUrl}}/productos.php?id=5
+
+### 10. Crear un pedido válido (201) -> guarda en pedidos y pedido_items
+POST {{baseUrl}}/pedidos.php
+Content-Type: application/json
+
+{
+  "nombre": "Carlos Mendoza",
+  "email": "carlos@correo.com",
+  "items": [
+    { "id": 1, "cantidad": 2 },
+    { "id": 4, "cantidad": 1 }
+  ]
+}
+
+### 11. Crear pedido con email o datos inválidos (422)
+POST {{baseUrl}}/pedidos.php
+Content-Type: application/json
+
+{
+  "nombre": "Ca",
+  "email": "correo-no-valido",
+  "items": []
+}
+
+### 12. Método no permitido en pedidos.php (405)
+GET {{baseUrl}}/pedidos.php
+
+### 13. Eliminar producto id=1 que ya tiene pedidos (409 por llave foránea)
+DELETE {{baseUrl}}/productos.php?id=1
