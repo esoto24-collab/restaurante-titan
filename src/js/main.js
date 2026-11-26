@@ -7,6 +7,7 @@ import '../components/opcionMenu/opcionMenu.js';
 import '../components/opcionCategoria/opcionCategoria.js';
 import '../components/comidaCard/comidaCard.js';
 import '../components/ticketCard/ticketCard.js';
+import '../components/dialogTicket/dialogTicket.js';
 
 import { generarRedesSociales } from './redesSociales.js';
 import { generarCategorias } from './categorias.js';
@@ -16,26 +17,20 @@ import { generarCamposIniciar } from './camposIniciar.js';
 import { generarTickets } from './tickets.js';
 
 const btnTema = document.querySelector('#tema');
-const btnMenuHamburguesa = document.querySelector(
-  '#menu-hamburguesa'
-);
+const btnMenuHamburguesa = document.querySelector('#menu-hamburguesa');
 const divBarraLateral = document.querySelector('#barra-lateral');
 const filtroOscuro = document.querySelector('#filtro-oscuro');
 const salirBarra = document.querySelector('#salir-barra');
 const opcionTema = document.querySelector('#opcion-tema');
 const opcionInicio = document.querySelector('#opcion-inicio');
 const opcionMenu = document.querySelector('#opcion-menu');
-const opcionCrearCuenta = document.querySelector(
-  '#opcion-crear-cuenta'
-);
-const opcionIniciarSesion = document.querySelector(
-  '#opcion-iniciar-sesion'
-);
+const opcionCrearCuenta = document.querySelector('#opcion-crear-cuenta');
+const opcionIniciarSesion = document.querySelector('#opcion-iniciar-sesion');
 
 const opcionPerfil = document.querySelector('#opcion-perfil');
 const root = document.documentElement;
 
-document.querySelector('footer').prepend(generarRedesSociales());
+//document.querySelector('footer').prepend(generarRedesSociales());
 
 function cambiarEstadoMenu(ocultar) {
   divBarraLateral.classList.toggle('ocultar', ocultar);
@@ -49,12 +44,10 @@ function cambiarTema() {
     btnTema.imagen = '/src/assets/svg/sun.svg';
     opcionTema.imagen = '/src/assets/svg/sun.svg';
     opcionTema.texto = 'Modo Dia';
-    console.log('cambio');
   } else {
     btnTema.imagen = '/src/assets/svg/moon.svg';
     opcionTema.imagen = '/src/assets/svg/moon.svg';
     opcionTema.texto = 'Modo Oscuro ';
-    console.log('cambio 2');
   }
 }
 
@@ -69,21 +62,21 @@ function renderizarEnMain(html, { reemplazar = true } = {}) {
   }
 }
 
-btnMenuHamburguesa.addEventListener('click', () => {
+btnMenuHamburguesa?.addEventListener('click', () => {
   const estaOculta = divBarraLateral.classList.contains('ocultar');
   cambiarEstadoMenu(!estaOculta);
 });
 
-filtroOscuro.addEventListener('click', () => {
+filtroOscuro?.addEventListener('click', () => {
   cambiarEstadoMenu(true);
 });
 
-salirBarra.addEventListener('click', () => {
+salirBarra?.addEventListener('click', () => {
   cambiarEstadoMenu(true);
 });
 
-btnTema.addEventListener('click', cambiarTema);
-opcionTema.addEventListener('click', () => {
+btnTema?.addEventListener('click', cambiarTema);
+opcionTema?.addEventListener('click', () => {
   cambiarEstadoMenu(true);
   cambiarTema();
 });
@@ -126,6 +119,7 @@ const vistas = {
       </form>
   `,
   perfil: () => `
+    <dialog-ticket></dialog-ticket>
     <div class="perfil">
       <div class="perfil__nombre">
           <functional-card
@@ -165,71 +159,130 @@ function navegarA(nombreVista) {
 
 function generarInicio() {
   navegarA('inicio');
-  document.querySelector('main').className = '';
-  document.querySelector('main').classList = 'inicio';
-  document.querySelector('main').appendChild(generarCategorias());
+  const main = document.querySelector('main');
+  if (main) main.className = 'inicio';
+  document.querySelector('main')?.appendChild(generarCategorias());
 }
 
 function generarMenu() {
   navegarA('menu');
-  document.querySelector('main').className = '';
-  document.querySelector('main').classList = 'menu';
-  document.querySelector('main').appendChild(generarComidas());
+  const main = document.querySelector('main');
+  if (main) main.className = 'menu';
+  document.querySelector('main')?.appendChild(generarComidas());
 }
 
 function generarCrearCuenta() {
   navegarA('crearCuenta');
   const form = document.querySelector('form');
-  document.querySelector('main').className = '';
-  document.querySelector('main').classList = 'formulario';
-  form.insertBefore(
-    generarCamposCrear(),
-    form.querySelector('button')
-  );
+  const main = document.querySelector('main');
+  if (main) main.className = 'formulario';
+  form?.insertBefore(generarCamposCrear(), form.querySelector('button'));
 }
 
 function generarIniciarSesion() {
   navegarA('iniciarSesion');
   const form = document.querySelector('form');
-  document.querySelector('main').className = '';
-  document.querySelector('main').classList = 'formulario';
-  form.insertBefore(
-    generarCamposIniciar(),
-    form.querySelector('button')
-  );
+  const main = document.querySelector('main');
+  if (main) main.className = 'formulario';
+  form?.insertBefore(generarCamposIniciar(), form.querySelector('button'));
 }
 
 function generarPerfil() {
   navegarA('perfil');
   const pedidos = document.querySelector('#pedidos');
-  document.querySelector('main').className = '';
-  document.querySelector('main').classList = 'usuario';
-  pedidos.appendChild(generarTickets());
+  const main = document.querySelector('main');
+  if (main) main.className = 'usuario';
+  pedidos?.appendChild(generarTickets());
 }
 
-opcionInicio.addEventListener('click', () => {
+opcionInicio?.addEventListener('click', () => {
   generarInicio();
   cambiarEstadoMenu(true);
 });
 
-opcionMenu.addEventListener('click', () => {
+opcionMenu?.addEventListener('click', () => {
   generarMenu();
   cambiarEstadoMenu(true);
 });
 
-opcionCrearCuenta.addEventListener('click', () => {
+opcionCrearCuenta?.addEventListener('click', () => {
   generarCrearCuenta();
   cambiarEstadoMenu(true);
 });
 
-opcionIniciarSesion.addEventListener('click', () => {
+opcionIniciarSesion?.addEventListener('click', () => {
   generarIniciarSesion();
   cambiarEstadoMenu(true);
 });
 
-opcionPerfil.addEventListener('click', () => {
+opcionPerfil?.addEventListener('click', () => {
   generarPerfil();
   cambiarEstadoMenu(true);
 });
 
-generarInicio();
+generarPerfil();
+
+document.addEventListener('click-ticket', (e) => {
+  document.querySelector('dialog-ticket')?.open();
+  document.querySelector('dialog-ticket').total = e.detail['total'];
+  document.querySelector('dialog-ticket').fecha = convertirFecha(e.detail['fecha']).formatoTicket;
+  document.querySelector('dialog-ticket').estado = e.detail['estado'];
+  document.querySelector('dialog-ticket').idPedido = e.detail["identificador"];
+});
+
+/*
+dialog?.addEventListener('click', (e) => {
+  if (e.target === dialog) dialog.close();
+});
+
+*/
+
+function convertirFecha(textoFecha, { sigloCorto = 2000, locale = 'es-MX' } = {}) {
+  const limpia = textoFecha.trim().replace(/\s*\/\s*/g, '/');
+  const partes = limpia.split('/');
+
+  if (partes.length !== 3) {
+    throw new Error(`Formato de fecha inválido: "${textoFecha}"`);
+  }
+
+  const [diaStr, mesStr, anioStr] = partes;
+  const dia = Number(diaStr);
+  const mes = Number(mesStr);
+  let anio = Number(anioStr);
+
+  if (Number.isNaN(dia) || Number.isNaN(mes) || Number.isNaN(anio)) {
+    throw new Error(`La fecha contiene valores no numéricos: "${textoFecha}"`);
+  }
+
+  if (anioStr.length <= 2) {
+    anio += sigloCorto;
+  }
+
+  const fecha = new Date(anio, mes - 1, dia);
+
+  const esValida =
+    fecha.getFullYear() === anio && fecha.getMonth() === mes - 1 && fecha.getDate() === dia;
+
+  if (!esValida) {
+    throw new Error(`Fecha inexistente en el calendario: "${textoFecha}"`);
+  }
+
+  const capitalizar = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+  const diaSemana = capitalizar(new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(fecha));
+  const nombreMes = capitalizar(new Intl.DateTimeFormat(locale, { month: 'long' }).format(fecha));
+
+  const formatoTicket = `${diaSemana}, ${nombreMes} ${dia}, ${anio}`;
+
+  return {
+    dia,
+    mes,
+    anio,
+    diaSemana,
+    nombreMes,
+    formatoTicket,
+    date: fecha,
+  };
+}
+
+console.log('script completo, listeners registrados');

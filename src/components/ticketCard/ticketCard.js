@@ -30,13 +30,26 @@ class TicketCard extends HTMLElement {
   }
 
   enlazarEventos() {
-    this.addEventListener("click",()=>{
-     
-    })
+   this.addEventListener('click', () => {
+    const evento = new CustomEvent('click-ticket', {
+      detail: {
+        fecha: this.fecha,
+        estado: this.estado,
+        articulos: this.articulos,
+        total: this.total,
+        identificador: this.identificador,
+      },
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
+
+    this.dispatchEvent(evento);
+  });
   }
 
   static get observedAttributes() {
-    return ['fecha', 'articulos', 'estado', 'total'];
+    return ['fecha', 'articulos', 'estado', 'total','identificador'];
   }
 
   get fecha() {
@@ -69,6 +82,14 @@ class TicketCard extends HTMLElement {
 
   set total(valor) {
     this.setAttribute('total', valor);
+  }
+
+  get identificador(){
+    return this.getAttribute('identificador');
+  }
+
+  set identificador(valor){
+    this.setAttribute('identificador', valor);
   }
 }
 

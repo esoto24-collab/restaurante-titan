@@ -1,0 +1,67 @@
+{
+  "detalleTickets": [
+    {
+      "id": "prod-1",
+      "ticketId": "1",
+      "nombre": "Hamburguesa Clásica",
+      "cantidad": 2,
+      "total": 80
+    },
+    {
+      "id": "prod-2",
+      "ticketId": "1",
+      "nombre": "Papas Francesas",
+      "cantidad": 2,
+      "total": 70
+    },
+    {
+      "id": "prod-3",
+      "ticketId": "1",
+      "nombre": "Refresco",
+      "cantidad": 1,
+      "total": 50
+    },
+    {
+      "id": "prod-4",
+      "ticketId": "2",
+      "nombre": "Pizza Margarita",
+      "cantidad": 1,
+      "total": 85
+    },
+    {
+      "id": "prod-5",
+      "ticketId": "3",
+      "nombre": "Tacos al Pastor",
+      "cantidad": 2,
+      "total": 90
+    },
+    {
+      "id": "prod-6",
+      "ticketId": "3",
+      "nombre": "Agua de Horchata",
+      "cantidad": 1,
+      "total": 55
+    },
+    {
+      "id": "prod-7",
+      "ticketId": "4",
+      "nombre": "Ensalada César",
+      "cantidad": 2,
+      "total": 160
+    },
+    {
+      "id": "prod-8",
+      "ticketId": "4",
+      "nombre": "Jugo Natural",
+      "cantidad": 2,
+      "total": 150
+    },
+    {
+      "id": "prod-9",
+      "ticketId": "5",
+      "nombre": "Hot Dog Especial",
+      "cantidad": 2,
+      "total": 90
+    }
+  ]
+}

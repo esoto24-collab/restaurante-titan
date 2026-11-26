@@ -1,11 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles de compra</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 24px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        background-color: #f4f4f0;
+        color: #111111;
+      }
+
+      dialog {
+        width: min(640px, 92vw);
+        margin: auto;
+        padding: 28px 32px;
+        background-color: #ffffff;
+        border: 2px solid #111111;
+        box-shadow: 6px 6px 0 #111111;
+        position: relative;
+      }
+
+      dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.45);
+      }
+
+      dialog functional-card {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+      }
+
+      .ticket-details h2 {
+        margin: 0 0 12px;
+        padding-right: 48px;
+        font-size: 1.35rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      h3 {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .ticket-meta {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        margin-bottom: 20px;
+        font-size: 0.92rem;
+        color: #333333;
+      }
+
+      .ticket-meta p {
+        margin: 0;
+      }
+
+      .ticket-meta span {
+        font-weight: 700;
+        color: #111111;
+      }
+
+      .ticket_dinero {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      dialog table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+
+      dialog thead th {
+        padding: 10px 8px;
+        border-top: 2px dashed #111111;
+        border-bottom: 2px dashed #111111;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        letter-spacing: 0.05em;
+        background-color: #fafafa;
+      }
+
+      dialog tbody td {
+        padding: 12px 8px;
+        vertical-align: middle;
+      }
+
+      dialog tbody tr:last-child td {
+        border-bottom: 2px dashed #111111;
+      }
+
+      dialog th:nth-child(1),
+      dialog td:nth-child(1) {
+        text-align: left;
+      }
+
+      dialog th:nth-child(2),
+      dialog td:nth-child(2) {
+        text-align: center;
+        width: 110px;
+      }
+
+      dialog th:nth-child(3),
+      dialog td:nth-child(3) {
+        text-align: right;
+        width: 130px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .barcode-fake {
+        width: 240px;
+        height: 64px;
+        background-color: #111111;
+        background-image: repeating-linear-gradient(
+          to right,
+          #111111 0px,
+          #111111 2px,
+          #ffffff 2px,
+          #ffffff 4px,
+          #111111 4px,
+          #111111 8px,
+          #ffffff 8px,
+          #ffffff 9px,
+          #111111 9px,
+          #111111 11px,
+          #ffffff 11px,
+          #ffffff 15px
+        );
+      }
+
+      .ticket__footer{
+        display: flex;
+        flex-flow: column;
+        gap: 10;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <dialog>
+      <div class="ticket_details">
+        <functional-card></functional-card>
+        <h2>Detalles de compra</h2>
+        <div class="ticket_meta">
+          <p>Orden #0001 para <span>Jesus Ivan</span></p>
+          <p>Miércoles, Noviembre 25, 2026</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hamburguesa</td>
+              <td>1</td>
+              <td>$120.00</td>
+            </tr>
+            <tr>
+              <td>Pizza Tremendamente grande de nombre</td>
+              <td>3</td>
+              <td>$200</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="ticket_dinero">
+          <p>Total</p>
+          <p>$120</p>
+        </div>
+        <div class="ticket__footer">
+          <h3>Gracias por vivir</h3>
+          <div class="barcode-fake" aria-label="Código de barras decorativo"></div>
+        </div>
+      </div>
+    </dialog>
+    <ticket-card></ticket-card>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
 </html>

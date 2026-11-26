@@ -1,0 +1,240 @@
+:host {
+  --ticket-tinta: #111111;
+  --ticket-papel: #ffffff;
+  --ticket-suave: #fafafa;
+  --ticket-duracion: 0.3s;
+  --ticket-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+dialog {
+  box-sizing: border-box;
+  width: min(92vw, 480px);
+  max-height: min(90dvh, 760px);
+  margin: auto;
+  padding: clamp(18px, 4vw, 28px) clamp(16px, 5vw, 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: var(--ticket-tinta);
+  background-color: var(--ticket-papel);
+  border: 2px solid var(--ticket-tinta);
+  box-shadow: 6px 6px 0 var(--ticket-tinta);
+
+
+  opacity: 0;
+  translate: 0 24px;
+  scale: 0.96;
+  transition:
+    opacity var(--ticket-duracion) var(--ticket-ease),
+    translate var(--ticket-duracion) var(--ticket-ease),
+    scale var(--ticket-duracion) var(--ticket-ease),
+    overlay var(--ticket-duracion) allow-discrete,
+    display var(--ticket-duracion) allow-discrete;
+
+
+  &[open] {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+
+  /* Punto de partida de la animación de entrada */
+  @starting-style {
+    &[open] {
+      opacity: 0;
+      translate: 0 24px;
+      scale: 0.96;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--ticket-tinta);
+    outline-offset: 4px;
+  }
+}
+
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
+  transition:
+    background-color var(--ticket-duracion) ease,
+    backdrop-filter var(--ticket-duracion) ease,
+    overlay var(--ticket-duracion) allow-discrete,
+    display var(--ticket-duracion) allow-discrete;
+}
+
+dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+}
+
+functional-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10%;
+}
+
+h2 {
+  margin: 0 0 12px;
+  padding-inline-end: 48px;
+  font-size: clamp(1.1rem, 4vw, 1.35rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 6px;
+}
+
+
+table {
+  width: 100%;
+  margin-block: 14px;
+  border-collapse: collapse;
+  font-size: clamp(0.85rem, 2.8vw, 0.95rem);
+
+  thead th {
+    padding: 10px 8px;
+    border-block: 2px dashed var(--ticket-tinta);
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--ticket-suave);
+  }
+
+  tbody td {
+    padding: 12px 8px;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+  }
+
+  tbody tr {
+    animation: fila 0.35s var(--ticket-ease) both;
+    animation-delay: calc(var(--i, 0) * 45ms + 120ms);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 2px dashed var(--ticket-tinta);
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    text-align: left;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 110px;
+    text-align: center;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 130px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes fila {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+}
+
+
+.ticket__dinero {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-block-end: 20px;
+  font-size: clamp(1.05rem, 4vw, 1.25rem);
+  font-weight: 700;
+  text-transform: uppercase;
+
+  p {
+    margin: 0;
+  }
+
+  #total {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+
+.ticket__footer {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 1rem;
+  }
+
+  .barcode-fake {
+    width: min(100%, 240px);
+    height: 64px;
+    background-color: var(--ticket-tinta);
+    background-image: repeating-linear-gradient(
+      to right,
+      #111111 0px,
+      #111111 2px,
+      #ffffff 2px,
+      #ffffff 4px,
+      #111111 4px,
+      #111111 8px,
+      #ffffff 8px,
+      #ffffff 9px,
+      #111111 9px,
+      #111111 11px,
+      #ffffff 11px,
+      #ffffff 15px
+    );
+  }
+}
+
+
+
+@media (max-width: 420px) {
+  dialog {
+    width: calc(100vw - 24px);
+    box-shadow: 4px 4px 0 var(--ticket-tinta);
+  }
+
+  table {
+    th:nth-child(2),
+    td:nth-child(2) {
+      width: 72px;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+      width: 92px;
+    }
+
+    thead th,
+    tbody td {
+      padding-inline: 4px;
+    }
+  }
+}
+
